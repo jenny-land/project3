@@ -1,0 +1,530 @@
+/* ============================================================
+   SHARED.CSS — Jennifer Landers Portfolio
+   Human Systems, Warm Clarity design system.
+   Tokens, reset, and components shared across all pages.
+   Import this style sheet before specific ones
+   ============================================================ */
+
+/* ============================================================
+   1. DESIGN TOKENS
+   All colors, fonts, and spacing references live here in this file.
+   creates the template
+   ============================================================ */
+
+:root {
+  /* ── Colors ── */
+  --cream: #fff9e8; /* Page background */
+  --green: #c1d6b3; /* Tags, dots, accent fills */
+  --graphite: #1e1e1e; /* Primary text, dark sections */
+  --warm-gray: #e8e8e6; /* Card backgrounds, placeholders */
+  --coral: #ef5a98; /* Primary CTA only */
+  --mid-gray: #6b6b6b; /* Secondary text, labels */
+
+  /* ── Typography ── */
+  --serif: "Cormorant Garamond", Georgia, serif;
+  --sans: "DM Sans", sans-serif;
+
+  /* ── Spacing ── */
+  --page-pad: 80px; /* Left/right padding on page content */
+  --section-v: 96px; /* Top/bottom padding on major sections */
+}
+
+/* ============================================================
+   2. RESET
+   Normalizes browser defaults so we start from a clean slate.
+   ============================================================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove list bullets — i style lists my way */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Images and media should never overflow their containers */
+img,
+video,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* Inherit font on form elements — browsers don't do this by default */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove default button appearance */
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* ============================================================
+   3. BASE STYLES
+   ============================================================ */
+
+html {
+  /* Smooth scrolling for anchor links (#work, #contact) */
+  scroll-behavior: smooth;
+  /* Prevent layout shift from scrollbar appearing */
+  overflow-y: scroll;
+}
+
+body {
+  background-color: var(--cream);
+  font-family: var(--sans);
+  color: var(--graphite);
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.7;
+  /* Prevents horizontal scroll from any overflowing elements */
+  overflow-x: hidden;
+}
+
+/* Anchor tags inherit color by default — so style links explicitly */
+a {
+  color: inherit;
+}
+
+/* ============================================================
+   4. FADE-UP ANIMATION — fix for js
+   
+   The problem: .fade-up starts invisible (opacity: 0).
+   If JS doesn't run, content is permanently hidden.
+   
+   The solution:
+   - By default, .fade-up is FULLY VISIBLE (no transform, full opacity).
+   - When JS loads add later, it adds .js-loaded to <body>.
+   - ONLY then do we hide .fade-up elements so JS can reveal them.
+   - Result: no JS = site looks perfect. JS = adds scroll reveals.
+   ============================================================ */
+
+/* Default: visible. Works without any JavaScript. */
+.fade-up {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* hides elements if js */
+.js-loaded .fade-up {
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity 500ms ease-in-out,
+    transform 500ms ease-in-out;
+}
+
+/* revealed w js */
+.js-loaded .fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/*  reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .js-loaded .fade-up {
+    opacity: 1;
+    transform: translateY(0);
+    transition: none;
+  }
+}
+
+/* ============================================================
+   5. NAVIGATION
+   Fixed top nav with backdrop blur.
+   Gets .scrolled class added by JS (Step 8) on scroll.
+   Works perfectly without .scrolled — just doesn't shrink.
+   ============================================================ */
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  /* Tall padding by default */
+  padding: 24px var(--page-pad);
+
+  /* Semi-transparent cream background with blur */
+  background: rgba(255, 249, 232, 0.92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); /* Safari */
+
+  border-bottom: 1px solid rgba(30, 30, 30, 0.07);
+
+  /* Smooth transition for  shrink on scroll */
+  transition: padding 300ms ease-in-out;
+}
+
+nav.scrolled {
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+
+/* ── Monogram / Logo ── */
+.nav-monogram {
+  font-family: var(--serif);
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 300;
+  color: var(--graphite);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  /* Prevents layout shift if we swap for an image later */
+  flex-shrink: 0;
+}
+
+/* ── Nav links ── */
+.nav-links {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+.nav-links a {
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mid-gray);
+  text-decoration: none;
+  transition: color 200ms ease-in-out;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--graphite);
+}
+
+/* ── Nav CTA button ── */
+.nav-cta {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--graphite);
+  text-decoration: none;
+  padding: 10px 22px;
+  border: 1px solid var(--graphite);
+  border-radius: 6px;
+  transition:
+    background 220ms ease-in-out,
+    color 220ms ease-in-out;
+}
+
+.nav-cta:hover {
+  background: var(--graphite);
+  color: var(--cream);
+}
+
+/* ============================================================
+   6. BUTTONS
+   Three variants:
+   - btn-primary: coral filled (use sparingly — CTAs only)
+   - btn-secondary: ghost with graphite border
+   - btn-ghost: text-only with arrow (inline links)
+   - btn-form-submit: coral filled, used inside the contact form
+   ============================================================ */
+
+/* ── Primary: coral fill ── */
+.btn-primary {
+  display: inline-block;
+  background: var(--coral);
+  color: #fff;
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 13px 28px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: opacity 220ms ease-in-out;
+}
+
+.btn-primary:hover {
+  opacity: 0.85;
+}
+
+/* ── Secondary: ghost with border ── */
+.btn-secondary {
+  display: inline-block;
+  background: transparent;
+  color: var(--graphite);
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 12px 27px;
+  border-radius: 6px;
+  border: 1px solid var(--graphite);
+  cursor: pointer;
+  text-decoration: none;
+  transition:
+    background 220ms ease-in-out,
+    color 220ms ease-in-out;
+}
+
+.btn-secondary:hover {
+  background: var(--graphite);
+  color: var(--cream);
+}
+
+/* ── Ghost: text + arrow, no border ── */
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mid-gray);
+  text-decoration: none;
+  transition: color 200ms ease-in-out;
+}
+
+.btn-ghost:hover {
+  color: var(--graphite);
+}
+
+.btn-ghost svg {
+  transition: transform 200ms ease-in-out;
+  flex-shrink: 0;
+}
+
+.btn-ghost:hover svg {
+  transform: translateX(3px);
+}
+
+/* ── Form submit: coral fill, inline-flex for icon ── */
+.btn-form-submit {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--coral);
+  color: #fff;
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 13px 28px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: opacity 220ms ease-in-out;
+}
+
+.btn-form-submit:hover {
+  opacity: 0.85;
+}
+
+.btn-form-submit svg {
+  transition: transform 220ms ease-in-out;
+  flex-shrink: 0;
+}
+
+.btn-form-submit:hover svg {
+  transform: translateX(3px);
+}
+
+/* ============================================================
+   7. TAGS
+   Small pill labels used on project cards and about page.
+   Two variants: filled (green) and outline.
+   ============================================================ */
+
+.tag {
+  display: inline-block;
+  background: var(--green);
+  color: var(--graphite);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: 100px;
+  /* Prevent tags from wrapping mid-word */
+  white-space: nowrap;
+}
+
+.tag.outline {
+  background: transparent;
+  border: 1px solid rgba(30, 30, 30, 0.2);
+}
+
+/* ============================================================
+   8. SECTION HEADER PATTERN
+   Used at the top of every major section across all pages.
+   
+   Structure:
+   <div class="section-header">
+     <span class="section-number">01</span>
+     <span class="section-title">Section Name</span>
+     <div class="section-rule"></div>   ← expands to fill remaining space
+   </div>
+   ============================================================ */
+
+.section-header {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 48px;
+}
+
+/* Italic serif number — e.g. "01" */
+.section-number {
+  font-family: var(--serif);
+  font-size: 13px;
+  font-style: italic;
+  color: var(--mid-gray);
+  /* Prevent flex shrinking */
+  flex-shrink: 0;
+}
+
+/* Uppercase small caps label — e.g. "Introduction" */
+.section-title {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--graphite);
+  flex-shrink: 0;
+}
+
+/* Horizontal rule that fills remaining width */
+.section-rule {
+  flex: 1;
+  height: 1px;
+  background: rgba(30, 30, 30, 0.1);
+  /* Align with text baseline */
+  align-self: center;
+}
+
+/* ============================================================
+   9. INSIGHT BLOCK
+   Used in case study research sections.
+   Green background with left graphite border.
+   
+   Structure:
+   <div class="insight-block">
+     <div class="insight-label">Key Research Finding</div>
+     <p>The insight text goes here.</p>
+   </div>
+   ============================================================ */
+
+.insight-block {
+  background: var(--green);
+  padding: 32px 40px;
+  border-left: 3px solid var(--graphite);
+}
+
+.insight-block .insight-label {
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(30, 30, 30, 0.55);
+  margin-bottom: 12px;
+}
+
+.insight-block p {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-style: italic;
+  font-weight: 300;
+  line-height: 1.5;
+  color: var(--graphite);
+}
+
+/* ============================================================
+   10. FOOTER
+   Dark graphite bar, sits below all page content.
+   Logo/monogram left, copyright right.
+   ============================================================ */
+
+footer {
+  background: var(--graphite);
+  border-top: 1px solid rgba(255, 249, 232, 0.08);
+  padding: 32px var(--page-pad);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Monogram or logo in footer — lighter than page version */
+.footer-monogram {
+  font-family: var(--serif);
+  font-size: 18px;
+  font-style: italic;
+  font-weight: 300;
+  color: rgba(255, 249, 232, 0.5);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  transition: color 200ms ease-in-out;
+}
+
+.footer-monogram:hover {
+  color: rgba(255, 249, 232, 0.8);
+}
+
+.footer-copy {
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 249, 232, 0.25);
+}
+
+/* ============================================================
+   11. SHARED RESPONSIVE BREAKPOINTS
+   Page-specific breakpoints live in their own CSS files.
+   Only nav and footer — which appear on every page — live here.
+   ============================================================ */
+
+@media (max-width: 960px) {
+  :root {
+    /* Reduce page padding on smaller screens */
+    --page-pad: 32px;
+  }
+
+  nav,
+  nav.scrolled {
+    padding: 20px var(--page-pad);
+  }
+
+  /* Hide nav links on mobile — hamburger menu later */
+  /* mobil */
+  .nav-links {
+    display: none;
+  }
+
+  footer {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+    padding: 24px var(--page-pad);
+  }
+}

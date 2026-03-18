@@ -1,0 +1,1067 @@
+/* ============================================================
+   INDEX.CSS — Homepage
+   load shared.css first
+   
+   Breakpoints:
+   Base:              0px+    (mobile, single column)
+   Small tablet:      640px+  (some 2-col grids)
+   Desktop:           960px+  (full layouts)
+   Large:             1200px+ (max widths, generous spacing)
+   ============================================================ */
+
+/* ============================================================
+   1. HERO
+   Mobile: stacked, single column.
+   Desktop: 2-col grid, left content / right descriptor.
+   The ghost letterform only appears at desktop — too large for mobile.
+   ============================================================ */
+
+.hero {
+  /* Push content below fixed nav. On mobile the nav is ~64px tall. */
+  padding-top: 100px;
+  padding-bottom: 64px;
+  padding-left: var(--page-pad);
+  padding-right: var(--page-pad);
+
+  /* Mobile: single column stack */
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+
+  border-bottom: 1px solid rgba(30, 30, 30, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Ghost "L" background — decorative, desktop only */
+/* Hidden on mobile */
+.hero::before {
+  content: none;
+}
+
+/* ── Hero left: eyebrow, H1, sub, buttons ── */
+.hero-left {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-eyebrow {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--mid-gray);
+  margin-bottom: 24px;
+
+  /* Short horizontal rule before the text */
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.hero-eyebrow::before {
+  content: "";
+  display: block;
+  width: 32px;
+  height: 1px;
+  background: var(--mid-gray);
+  flex-shrink: 0;
+}
+
+.hero-h1 {
+  font-family: var(--serif);
+  /* Mobile: smaller but still impactful */
+  font-size: clamp(44px, 10vw, 96px);
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  margin-bottom: 28px;
+}
+
+.hero-h1 em {
+  font-style: italic;
+  /* Italic word in lighter mid-gray */
+  color: var(--mid-gray);
+}
+
+.hero-sub {
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--mid-gray);
+  line-height: 1.7;
+  max-width: 480px;
+  margin-bottom: 40px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* ── Hero right: descriptor list + availability ── */
+.hero-right {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.hero-descriptor-label {
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--mid-gray);
+  margin-bottom: 16px;
+}
+
+.descriptor-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.descriptor-list li {
+  font-family: var(--serif);
+  font-size: clamp(18px, 3vw, 22px);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--graphite);
+  line-height: 1.2;
+  display: flex;
+  align-items: center;
+}
+
+/* Green dot after each descriptor */
+.descriptor-list li span {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--green);
+  margin-left: 10px;
+  flex-shrink: 0;
+}
+
+/* Availability pill */
+.hero-availability {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  border: 1px solid rgba(30, 30, 30, 0.1);
+  border-radius: 100px;
+  align-self: flex-start;
+}
+
+.availability-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--green);
+  flex-shrink: 0;
+  /* Subtle pulse — CSS only, no JS needed */
+  box-shadow: 0 0 0 3px rgba(193, 214, 179, 0.3);
+  animation: pulse 2.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 3px rgba(193, 214, 179, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 0 7px rgba(193, 214, 179, 0.1);
+  }
+}
+
+/* Pause animation for reduced motion users */
+@media (prefers-reduced-motion: reduce) {
+  .availability-dot {
+    animation: none;
+  }
+}
+
+.availability-text {
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: var(--mid-gray);
+}
+
+/* ── Hero: desktop layout ── */
+@media (min-width: 960px) {
+  .hero {
+    /* Switch to 2-column grid */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: end;
+    gap: 80px;
+
+    /* Taller padding have more room */
+    padding-top: 160px;
+    padding-bottom: 96px;
+
+    /* Min-height ensures the hero fills the viewport */
+    min-height: 100vh;
+  }
+
+  /* Ghost letterform — only shown at desktop where it fits */
+  .hero::before {
+    content: "L";
+    position: absolute;
+    bottom: -60px;
+    right: -20px;
+    font-family: var(--serif);
+    font-size: 480px;
+    font-style: italic;
+    font-weight: 300;
+    color: rgba(30, 30, 30, 0.03);
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  /* Descriptor list aligns to the right on desktop */
+  .hero-right {
+    align-items: flex-end;
+  }
+
+  .hero-descriptor-label {
+    text-align: right;
+  }
+
+  .descriptor-list {
+    align-items: flex-end;
+  }
+}
+
+/* ============================================================
+   2. WORK SECTION
+   Mobile: everything stacked.
+   Desktop: featured card is 2-col, work grid is 2-col.
+   ============================================================ */
+
+#work {
+  padding: 64px var(--page-pad);
+}
+
+@media (min-width: 960px) {
+  #work {
+    padding: 96px var(--page-pad);
+  }
+}
+
+/* ── Work section header ── */
+.work-header {
+  display: flex;
+  /* Mobile: stack label and count */
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 40px;
+}
+
+.work-header-left {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+}
+
+.work-header-right {
+  font-size: 12px;
+  color: var(--mid-gray);
+}
+
+@media (min-width: 640px) {
+  .work-header {
+    /* Side by side on wider screens */
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 56px;
+  }
+}
+
+/* ── Featured card ── */
+.featured-card {
+  display: flex;
+  /* Mobile: single column — image on top, content below */
+  flex-direction: column;
+
+  border: 1px solid rgba(30, 30, 30, 0.1);
+  margin-bottom: 16px;
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 250ms ease-in-out;
+}
+
+.featured-card:hover {
+  border-color: var(--graphite);
+}
+
+/* Image area */
+.featured-img {
+  background: var(--warm-gray);
+  /* Mobile: fixed height image area */
+  min-height: 280px;
+  overflow: hidden;
+  position: relative;
+}
+
+.featured-img-fill {
+  width: 100%;
+  height: 100%;
+  min-height: 280px;
+  background: var(--warm-gray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Scale on hover — CSS only */
+  transition: transform 600ms ease-in-out;
+}
+
+.featured-card:hover .featured-img-fill {
+  transform: scale(1.02);
+}
+
+.img-placeholder-text {
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--mid-gray);
+  opacity: 0.5;
+}
+
+/* "Featured" badge */
+.featured-card-label {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--graphite);
+  background: var(--green);
+  padding: 5px 12px;
+  border-radius: 100px;
+}
+
+/* Content area */
+.featured-content {
+  padding: 36px 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 32px;
+  background: var(--cream);
+}
+
+.featured-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+/* Card tags — slightly smaller than page-level tags */
+.card-tag {
+  display: inline-block;
+  background: var(--green);
+  color: var(--graphite);
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 100px;
+  white-space: nowrap;
+}
+
+.card-tag.outline {
+  background: transparent;
+  border: 1px solid rgba(30, 30, 30, 0.15);
+}
+
+.featured-title {
+  font-family: var(--serif);
+  font-size: clamp(28px, 4vw, 48px);
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  margin-bottom: 16px;
+}
+
+.featured-desc {
+  font-size: 15px;
+  color: var(--mid-gray);
+  line-height: 1.7;
+  margin-bottom: 0;
+}
+
+/* Meta strip: Role / Team / Year */
+.featured-meta {
+  display: flex;
+  /* Mobile: wrap if needed */
+  flex-wrap: wrap;
+  gap: 24px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(30, 30, 30, 0.08);
+}
+
+.featured-meta-label {
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--mid-gray);
+  margin-bottom: 4px;
+}
+
+.featured-meta-value {
+  font-size: 12px;
+  color: var(--graphite);
+}
+
+/* Arrow icon — bottom right corner */
+.featured-card-arrow {
+  position: absolute;
+  bottom: 32px;
+  right: 32px;
+  color: var(--graphite);
+  transition: transform 250ms ease-in-out;
+  /* Hidden on mobile — not enough space */
+  display: none;
+}
+
+.featured-card:hover .featured-card-arrow {
+  transform: translate(4px, -4px);
+}
+
+@media (min-width: 960px) {
+  .featured-card {
+    /* Desktop: side-by-side — image left, content right */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .featured-img {
+    /* Full height on desktop */
+    min-height: 480px;
+  }
+
+  .featured-img-fill {
+    min-height: 480px;
+  }
+
+  .featured-content {
+    /* More breathing room on desktop */
+    padding: 52px 48px;
+  }
+
+  .featured-card-arrow {
+    /* Show arrow on desktop */
+    display: block;
+    bottom: 48px;
+    right: 48px;
+  }
+}
+
+/* ── Work grid: smaller cards ── */
+.work-grid {
+  /* Mobile: single column */
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+@media (min-width: 640px) {
+  .work-grid {
+    /* 2 columns from tablet up */
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.work-card {
+  border: 1px solid rgba(30, 30, 30, 0.1);
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+  transition: border-color 250ms ease-in-out;
+}
+
+.work-card:hover {
+  border-color: var(--graphite);
+}
+
+/* Image area */
+.work-card-img {
+  /* Mobile: shorter image */
+  height: 220px;
+  overflow: hidden;
+  background: var(--warm-gray);
+}
+
+.work-card-img-inner {
+  width: 100%;
+  height: 100%;
+  background: var(--warm-gray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 600ms ease-in-out;
+}
+
+/* Subtle background color variation per card */
+.work-card:nth-child(2) .work-card-img-inner {
+  background: #d8e8d0;
+}
+.work-card:nth-child(3) .work-card-img-inner {
+  background: #eae4d4;
+}
+
+.work-card:hover .work-card-img-inner {
+  transform: scale(1.02);
+}
+
+@media (min-width: 960px) {
+  .work-card-img {
+    height: 280px;
+  }
+}
+
+/* Content area */
+.work-card-body {
+  padding: 28px 28px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+  background: var(--cream);
+}
+
+@media (min-width: 960px) {
+  .work-card-body {
+    padding: 32px 36px 36px;
+  }
+}
+
+.work-card-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.work-card-title {
+  font-family: var(--serif);
+  font-size: clamp(22px, 3vw, 28px);
+  font-weight: 300;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+.work-card-desc {
+  font-size: 13px;
+  color: var(--mid-gray);
+  line-height: 1.65;
+}
+
+/* Footer: year + arrow */
+.work-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 16px;
+  border-top: 1px solid rgba(30, 30, 30, 0.07);
+  margin-top: auto;
+}
+
+.work-card-year {
+  font-size: 11px;
+  color: var(--mid-gray);
+  letter-spacing: 0.06em;
+}
+
+.work-card-arrow {
+  color: var(--mid-gray);
+  transition: transform 250ms ease-in-out;
+}
+
+.work-card:hover .work-card-arrow {
+  transform: translate(3px, -3px);
+}
+
+/* ============================================================
+   3. ABOUT BLURB
+   Mobile: single column stack.
+   Desktop: 2-col grid — headline left, prose + grid right.
+   ============================================================ */
+
+#about-blurb {
+  padding: 64px var(--page-pad);
+  border-top: 1px solid rgba(30, 30, 30, 0.08);
+
+  /* Mobile: single column */
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+@media (min-width: 960px) {
+  #about-blurb {
+    /* Desktop: 2-col grid */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    padding: 96px var(--page-pad);
+  }
+}
+
+.about-blurb-eyebrow {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--mid-gray);
+  margin-bottom: 20px;
+}
+
+.about-blurb-h2 {
+  font-family: var(--serif);
+  font-size: clamp(32px, 5vw, 52px);
+  font-weight: 300;
+  line-height: 1.12;
+  letter-spacing: -0.015em;
+  margin-bottom: 28px;
+}
+
+.about-blurb-h2 em {
+  font-style: italic;
+  color: var(--mid-gray);
+}
+
+/* "Full Story →" underline link */
+.about-blurb-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--graphite);
+  text-decoration: none;
+  border-bottom: 1px solid var(--graphite);
+  padding-bottom: 2px;
+  transition: opacity 200ms ease-in-out;
+}
+
+.about-blurb-link:hover {
+  opacity: 0.55;
+}
+
+.about-blurb-link svg {
+  transition: transform 200ms ease-in-out;
+  flex-shrink: 0;
+}
+
+.about-blurb-link:hover svg {
+  transform: translateX(3px);
+}
+
+/* Right column: paragraphs + capability grid */
+.about-blurb-p {
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--graphite);
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.about-blurb-p:last-of-type {
+  margin-bottom: 28px;
+}
+
+/* Capability grid: 2-col bordered cells */
+.about-capabilities {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 1px solid rgba(30, 30, 30, 0.1);
+}
+
+.capability-item {
+  padding: 14px 16px;
+  border-right: 1px solid rgba(30, 30, 30, 0.1);
+  border-bottom: 1px solid rgba(30, 30, 30, 0.1);
+  font-size: 12px;
+  color: var(--mid-gray);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  line-height: 1.4;
+}
+
+/* Remove right border from even items (right column) */
+.capability-item:nth-child(2n) {
+  border-right: none;
+}
+
+/* Remove bottom border from last two items */
+.capability-item:nth-last-child(-n + 2) {
+  border-bottom: none;
+}
+
+.capability-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--green);
+  flex-shrink: 0;
+}
+
+/* ============================================================
+   4. CONTACT SECTION
+   Mobile: single column — headline/links above, form below.
+   Desktop: 2-col — headline/links left, form right.
+   Dark graphite background.
+   ============================================================ */
+
+#contact {
+  background: var(--graphite);
+  padding: 64px var(--page-pad);
+
+  /* Mobile: single column */
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+@media (min-width: 960px) {
+  #contact {
+    /* Desktop: 2-col grid */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+    padding: 96px var(--page-pad);
+  }
+}
+
+/* ── Left column: headline + direct links ── */
+.contact-left {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.contact-eyebrow {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255, 249, 232, 0.4);
+  margin-bottom: 20px;
+}
+
+.contact-h2 {
+  font-family: var(--serif);
+  font-size: clamp(32px, 5vw, 56px);
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  color: var(--cream);
+  margin-bottom: 16px;
+}
+
+.contact-h2 em {
+  font-style: italic;
+  color: rgba(255, 249, 232, 0.45);
+}
+
+.contact-p {
+  font-size: 15px;
+  font-weight: 300;
+  color: rgba(255, 249, 232, 0.55);
+  line-height: 1.75;
+}
+
+/* Direct links: email, LinkedIn, resume */
+.contact-links {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-links-label {
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255, 249, 232, 0.3);
+  margin-bottom: 12px;
+}
+
+.contact-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border: 1px solid rgba(255, 249, 232, 0.08);
+  text-decoration: none;
+  /* Overlap borders between items */
+  margin-bottom: -1px;
+  transition:
+    border-color 220ms ease-in-out,
+    background 220ms ease-in-out;
+}
+
+/* Last link: add bottom margin back */
+.contact-link:last-child {
+  margin-bottom: 0;
+}
+
+.contact-link:hover {
+  border-color: rgba(255, 249, 232, 0.28);
+  background: rgba(255, 249, 232, 0.04);
+  /* Bring hovered item above adjacent items */
+  position: relative;
+  z-index: 1;
+}
+
+.contact-link:hover .contact-link-arrow {
+  transform: translate(3px, -3px);
+}
+
+.contact-link-left {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.contact-link-label {
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 249, 232, 0.3);
+}
+
+.contact-link-value {
+  font-size: 14px;
+  color: var(--cream);
+  font-weight: 300;
+  /* Allow long email to wrap on tiny screens */
+  word-break: break-all;
+}
+
+.contact-link-arrow {
+  color: rgba(255, 249, 232, 0.35);
+  transition: transform 220ms ease-in-out;
+  flex-shrink: 0;
+  margin-left: 12px;
+}
+
+/* ── Right column: contact form ── */
+.contact-right {
+  padding-top: 0;
+}
+
+@media (min-width: 960px) {
+  /* Slight visual alignment with left column content */
+  .contact-right {
+    padding-top: 8px;
+  }
+}
+
+.contact-form-label {
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255, 249, 232, 0.3);
+  margin-bottom: 24px;
+}
+
+/* Form layout */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Name + email on same row at tablet+ */
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+@media (min-width: 640px) {
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+}
+
+/* Form labels */
+.form-field label {
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 249, 232, 0.35);
+}
+
+/* All form inputs, textarea, select */
+.form-field input,
+.form-field textarea,
+.form-field select {
+  background: rgba(255, 249, 232, 0.04);
+  border: 1px solid rgba(255, 249, 232, 0.12);
+  border-radius: 6px;
+  padding: 12px 16px;
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--cream);
+  outline: none;
+  width: 100%;
+  /* Remove iOS/Android default styling */
+  -webkit-appearance: none;
+  appearance: none;
+  transition:
+    border-color 200ms ease-in-out,
+    background 200ms ease-in-out;
+}
+
+/* Select arrow — custom since we removed default */
+.form-field select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='rgba(255,249,232,0.4)' stroke-width='1.5' viewBox='0 0 24 24'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  padding-right: 40px;
+  cursor: pointer;
+}
+
+/* Select options (browser-styled, limited control) */
+.form-field select option {
+  background: var(--graphite);
+  color: var(--cream);
+}
+
+/* Placeholder text */
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+  color: rgba(255, 249, 232, 0.2);
+}
+
+/* Focus state: brighter border, slightly lighter bg */
+.form-field input:focus,
+.form-field textarea:focus,
+.form-field select:focus {
+  border-color: rgba(255, 249, 232, 0.4);
+  background: rgba(255, 249, 232, 0.07);
+}
+
+/* Textarea: taller than inputs, user can resize vertically */
+.form-field textarea {
+  resize: vertical;
+  min-height: 120px;
+  line-height: 1.6;
+}
+
+/* Error state — JS adds .has-error to the .form-field wrapper */
+.form-field.has-error input,
+.form-field.has-error textarea,
+.form-field.has-error select {
+  border-color: var(--coral);
+}
+
+/* Error message: hidden by default, shown when .has-error present */
+.form-error-msg {
+  font-size: 10px;
+  color: var(--coral);
+  /* Hidden until error occurs */
+  display: none;
+}
+
+.form-field.has-error .form-error-msg {
+  display: block;
+}
+
+/* Submit row: note text + button */
+.form-submit-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-top: 8px;
+  flex-wrap: wrap;
+}
+
+.form-note {
+  font-size: 11px;
+  color: rgba(255, 249, 232, 0.25);
+  line-height: 1.5;
+}
+
+/* Form success state */
+.contact-form-wrap {
+  position: relative;
+}
+
+.form-success {
+  /* Hidden by default — JS adds .visible in Step 8 */
+  display: none;
+  flex-direction: column;
+  gap: 16px;
+  padding: 40px;
+  border: 1px solid rgba(193, 214, 179, 0.25);
+  background: rgba(193, 214, 179, 0.05);
+}
+
+.form-success.visible {
+  display: flex;
+}
+
+.form-success-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(193, 214, 179, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--green);
+}
+
+.form-success h3 {
+  font-family: var(--serif);
+  font-size: 24px;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--cream);
+  line-height: 1.3;
+}
+
+.form-success p {
+  font-size: 13px;
+  color: rgba(255, 249, 232, 0.45);
+  line-height: 1.65;
+}
