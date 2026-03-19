@@ -1,0 +1,595 @@
+/* ============================================================
+   ABOUT.CSS — About Page
+   Mobile-first. Requires shared.css loaded before this.
+
+   Breakpoints:
+   Base:          0px+    (mobile, single column)
+   Small tablet:  640px+  (lens grid goes 2-col)
+   Desktop:       960px+  (full 2-col layouts throughout)
+   Large:         1200px+ (max-width and generous spacing)
+   ============================================================ */
+
+/* ============================================================
+   1. PAGE WRAPPER
+   Centers content and sets horizontal padding.
+   Max-width prevents lines from becoming too long on
+   ultra-wide screens.
+   ============================================================ */
+
+.page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--page-pad);
+}
+
+/* ============================================================
+   2. HERO
+   Mobile: single column stack — headline above, portrait below.
+   Desktop: 2-col grid, headline left, portrait right,
+            both aligned to the bottom edge.
+   ============================================================ */
+
+.hero {
+  /* Push below fixed nav */
+  padding-top: 120px;
+  padding-bottom: 64px;
+
+  /* Mobile: single column */
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+
+  border-bottom: 1px solid rgba(30, 30, 30, 0.1);
+}
+
+@media (min-width: 960px) {
+  .hero {
+    /* Desktop: 2-col, bottom-aligned */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: end;
+    padding-top: 160px;
+    padding-bottom: 96px;
+  }
+}
+
+/* ── Hero label: "About" eyebrow ── */
+.hero-label {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--mid-gray);
+  margin-bottom: 24px;
+}
+
+/* ── Hero H1 ── */
+.hero-h1 {
+  font-family: var(--serif);
+  /* Mobile: readable but not overwhelming */
+  font-size: clamp(36px, 8vw, 64px);
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  margin-bottom: 36px;
+}
+
+.hero-h1 em {
+  font-style: italic;
+  color: var(--mid-gray);
+}
+
+/* ── Hero tags ── */
+.hero-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* ── Hero right: portrait + note ── */
+.hero-right {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  /* Mobile: align portrait to left */
+  align-items: flex-start;
+}
+
+@media (min-width: 960px) {
+  .hero-right {
+    /* Desktop: align portrait to right edge */
+    align-items: flex-end;
+  }
+}
+
+/* Portrait frame — placeholder until photo is added */
+.portrait-frame {
+  width: 100%;
+  /* Mobile: shorter portrait, full width */
+  max-width: 280px;
+  aspect-ratio: 4 / 5;
+  background: var(--warm-gray);
+  position: relative;
+  overflow: hidden;
+}
+
+@media (min-width: 960px) {
+  .portrait-frame {
+    /* Desktop: slightly larger */
+    max-width: 360px;
+  }
+}
+
+/*
+  Placeholder text inside empty portrait frame.
+  When you replace the div with an <img>, this disappears
+  because ::after doesn't apply to replaced elements.
+*/
+.portrait-frame::after {
+  content: "Your photo here";
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--mid-gray);
+  opacity: 0.5;
+  white-space: nowrap;
+}
+
+/* Small italic note beneath portrait */
+.portrait-note {
+  font-size: 11px;
+  color: var(--mid-gray);
+  font-style: italic;
+  line-height: 1.5;
+  max-width: 280px;
+}
+
+@media (min-width: 960px) {
+  .portrait-note {
+    text-align: right;
+    max-width: 320px;
+  }
+}
+
+/* ============================================================
+   3. SECTION BASE STYLES
+   Every <section> on this page gets consistent vertical
+   padding and a bottom border (except the last one).
+   ============================================================ */
+
+section {
+  padding: 64px 0;
+  border-bottom: 1px solid rgba(30, 30, 30, 0.08);
+}
+
+section:last-of-type {
+  border-bottom: none;
+}
+
+@media (min-width: 960px) {
+  section {
+    padding: 80px 0;
+  }
+}
+
+/* ============================================================
+   4. SECTION 01 — INTRODUCTION
+   Mobile: prose above, pull quote below.
+   Desktop: 2-col grid, prose left, pull quote right.
+   ============================================================ */
+
+.intro-grid {
+  /* Mobile: single column */
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+@media (min-width: 960px) {
+  .intro-grid {
+    /* Desktop: equal 2-col */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+}
+
+/* Prose paragraphs */
+.intro-prose p {
+  font-size: 17px;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--graphite);
+  margin-bottom: 20px;
+}
+
+.intro-prose p:last-child {
+  margin-bottom: 0;
+}
+
+/* Pull quote — serif italic with left border */
+.aside-pull {
+  font-family: var(--serif);
+  font-size: clamp(20px, 3vw, 26px);
+  font-style: italic;
+  font-weight: 300;
+  line-height: 1.4;
+  color: var(--graphite);
+  /* Left border treatment */
+  border-left: 2px solid var(--graphite);
+  padding-left: 28px;
+  margin-bottom: 32px;
+}
+
+/* Supporting detail beneath the pull quote */
+.aside-detail {
+  font-size: 13px;
+  color: var(--mid-gray);
+  line-height: 1.7;
+  /* Aligns with pull quote text (not the border) */
+  padding-left: 28px;
+}
+
+/* ============================================================
+   5. SECTION 02 — HOW I THINK
+   Full-width intro sentence.
+   Lens grid: 1-col mobile → 2-col tablet → 4-col desktop.
+   Closing statement below the grid.
+   ============================================================ */
+
+/* Serif intro sentence above the grid */
+.lens-intro {
+  font-family: var(--serif);
+  font-size: clamp(22px, 3.5vw, 28px);
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.35;
+  color: var(--graphite);
+  max-width: 640px;
+  margin-bottom: 40px;
+}
+
+@media (min-width: 960px) {
+  .lens-intro {
+    margin-bottom: 56px;
+  }
+}
+
+/* Lens grid container */
+.lens-grid {
+  /* Mobile: single column — each lens is a horizontal card */
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  border: 1px solid rgba(30, 30, 30, 0.1);
+  margin-bottom: 40px;
+}
+
+@media (min-width: 640px) {
+  .lens-grid {
+    /* Small tablet: 2 columns */
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 960px) {
+  .lens-grid {
+    /* Desktop: all 4 in a row */
+    grid-template-columns: repeat(4, 1fr);
+    margin-bottom: 48px;
+  }
+}
+
+/* Individual lens cell */
+.lens-item {
+  padding: 28px 24px;
+  /* Right border between cells — removed on last in each row */
+  border-right: 1px solid rgba(30, 30, 30, 0.1);
+  /* Bottom border between rows on mobile */
+  border-bottom: 1px solid rgba(30, 30, 30, 0.1);
+}
+
+/*
+  Mobile (1-col): last item removes bottom border
+  We can't use :last-child here alone because grid reflow
+  changes which items are "last in row" at each breakpoint.
+  Simplest approach: always show borders, remove on true last child.
+*/
+.lens-item:last-child {
+  border-bottom: none;
+  border-right: none;
+}
+
+@media (min-width: 640px) {
+  /* 2-col: remove right border from even items */
+  .lens-item:nth-child(2n) {
+    border-right: none;
+  }
+  /* 2-col: remove bottom border from last 2 items */
+  .lens-item:nth-last-child(-n + 2) {
+    border-bottom: none;
+  }
+}
+
+@media (min-width: 960px) {
+  /* 4-col: all items are in one row */
+  /* Remove right border from last item */
+  .lens-item:last-child {
+    border-right: none;
+  }
+  /* No bottom borders at desktop — single row */
+  .lens-item {
+    border-bottom: none;
+  }
+  .lens-item:nth-child(2n) {
+    /* Reset the 2-col rule */
+    border-right: 1px solid rgba(30, 30, 30, 0.1);
+  }
+  .lens-item:last-child {
+    border-right: none;
+  }
+}
+
+/* Ghost number — large, very light, decorative */
+.lens-item-number {
+  font-family: var(--serif);
+  font-size: 36px;
+  font-weight: 300;
+  color: rgba(30, 30, 30, 0.1);
+  line-height: 1;
+  margin-bottom: 16px;
+}
+
+/* Lens title — small caps */
+.lens-item-title {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--graphite);
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+/* Lens description */
+.lens-item-desc {
+  font-size: 13px;
+  color: var(--mid-gray);
+  line-height: 1.65;
+}
+
+/* Closing statement beneath the grid */
+.lens-closing {
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--graphite);
+  line-height: 1.75;
+  max-width: 680px;
+}
+
+.lens-closing strong {
+  font-weight: 500;
+}
+
+/* ============================================================
+   6. SECTION 03 — BACKGROUND
+   Green block fills edge-to-edge within the page wrapper.
+   Mobile: prose above, callout + tags below (single col).
+   Desktop: 2-col inside the green block.
+   ============================================================ */
+
+.background-block {
+  background: var(--green);
+  padding: 40px 32px;
+
+  /* Mobile: single column */
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+@media (min-width: 960px) {
+  .background-block {
+    /* Desktop: 2-col inside the green fill */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: start;
+    padding: 56px 56px;
+  }
+}
+
+/* Left: prose paragraphs */
+.background-block-left p {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--graphite);
+  margin-bottom: 16px;
+}
+
+.background-block-left p:last-child {
+  margin-bottom: 0;
+}
+
+/* Right: callout quote + skill transfer list */
+
+/* Callout quote — serif italic */
+.background-callout {
+  font-family: var(--serif);
+  font-size: clamp(18px, 2.5vw, 22px);
+  font-style: italic;
+  font-weight: 300;
+  line-height: 1.45;
+  color: var(--graphite);
+  margin-bottom: 28px;
+}
+
+/* Skill transfer tag rows */
+.background-tags {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.background-tag-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 13px;
+  color: var(--graphite);
+  line-height: 1.5;
+}
+
+/* Dot before each row via ::before */
+.background-tag-row::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  /* Slightly transparent graphite dot on green bg */
+  background: rgba(30, 30, 30, 0.45);
+  flex-shrink: 0;
+}
+
+/* ============================================================
+   7. SECTION 04 — WHAT I'M LOOKING FOR
+   Mobile: prose above, interest list below.
+   Desktop: 2fr/1fr grid — prose gets more space than the list.
+   ============================================================ */
+
+.looking-grid {
+  /* Mobile: single column */
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+@media (min-width: 960px) {
+  .looking-grid {
+    /* Desktop: prose gets 2/3, list gets 1/3 */
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+}
+
+/* Prose paragraphs */
+.looking-prose p {
+  font-size: 17px;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--graphite);
+  margin-bottom: 20px;
+}
+
+.looking-prose p:last-child {
+  margin-bottom: 0;
+}
+
+/* Aside: label + interest list */
+.looking-aside-label {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--mid-gray);
+  margin-bottom: 16px;
+}
+
+/* Individual interest item */
+.interest-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(30, 30, 30, 0.08);
+  font-size: 14px;
+  color: var(--graphite);
+  line-height: 1.5;
+}
+
+.interest-item:last-child {
+  border-bottom: none;
+}
+
+/* Green dot */
+.interest-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--green);
+  flex-shrink: 0;
+  /* Optically center with the first line of text */
+  margin-top: 5px;
+}
+
+/* ============================================================
+   8. CTA BLOCK
+   Not a <section> — a closing div at the bottom of .page.
+   Mobile: headline above, copy + buttons below.
+   Desktop: 2-col, equal columns, vertically centered.
+   Extra bottom padding so it doesn't butt up against footer.
+   ============================================================ */
+
+.cta-block {
+  padding: 64px 0 80px;
+
+  /* Mobile: single column */
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+@media (min-width: 960px) {
+  .cta-block {
+    /* Desktop: 2-col, centered */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    padding: 80px 0 96px;
+  }
+}
+
+/* Serif headline */
+.cta-h2 {
+  font-family: var(--serif);
+  font-size: clamp(32px, 5vw, 52px);
+  font-weight: 300;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+.cta-h2 em {
+  font-style: italic;
+  color: var(--mid-gray);
+}
+
+/* Right column: supporting copy + buttons */
+.cta-right {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.cta-right p {
+  font-size: 15px;
+  color: var(--mid-gray);
+  line-height: 1.7;
+}
+
+/* Button row */
+.cta-buttons {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  align-items: center;
+}
