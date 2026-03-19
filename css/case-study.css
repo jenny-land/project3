@@ -1,0 +1,1001 @@
+/* ============================================================
+   CASE-STUDY.CSS — Case Study Template
+   Mobile-first. Requires shared.css loaded before this.
+
+   Breakpoints:
+   Base:          0px+    (mobile, single column)
+   Small tablet:  640px+  (2-col grids, process steps 2×2)
+   Desktop:       960px+  (full layouts, cover fills viewport)
+   Large:         1200px+ (max-width on page content)
+   ============================================================ */
+
+/* ============================================================
+   1. READING PROGRESS BAR
+   Fixed 2px line at the very top of the viewport.
+   Sits above the nav (z-index: 200 vs nav z-index: 100).
+   Width is controlled by case-study.js in Step 10.
+   Without JS: stays at width 0%, invisible. That's correct.
+   ============================================================ */
+
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  width: 0%;
+  background: var(--graphite);
+  z-index: 200;
+  /* Smooth update as scroll position changes */
+  transition: width 50ms linear;
+}
+
+/* ============================================================
+   2. NAV BACK LINK
+   Replaces the nav-cta on case study pages.
+   Arrow animates left on hover — opposite direction to forward links.
+   ============================================================ */
+
+.nav-back {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mid-gray);
+  text-decoration: none;
+  transition: color 200ms ease-in-out;
+  /* Prevent wrapping on small screens */
+  white-space: nowrap;
+}
+
+.nav-back:hover {
+  color: var(--graphite);
+}
+
+.nav-back svg {
+  flex-shrink: 0;
+  transition: transform 200ms ease-in-out;
+}
+
+.nav-back:hover svg {
+  /* Arrow moves left on hover */
+  transform: translateX(-3px);
+}
+
+/* ============================================================
+   3. COVER
+   Mobile: natural height — content flows, no 100vh.
+         Full viewport height is too much on a 375px tall screen.
+   Desktop: fills the viewport so it feels like a proper landing moment.
+
+   Content aligns to the bottom using flex-direction column
+   with justify-content: flex-end.
+   The ghost bg-number is positioned absolutely.
+   ============================================================ */
+
+.cover {
+  /* Push below fixed nav */
+  padding-top: 100px;
+  padding-bottom: 48px;
+  padding-left: var(--page-pad);
+  padding-right: var(--page-pad);
+
+  /* Mobile: warm-gray bg, natural height */
+  background: var(--warm-gray);
+
+  /* Flex column so we can push content to the bottom */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 24px;
+
+  position: relative;
+  overflow: hidden;
+}
+
+@media (min-width: 960px) {
+  .cover {
+    /* Desktop: full viewport height */
+    min-height: 100vh;
+    padding-top: 120px;
+    padding-bottom: 80px;
+  }
+}
+
+/* Ghost project number — decorative background element */
+.cover-bg-number {
+  position: absolute;
+  /* Sits in upper-right area */
+  top: 50%;
+  right: var(--page-pad);
+  transform: translateY(-50%);
+  font-family: var(--serif);
+  font-weight: 300;
+  color: rgba(30, 30, 30, 0.04);
+  line-height: 1;
+  user-select: none;
+  pointer-events: none;
+  /* Mobile: smaller so it doesn't cause overflow */
+  font-size: 180px;
+}
+
+@media (min-width: 960px) {
+  .cover-bg-number {
+    /* Desktop: much larger — purely decorative at this scale */
+    font-size: 320px;
+  }
+}
+
+/* Cover tag row: filled tags + dot divider + year */
+.cover-tag {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Small dot separator between tags and year */
+.divider-dot {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--mid-gray);
+  flex-shrink: 0;
+}
+
+/* Year label next to the divider dot */
+.year {
+  font-size: 11px;
+  color: var(--mid-gray);
+  letter-spacing: 0.08em;
+}
+
+/* Cover H1 — the project name */
+.cover-h1 {
+  font-family: var(--serif);
+  font-size: clamp(48px, 9vw, 88px);
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  /* Max-width keeps long titles from running edge to edge */
+  max-width: 800px;
+}
+
+/* Hook sentence beneath the H1 */
+.cover-hook {
+  font-family: var(--sans);
+  font-size: clamp(15px, 2vw, 18px);
+  font-weight: 300;
+  color: var(--mid-gray);
+  max-width: 520px;
+  line-height: 1.65;
+}
+
+/* Meta strip: Role / Timeline / Team / Tools */
+.cover-meta {
+  display: flex;
+  /* Mobile: 2-col grid so meta fits without excessive scrolling */
+  flex-wrap: wrap;
+  gap: 24px 48px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(30, 30, 30, 0.12);
+  /* Separate from hook sentence */
+  margin-top: 8px;
+}
+
+@media (min-width: 640px) {
+  .cover-meta {
+    /* Tablet+: all 4 in a row */
+    flex-wrap: nowrap;
+    gap: 48px;
+  }
+}
+
+.cover-meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  /* Prevent items from shrinking too much */
+  flex-shrink: 0;
+}
+
+.cover-meta-label {
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--mid-gray);
+}
+
+.cover-meta-value {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--graphite);
+}
+
+/* ============================================================
+   4. PAGE CONTENT WRAPPER
+   All sections after the cover sit inside this max-width container.
+   Matches the pattern used in about.css.
+   ============================================================ */
+
+.page-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--page-pad);
+}
+
+/* ============================================================
+   5. SECTION BASE STYLES
+   Consistent vertical rhythm across all case study sections.
+   ============================================================ */
+
+section {
+  padding: 64px 0;
+  border-bottom: 1px solid rgba(30, 30, 30, 0.08);
+}
+
+section:last-of-type {
+  border-bottom: none;
+}
+
+@media (min-width: 960px) {
+  section {
+    padding: 96px 0;
+  }
+}
+
+/* ============================================================
+   6. LAYOUT HELPERS
+   Reusable grid patterns used across multiple sections.
+   ============================================================ */
+
+/* Overview 4-col grid */
+.overview-grid {
+  display: grid;
+  /* Mobile: 2-col so each cell has enough room */
+  grid-template-columns: 1fr 1fr;
+  gap: 32px 40px;
+}
+
+@media (min-width: 960px) {
+  .overview-grid {
+    /* Desktop: all 4 in a row */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    border: 1px solid rgba(30, 30, 30, 0.1);
+  }
+}
+
+/* Overview cells — bordered at desktop only */
+.overview-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+@media (min-width: 960px) {
+  .overview-cell {
+    padding: 32px 28px;
+    border-right: 1px solid rgba(30, 30, 30, 0.1);
+  }
+
+  .overview-cell:last-child {
+    border-right: none;
+  }
+}
+
+.overview-text {
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--graphite);
+  line-height: 1.7;
+}
+
+/* Two-col text: used in Problem and Research sections */
+.two-col-text {
+  /* Mobile: single column */
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+@media (min-width: 960px) {
+  .two-col-text {
+    /* Desktop: equal 2-col */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: start;
+  }
+}
+
+/* Three-col text: used in reflection block */
+.three-col-text {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+@media (min-width: 960px) {
+  .three-col-text {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+  }
+}
+
+/* ============================================================
+   7. PROSE
+   Body text blocks used inside sections.
+   ============================================================ */
+
+.prose h2 {
+  font-family: var(--serif);
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: 300;
+  line-height: 1.25;
+  margin-bottom: 20px;
+}
+
+.prose p {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.75;
+  color: var(--graphite);
+  margin-bottom: 16px;
+}
+
+.prose p:last-child {
+  margin-bottom: 0;
+}
+
+/* ============================================================
+   8. PROBLEM STATEMENT BLOCK
+   Dark graphite fill. Serif italic quote.
+   Decorative large quote mark via ::before.
+   ============================================================ */
+
+.problem-statement {
+  background: var(--graphite);
+  color: var(--cream);
+  padding: 40px 36px;
+  position: relative;
+  overflow: hidden;
+}
+
+@media (min-width: 960px) {
+  .problem-statement {
+    padding: 56px 64px;
+  }
+}
+
+/* Decorative oversized quote mark */
+.problem-statement::before {
+  content: '"';
+  position: absolute;
+  top: -20px;
+  left: 48px;
+  font-family: var(--serif);
+  font-size: 200px;
+  color: rgba(255, 249, 232, 0.05);
+  line-height: 1;
+  pointer-events: none;
+}
+
+.problem-label {
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255, 249, 232, 0.4);
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+/* The problem statement text itself */
+.problem-statement p {
+  font-family: var(--serif);
+  font-size: clamp(20px, 3vw, 34px);
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.4;
+  color: var(--cream);
+  position: relative;
+  z-index: 1;
+  max-width: 780px;
+  /* Override .prose p margin if nested */
+  margin-bottom: 0;
+}
+
+/* ============================================================
+   9. RESEARCH QUOTE CARDS
+   2-col grid at tablet+. Each card has a label, quote, insight.
+   ============================================================ */
+
+.research-grid {
+  /* Mobile: single column */
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+@media (min-width: 640px) {
+  .research-grid {
+    /* Tablet+: side by side */
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+}
+
+.user-quote-card {
+  background: var(--cream);
+  border: 1px solid rgba(30, 30, 30, 0.1);
+  padding: 24px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+@media (min-width: 960px) {
+  .user-quote-card {
+    padding: 28px 32px;
+  }
+}
+
+.quote-label {
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--mid-gray);
+  margin-bottom: 14px;
+}
+
+/* The user's actual words — serif italic */
+.quote-text {
+  font-family: var(--serif);
+  font-size: clamp(17px, 2.5vw, 19px);
+  font-style: italic;
+  font-weight: 300;
+  line-height: 1.5;
+  color: var(--graphite);
+  margin-bottom: 16px;
+  /* Flex-grow so cards in the same row align their insight sections */
+  flex-grow: 1;
+}
+
+/* Behavioral insight below the quote */
+.quote-insight {
+  font-size: 12px;
+  color: var(--mid-gray);
+  line-height: 1.6;
+  padding-top: 14px;
+  border-top: 1px solid rgba(30, 30, 30, 0.08);
+}
+
+/* ============================================================
+   10. STATS ROW
+   Mobile: stacked — each stat gets full width and is easy to read.
+   Desktop: 3-col bordered grid.
+   ============================================================ */
+
+.stats-row {
+  display: grid;
+  /* Mobile: single column */
+  grid-template-columns: 1fr;
+  border: 1px solid rgba(30, 30, 30, 0.1);
+  margin: 40px 0;
+}
+
+@media (min-width: 640px) {
+  .stats-row {
+    /* Tablet+: 3 across */
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.stat-cell {
+  padding: 28px 24px;
+  border-bottom: 1px solid rgba(30, 30, 30, 0.1);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Mobile: last cell removes bottom border */
+.stat-cell:last-child {
+  border-bottom: none;
+}
+
+@media (min-width: 640px) {
+  .stat-cell {
+    /* Desktop: right border separates columns */
+    border-bottom: none;
+    border-right: 1px solid rgba(30, 30, 30, 0.1);
+    padding: 36px 32px;
+  }
+
+  .stat-cell:last-child {
+    border-right: none;
+  }
+}
+
+/* Large serif number — the stat itself */
+.stat-number {
+  font-family: var(--serif);
+  font-size: clamp(40px, 6vw, 52px);
+  font-weight: 300;
+  line-height: 1;
+  color: var(--graphite);
+}
+
+.stat-label {
+  font-size: 11px;
+  color: var(--mid-gray);
+  line-height: 1.55;
+  max-width: 180px;
+}
+
+/* ============================================================
+   11. PROCESS STEPS
+   4 steps with a horizontal connector line threading through
+   the numbered circles.
+   Mobile: 2×2 grid (steps are too narrow at 4-col on small screens).
+   Desktop: single row of 4.
+
+   The connector line is drawn with ::after on each step,
+   extending from the right edge of the circle to the
+   left edge of the next circle.
+   ============================================================ */
+
+.process-steps {
+  display: grid;
+  /* Mobile: 2-col — 2×2 arrangement */
+  grid-template-columns: 1fr 1fr;
+  gap: 40px 24px;
+  margin-bottom: 48px;
+}
+
+@media (min-width: 960px) {
+  .process-steps {
+    /* Desktop: 4 in a row */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    position: relative;
+    margin-bottom: 56px;
+  }
+}
+
+.process-step {
+  display: flex;
+  flex-direction: column;
+  /* Mobile: no connector line */
+  position: relative;
+}
+
+@media (min-width: 960px) {
+  .process-step {
+    /* Padding right makes room for connector line */
+    padding-right: 24px;
+  }
+
+  /* Connector line: horizontal rule from circle to next circle */
+  .process-step::after {
+    content: "";
+    position: absolute;
+    top: 18px; /* Vertically centered with the 36px circle */
+    /* Start after the circle (36px wide) */
+    left: 36px;
+    /* Extend most of the way to the right edge */
+    right: 0;
+    height: 1px;
+    background: rgba(30, 30, 30, 0.15);
+  }
+
+  /* Last step: no connector — nothing to connect to */
+  .process-step:last-child::after {
+    display: none;
+  }
+}
+
+/* Numbered circle */
+.process-step-num {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--graphite);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--graphite);
+  margin-bottom: 20px;
+  /* Sits above the connector line */
+  background: var(--cream);
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+}
+
+/* Step title — small caps */
+.process-step-title {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--graphite);
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+/* Step description */
+.process-step-desc {
+  font-size: 13px;
+  color: var(--mid-gray);
+  line-height: 1.65;
+}
+
+/* ============================================================
+   12. MOCKUP FRAMES
+   Placeholder areas for project images.
+   Dark graphite for primary, warm-gray for secondary.
+   ============================================================ */
+
+.mockup-frame {
+  background: var(--warm-gray);
+  padding: 48px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 32px 0;
+  /* Mobile: shorter */
+  min-height: 260px;
+  position: relative;
+  overflow: hidden;
+}
+
+@media (min-width: 960px) {
+  .mockup-frame {
+    min-height: 400px;
+    padding: 48px;
+  }
+}
+
+/* Centered placeholder content inside the frame */
+.mockup-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  opacity: 0.35;
+}
+
+.mockup-placeholder span {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--mid-gray);
+  text-align: center;
+  max-width: 280px;
+  line-height: 1.5;
+}
+
+/* Caption below each mockup frame */
+.mockup-caption {
+  font-size: 12px;
+  color: var(--mid-gray);
+  text-align: center;
+  /* Negative margin pulls it closer to the frame above */
+  margin-top: -16px;
+  margin-bottom: 32px;
+  font-style: italic;
+  line-height: 1.5;
+}
+
+/* ============================================================
+   13. DECISION CARD
+   2-col split: challenge (warm-gray) left, decision (cream) right.
+   Mobile: stacked — challenge above, decision below.
+   The coral highlight border calls out the key rationale.
+   ============================================================ */
+
+.decision-card {
+  border: 1px solid rgba(30, 30, 30, 0.1);
+  margin-bottom: 24px;
+  /* Mobile: single column */
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 640px) {
+  .decision-card {
+    /* Tablet+: side by side */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Left cell: the challenge */
+.decision-card-problem {
+  padding: 28px 28px;
+  background: var(--warm-gray);
+  /* Mobile: bottom border separates from solution */
+  border-bottom: 1px solid rgba(30, 30, 30, 0.1);
+}
+
+@media (min-width: 640px) {
+  .decision-card-problem {
+    /* Desktop: right border instead of bottom */
+    border-bottom: none;
+    border-right: 1px solid rgba(30, 30, 30, 0.1);
+    padding: 32px 36px;
+  }
+}
+
+/* Right cell: the decision */
+.decision-card-solution {
+  padding: 28px 28px;
+  background: var(--cream);
+}
+
+@media (min-width: 640px) {
+  .decision-card-solution {
+    padding: 32px 36px;
+  }
+}
+
+/* "Challenge" / "Decision" label */
+.decision-card-label {
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--mid-gray);
+  margin-bottom: 12px;
+}
+
+/* Card body text */
+.decision-card-text {
+  font-size: 15px;
+  color: var(--graphite);
+  line-height: 1.65;
+}
+
+/* Highlighted rationale — coral left border treatment */
+.decision-card-highlight {
+  border-left: 2px solid var(--coral);
+  padding-left: 16px;
+  margin-top: 16px;
+  font-size: 13px;
+  color: var(--mid-gray);
+  font-style: italic;
+  line-height: 1.6;
+}
+
+/* ============================================================
+   14. OUTCOMES GRID
+   Mobile: stacked — outcomes list above, reflection aside below.
+   Desktop: 2fr/1fr — outcomes list gets more space.
+   ============================================================ */
+
+.outcomes-grid {
+  /* Mobile: single column */
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-bottom: 48px;
+}
+
+@media (min-width: 960px) {
+  .outcomes-grid {
+    /* Desktop: outcomes wider than aside */
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 48px;
+    align-items: start;
+    margin-bottom: 56px;
+  }
+}
+
+/* Individual outcome row */
+.outcome-metric {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(30, 30, 30, 0.08);
+}
+
+.outcome-metric:last-child {
+  border-bottom: none;
+}
+
+/* Colored dot: green by default, coral for primary outcome */
+.outcome-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--green);
+  /* Optically align with first line of text */
+  margin-top: 6px;
+  flex-shrink: 0;
+}
+
+.outcome-dot.coral {
+  background: var(--coral);
+}
+
+.outcome-text {
+  font-size: 15px;
+  color: var(--graphite);
+  line-height: 1.65;
+}
+
+.outcome-text strong {
+  font-weight: 500;
+}
+
+/* ============================================================
+   15. REFLECTION BLOCK
+   Warm-gray background. 3-col at desktop, stacked on mobile.
+   ============================================================ */
+
+.reflection-block {
+  background: var(--warm-gray);
+  padding: 36px 28px;
+
+  /* Mobile: stacked */
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+@media (min-width: 640px) {
+  .reflection-block {
+    /* Tablet+: 3-col */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+    padding: 48px 56px;
+  }
+}
+
+/* "What Worked" / "What I'd Change" / "Next Steps" label */
+.reflection-item-label {
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--mid-gray);
+  margin-bottom: 12px;
+}
+
+.reflection-item-text {
+  font-size: 14px;
+  color: var(--graphite);
+  line-height: 1.7;
+}
+
+/* ============================================================
+   16. CASE NAVIGATION
+   Full-width footer navigation linking to previous/next projects.
+   Sits outside .page-content so it spans edge to edge.
+   Mobile: stacked — next below previous.
+   Desktop: 2-col side by side.
+   ============================================================ */
+
+.case-nav {
+  /* Mobile: single column */
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid rgba(30, 30, 30, 0.1);
+}
+
+@media (min-width: 640px) {
+  .case-nav {
+    /* Tablet+: 2-col */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Each nav item — previous and next */
+.case-nav-item {
+  padding: 40px var(--page-pad);
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: background 200ms ease-in-out;
+  /* Separate the two items on mobile */
+  border-bottom: 1px solid rgba(30, 30, 30, 0.08);
+}
+
+@media (min-width: 640px) {
+  .case-nav-item {
+    border-bottom: none;
+    /* Vertical divider between prev and next */
+    border-right: 1px solid rgba(30, 30, 30, 0.1);
+    padding: 48px 80px;
+  }
+
+  .case-nav-item:last-child {
+    border-right: none;
+  }
+}
+
+/* Next item aligns right */
+.case-nav-next {
+  align-items: flex-end;
+  text-align: right;
+}
+
+.case-nav-item:hover {
+  background: var(--warm-gray);
+}
+
+/* "Previous Project" / "Next Project" label */
+.case-nav-direction {
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--mid-gray);
+}
+
+/* Project name in the nav */
+.case-nav-title {
+  font-family: var(--serif);
+  font-size: clamp(20px, 3vw, 24px);
+  font-weight: 300;
+  color: var(--graphite);
+  line-height: 1.2;
+}
+
+/* Tags below the project name */
+.case-nav-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.case-nav-next .case-nav-tags {
+  justify-content: flex-end;
+}
+
+/* Small green pill tags */
+.case-nav-tag {
+  font-size: 10px;
+  background: var(--green);
+  color: var(--graphite);
+  padding: 3px 10px;
+  border-radius: 100px;
+}
+
+/*
+  Empty nav slot — keeps grid balanced when there's no
+  previous or next project. Invisible but holds its space.
+*/
+.case-nav-empty {
+  /* No hover state for empty slot */
+  pointer-events: none;
+  /* Visually invisible */
+  opacity: 0;
+}
+
+@media (max-width: 639px) {
+  /* Hide empty slot entirely on mobile — no point showing blank space */
+  .case-nav-empty {
+    display: none;
+  }
+}
