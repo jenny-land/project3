@@ -1,52 +1,32 @@
 // ============================================================
 // INDEX.JS — Homepage
-// Enhancement layer only.
+// Enhancement layer only. The page works fully without this.
 //
 // What this file does:
 //   1. Activates the JS-safe fade-up system (body.js-loaded)
 //   2. Nav shrink on scroll
 //   3. Contact form validation + success state
-//
-// What this file does NOT do yet:
-//   Scroll-triggered fade-up reveals
-// ============================================================
+//   4. Scroll-triggered fade-up reveals  ← added later
 
 // ── 1. ACTIVATE JS-SAFE FADE-UP SYSTEM ──────────────────────
 //
-// shared.css has two rules for .fade-up:
-//
-//   .fade-up                  → fully visible (no JS fallback)
-//   .js-loaded .fade-up       → hidden, ready to be revealed
-//   .js-loaded .fade-up.visible → visible (revealed by observer)
-//
-// Adding 'js-loaded' to body right now — before DOMContentLoaded —
-// means elements are hidden as early as possible, preventing a
-// flash of visible content before the observer runs in later steps
-//
-// If this script fails or is blocked, 'js-loaded' never gets added
-// and all content remains permanently visible. Safe degradation.
+// Runs immediately — before DOMContentLoaded — so .fade-up
+// elements get opacity:0 applied as early as possible.
+// If JS fails, 'js-loaded' is never added and all content
+// stays permanently visible. Safe degradation.
 // ─────────────────────────────────────────────────────────────
 document.body.classList.add("js-loaded");
 
-// Everything else waits for the DOM to be ready
 document.addEventListener("DOMContentLoaded", () => {
   // ── 2. NAV SHRINK ON SCROLL ───────────────────────────────
   //
-  // shared.css defines two nav states:
-  //   nav           → padding: 24px 80px (tall)
-  //   nav.scrolled  → padding: 18px 80px (compact)
-  //
-  // We toggle the 'scrolled' class based on scroll position.
-  // The CSS transition handles the smooth animation.
-  //
-  // Threshold: 60px — roughly one nav height.
-  // Below 60px: full nav (user is at the top of the page).
-  // Above 60px: compact nav (user is reading content).
+  // Toggles nav.scrolled when scrollY passes 60px.
+  // CSS handles the smooth padding transition.
+  // passive:true allows browser scroll optimizations.
   // ──────────────────────────────────────────────────────────
   const nav = document.getElementById("nav");
 
   if (nav) {
-    // Run once on load in case the page is refreshed mid-scroll
     nav.classList.toggle("scrolled", window.scrollY > 60);
 
     window.addEventListener(
@@ -54,182 +34,192 @@ document.addEventListener("DOMContentLoaded", () => {
       () => {
         nav.classList.toggle("scrolled", window.scrollY > 60);
       },
-      {
-        // passive: true tells the browser this handler never calls
-        // preventDefault() — allows scroll performance optimizations
-        passive: true,
-      },
+      { passive: true },
     );
   }
 
   // ── 3. CONTACT FORM VALIDATION ───────────────────────────
   //
-  // The form has novalidate on it — we handle all validation here.
-  //
-  // Fields validated:
-  //   - Name: must not be empty
-  //   - Email: must match a basic email pattern
-  //   - Message: must not be empty
-  //
-  // Reason (select): optional — no validation required.
-  //
-  // Error states:
-  //   JS adds .has-error to the .form-field wrapper.
-  //   CSS shows the .form-error-msg span and turns the
-  //   input border coral. Defined in index.css.
-  //
-  // Success state:
-  //   form is hidden, #formSuccess div is shown.
-  //   Defined in index.css — .form-success.visible { display: flex }
+  // Validates name, email, message on submit.
+  // Shows inline error per field via .has-error class.
+  // Clears errors on input. Shows success state on valid submit.
   // ──────────────────────────────────────────────────────────
   const form = document.getElementById("contactForm");
   const successMsg = document.getElementById("formSuccess");
 
-  // Guard: only run if both elements exist on this page
-  if (!form || !successMsg) return;
+  if (form && successMsg) {
+    function isValidEmail(value) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim());
+    }
 
-  // ── Email validation helper ──
-  // Tests for the pattern: something@something.something
-  // Deliberately simple — catches obvious mistakes without
-  // being so strict it rejects valid addresses.
-  function isValidEmail(value) {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim());
-  }
+    function showError(fieldId) {
+      const field = document.getElementById(fieldId);
+      if (field) field.classList.add("has-error");
+    }
 
-  // ── Show error on a field ──
-  // Adds .has-error to the .form-field wrapper (not the input).
-  // CSS uses the parent class to show the error message span
-  // and change the input border color to coral.
-  function showError(fieldId) {
-    const field = document.getElementById(fieldId);
-    if (field) field.classList.add("has-error");
-  }
+    function clearError(fieldId) {
+      const field = document.getElementById(fieldId);
+      if (field) field.classList.remove("has-error");
+    }
 
-  // ── Clear error on a field ──
-  function clearError(fieldId) {
-    const field = document.getElementById(fieldId);
-    if (field) field.classList.remove("has-error");
-  }
+    function clearAllErrors() {
+      ["field-name", "field-email", "field-message"].forEach(clearError);
+    }
 
-  // ── Clear all error states ──
-  function clearAllErrors() {
-    ["field-name", "field-email", "field-message"].forEach(clearError);
-  }
+    function showSuccess() {
+      form.style.display = "none";
+      successMsg.classList.add("visible");
+      successMsg.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    }
 
-  // ── Show the success state ──
-  // Hides the form, shows the confirmation message.
-  // No page reload — pure DOM manipulation.
-  function showSuccess() {
-    form.style.display = "none";
-    successMsg.classList.add("visible");
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      clearAllErrors();
 
-    // Scroll the success message into view smoothly
-    // in case the user submitted from far down the form
-    successMsg.scrollIntoView({ behavior: "smooth", block: "nearest" });
-  }
+      const nameInput = document.getElementById("contact-name");
+      const emailInput = document.getElementById("contact-email");
+      const messageInput = document.getElementById("contact-message");
 
-  // ── Form submit handler ──
-  form.addEventListener("submit", (e) => {
-    // Always prevent default — we control what happens next
-    e.preventDefault();
+      let isValid = true;
 
-    // Clear previous errors before re-validating
-    clearAllErrors();
+      if (!nameInput.value.trim()) {
+        showError("field-name");
+        isValid = false;
+      }
+      if (!isValidEmail(emailInput.value)) {
+        showError("field-email");
+        isValid = false;
+      }
+      if (!messageInput.value.trim()) {
+        showError("field-message");
+        isValid = false;
+      }
 
-    // Grab current field values
+      if (!isValid) {
+        const firstError = form.querySelector(
+          ".has-error input, .has-error textarea",
+        );
+        if (firstError) firstError.focus();
+        return;
+      }
+
+      // ── Production: replace showSuccess() with fetch() ──
+      //
+      // Formspree example:
+      //   fetch('https://formspree.io/f/YOUR_FORM_ID', {
+      //     method: 'POST',
+      //     headers: { 'Content-Type': 'application/json' },
+      //     body: JSON.stringify({
+      //       name:    nameInput.value.trim(),
+      //       email:   emailInput.value.trim(),
+      //       reason:  document.getElementById('contact-reason').value,
+      //       message: messageInput.value.trim()
+      //     })
+      //   })
+      //   .then(res => res.ok ? showSuccess() : alert('Something went wrong.'))
+      //   .catch(() => alert('Could not send. Please email me directly.'));
+      //
+      // ────────────────────────────────────────────────────
+      showSuccess();
+    });
+
+    // Clear individual field errors as the user types
     const nameInput = document.getElementById("contact-name");
     const emailInput = document.getElementById("contact-email");
     const messageInput = document.getElementById("contact-message");
 
-    // Track whether the whole form is valid
-    let isValid = true;
+    if (nameInput)
+      nameInput.addEventListener("input", () => clearError("field-name"));
+    if (emailInput)
+      emailInput.addEventListener("input", () => clearError("field-email"));
+    if (messageInput)
+      messageInput.addEventListener("input", () => clearError("field-message"));
+  } // end form guard
 
-    // Validate name: must have at least 1 non-whitespace character
-    if (!nameInput.value.trim()) {
-      showError("field-name");
-      isValid = false;
+  // ── 4. SCROLL-TRIGGERED FADE-UP REVEALS ──────────────────
+  //
+  // Uses IntersectionObserver to watch every .fade-up element.
+  // When an element becomes 10% visible, we add .visible to it.
+  // shared.css transitions it from opacity:0/translateY(16px)
+  // to opacity:1/translateY(0).
+  //
+  // Stagger: each element gets a small delay based on its index
+  // in the NodeList. This creates a cascade effect when multiple
+  // elements enter the viewport at the same time — e.g. the
+  // work cards all appearing slightly after each other.
+  //
+  // The stagger is capped at 400ms so elements late in the page
+  // don't have unreasonably long waits.
+  //
+  // unobserve() after firing: once revealed, the observer stops
+  // watching. The element stays visible permanently and we free
+  // up the observer from tracking it.
+  //
+  // prefers-reduced-motion: if the user has requested reduced
+  // motion, we reveal everything immediately with no animation.
+  // The CSS already handles this (shared.css Section 4) but we
+  // also skip the stagger delay here for consistency.
+  // ──────────────────────────────────────────────────────────
+
+  const prefersReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)",
+  ).matches;
+
+  // Grab all fade-up elements on this page
+  const fadeElements = document.querySelectorAll(".fade-up");
+
+  if (fadeElements.length === 0) return;
+
+  // If user prefers reduced motion, reveal everything immediately
+  // No observer needed — just add .visible to all elements now
+  if (prefersReducedMotion) {
+    fadeElements.forEach((el) => el.classList.add("visible"));
+    return;
+  }
+
+  // ── Build the observer ──
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        // Only act when element is entering the viewport
+        if (!entry.isIntersecting) return;
+
+        // Reveal the element
+        entry.target.classList.add("visible");
+
+        // Stop watching — element stays visible, no re-trigger
+        observer.unobserve(entry.target);
+      });
+    },
+    {
+      // 10% of the element must be visible before triggering.
+      // Lower values (0.05) trigger too early — elements reveal
+      // before the user consciously sees them entering.
+      // Higher values (0.3) feel too late on tall mobile screens.
+      threshold: 0.1,
+
+      // rootMargin: slight negative offset so elements don't
+      // trigger at the very instant they peek into the viewport.
+      // '-40px' means the element needs to be 40px into the
+      // viewport before revealing. Feels more intentional.
+      rootMargin: "0px 0px -40px 0px",
+    },
+  );
+
+  // ── Apply staggered delays and start observing ──
+  fadeElements.forEach((el, index) => {
+    // Stagger: 80ms per element, capped at 400ms
+    // Cap prevents absurdly long waits for elements
+    // near the bottom of the page
+    const delay = Math.min(index * 80, 400);
+
+    // Only apply delay if no delay already set inline
+    // (some elements have transition-delay set in HTML
+    // e.g. the hero-right has style="transition-delay:120ms")
+    if (!el.style.transitionDelay) {
+      el.style.transitionDelay = delay + "ms";
     }
 
-    // Validate email: must match email pattern
-    if (!isValidEmail(emailInput.value)) {
-      showError("field-email");
-      isValid = false;
-    }
-
-    // Validate message: must have at least 1 non-whitespace character
-    if (!messageInput.value.trim()) {
-      showError("field-message");
-      isValid = false;
-    }
-
-    // If any field failed, stop here.
-    // Focus the first errored field for accessibility.
-    if (!isValid) {
-      const firstError = form.querySelector(
-        ".has-error input, .has-error textarea",
-      );
-      if (firstError) firstError.focus();
-      return;
-    }
-
-    // ── All fields valid — submit the form ──
-    //
-    // RIGHT NOW: we just show the success state immediately.
-    //
-    // WHEN YOU'RE READY TO GO LIVE:
-    // Replace the showSuccess() call below with a fetch() to your
-    // form endpoint. Easy option:
-    //
-    // OPTION — Formspree (free tier, no backend needed):
-    //   1. Create account at formspree.io
-    //   2. Create a new form, copy your form ID
-    //   3. Replace showSuccess() with:
-    //
-    //   fetch('https://formspree.io/f/YOUR_FORM_ID', {
-    //     method: 'POST',
-    //     headers: { 'Content-Type': 'application/json' },
-    //     body: JSON.stringify({
-    //       name:    nameInput.value.trim(),
-    //       email:   emailInput.value.trim(),
-    //       reason:  document.getElementById('contact-reason').value,
-    //       message: messageInput.value.trim()
-    //     })
-    //   })
-    //   .then(response => {
-    //     if (response.ok) {
-    //       showSuccess();
-    //     } else {
-    //       // Handle server error — show a generic message
-    //       alert('Something went wrong. Please email me directly.');
-    //     }
-    //   })
-    //   .catch(() => {
-    //     // Handle network error
-    //     alert('Could not send message. Please email me directly.');
-    //   });
-    // ─────────────────────────────────────────────────────────
-    showSuccess();
+    observer.observe(el);
   });
-
-  // ── Clear errors on input ──
-  // As soon as the user starts typing in a field that has an error,
-  // the error clears. Feels responsive and not punishing.
-  // We listen on the field wrapper's inputs, not the form globally,
-  // so we can target specific field IDs.
-
-  const nameInput = document.getElementById("contact-name");
-  const emailInput = document.getElementById("contact-email");
-  const messageInput = document.getElementById("contact-message");
-
-  if (nameInput) {
-    nameInput.addEventListener("input", () => clearError("field-name"));
-  }
-
-  if (emailInput) {
-    emailInput.addEventListener("input", () => clearError("field-email"));
-  }
-
-  if (messageInput) {
-    messageInput.addEventListener("input", () => clearError("field-message"));
-  }
 }); // end DOMContentLoaded
