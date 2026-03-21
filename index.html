@@ -9,12 +9,12 @@
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap"
       rel="stylesheet"
     />
+
     <link rel="stylesheet" href="css/shared.css" />
     <link rel="stylesheet" href="css/index.css" />
   </head>
   <body>
     <!-- ── NAV ── -->
-    <!-- JL becomes logo image later -->
     <nav id="nav">
       <a href="index.html" class="nav-monogram">JL</a>
       <ul class="nav-links">
@@ -32,12 +32,6 @@
         <h1 class="hero-h1">
           Designing<br />systems that<br />feel <em>human.</em>
         </h1>
-        <!--
-        COPY NOTE: This sub line is your elevator pitch.
-        Keep it to 2 sentences max. It should answer:
-        what you do + how you do it + what makes you different.
-        Update this once you finalize your personal summary.
-      -->
         <p class="hero-sub">
           I design research-driven interaction systems that make complex
           experiences feel clear and human — grounded in empathy, built with
@@ -64,11 +58,6 @@
       <div class="hero-right fade-up" style="transition-delay: 120ms">
         <div class="hero-descriptor">
           <div class="hero-descriptor-label">Focused on</div>
-          <!--
-          COPY NOTE: These 3 lines are your specialisms.
-          Each gets a green dot. Keep them short — 3–4 words max.
-          These should match the language in your resume and about page.
-        -->
           <ul class="descriptor-list">
             <li>Interaction Systems <span></span></li>
             <li>Research & Discovery <span></span></li>
@@ -77,15 +66,10 @@
         </div>
         <div class="hero-availability">
           <div class="availability-dot"></div>
-          <!--
-          COPY NOTE: Update this when your availability changes.
-          Options: "Available for full-time roles · Bay Area"
-          or "Open to internships & contract work · Bay Area"
-        -->
-          <span class="availability-text"
-            >Available for full-time roles, open to internships & contract work
-            · Bay Area</span
-          >
+          <span class="availability-text">
+            Available for full-time roles, open to internships & contract work ·
+            Bay Area
+          </span>
         </div>
       </div>
     </section>
@@ -97,74 +81,54 @@
           <span class="section-number">01</span>
           <span class="section-title">Selected Work</span>
         </div>
-        <!--
-        COPY NOTE: Update the project count and year range
-        once you know how many case studies you're featuring.
-      -->
-        <div class="work-header-right">3 Projects · 2024–2026</div>
+        <div class="work-header-right">4 Projects · 2024–2026</div>
       </div>
 
-      <!-- ── FEATURED CASE STUDY ── -->
+      <!-- ── FEATURED: RIPPLE ── -->
       <!--
-      STRUCTURE NOTE: This is your biggest, most complete project.
-      It gets the 2-col layout — image left, content right.
-      Link this to your actual case study file when it's ready.
-      For now it links to the template.
-    -->
-      <a href="case-study.html" class="featured-card fade-up">
+        FEATURED PROJECT: Ripple
+        strongest research story, most personal project,
+        and deepest accessibility thinking. Goes first.
+ 
+        IMAGE: When ready, replace the inner div with:
+        <img src="images/ripple-cover.jpg"
+             alt="Ripple — social energy awareness app"
+             style="width:100%;height:100%;object-fit:cover;">
+      -->
+      <a href="ripple.html" class="featured-card fade-up">
         <div class="featured-img">
           <div class="featured-img-fill">
-            <!--
-            IMAGE NOTE: Replace this div with an <img> tag
-            when you have your project cover image.
-            Recommended size: 1200×900px, JPG or WebP.
-            The image will be cropped to fill this area.
-          -->
-            <span class="img-placeholder-text">Project cover image</span>
+            <span class="img-placeholder-text">Ripple cover image</span>
           </div>
           <div class="featured-card-label">Featured</div>
         </div>
         <div class="featured-content">
           <div class="featured-content-top">
-            <!--
-            COPY NOTE: Tags describe the work type and duration.
-            First 2 are filled (green), last 1 is outline.
-            Duration tag goes outline.
-          -->
             <div class="featured-tags">
               <span class="card-tag">UX Research</span>
               <span class="card-tag">Interaction Design</span>
-              <span class="card-tag outline">10 Weeks</span>
+              <span class="card-tag outline">Accessibility</span>
             </div>
-            <!--
-            COPY NOTE: Project title — can be a real name or a
-            descriptive title. Keep to 3–5 words max for visual balance.
-          -->
-            <div class="featured-title">
-              Bondfire Team<br />Collaboration App
-            </div>
-            <!--
-            COPY NOTE: One sentence. Frame the human problem,
-            not the feature. What did users struggle with and why
-            did it matter? Avoid "I designed a..."
-          -->
+            <div class="featured-title">Ripple</div>
             <p class="featured-desc">
-              How do you help distributed teams stay coordinated when
-              communication tools create more noise than clarity?
+              How do you design a social tool for people whose energy — and
+              availability — changes moment to moment?
             </p>
           </div>
           <div class="featured-meta">
             <div class="featured-meta-item">
               <div class="featured-meta-label">Role</div>
-              <div class="featured-meta-value">UX Researcher & Designer</div>
+              <div class="featured-meta-value">
+                Lead UX Designer & Researcher
+              </div>
             </div>
             <div class="featured-meta-item">
-              <div class="featured-meta-label">Team</div>
-              <div class="featured-meta-value">Designer + Developer</div>
+              <div class="featured-meta-label">Timeline</div>
+              <div class="featured-meta-value">48-hr Hackathon Sprint</div>
             </div>
             <div class="featured-meta-item">
               <div class="featured-meta-label">Year</div>
-              <div class="featured-meta-value">2024–Present</div>
+              <div class="featured-meta-value">2025</div>
             </div>
           </div>
         </div>
@@ -181,14 +145,16 @@
         </svg>
       </a>
 
-      <!-- ── WORK GRID — 2 or 3 smaller cards ── -->
+      <!-- ── WORK GRID: BONDFIRE + CALCAL ── -->
       <div class="work-grid">
+        <!-- BONDFIRE -->
         <!--
-        WORK CARD 2
-        COPY NOTE: Replace title, tags, and desc with your second project.
-        If this is the Nonprofit Website project, update accordingly.
-      -->
-        <a href="case-study.html" class="work-card fade-up">
+          IMAGE: When ready, replace the inner div with:
+          <img src="images/bondfire-cover.jpg"
+               alt="Bondfire — Slack team engagement app"
+               style="width:100%;height:100%;object-fit:cover;">
+        -->
+        <a href="bondfire.html" class="work-card fade-up">
           <div class="work-card-img">
             <div class="work-card-img-inner">
               <span
@@ -200,22 +166,24 @@
                   text-transform: uppercase;
                   color: var(--mid-gray);
                 "
-                >Cover image</span
               >
+                Bondfire cover image
+              </span>
             </div>
           </div>
           <div class="work-card-body">
             <div class="work-card-tags">
               <span class="card-tag">UX Research</span>
-              <span class="card-tag outline">Accessibility</span>
+              <span class="card-tag outline">B2B SaaS</span>
             </div>
-            <div class="work-card-title">Nonprofit<br />Website Project</div>
+            <div class="work-card-title">Bondfire</div>
             <p class="work-card-desc">
-              Redesigning a mission-driven organization's site around the needs
-              of users who couldn't articulate what they needed.
+              Designing for three stakeholders simultaneously — the employee who
+              hates forced fun, the team lead who needs trust fast, and the exec
+              who needs ROI.
             </p>
             <div class="work-card-footer">
-              <span class="work-card-year">2024</span>
+              <span class="work-card-year">2024–2025</span>
               <svg
                 class="work-card-arrow"
                 width="18"
@@ -231,13 +199,15 @@
           </div>
         </a>
 
+        <!-- CALCAL -->
         <!--
-        WORK CARD 3
-        COPY NOTE: Replace with your third project.
-        The Ctrl Z website, Ripple, or another strong piece.
-      -->
+          IMAGE: When ready, replace the inner div with:
+          <img src="images/calcal-cover.jpg"
+               alt="CalCal — calendar app for international scheduling"
+               style="width:100%;height:100%;object-fit:cover;">
+        -->
         <a
-          href="case-study.html"
+          href="calcal.html"
           class="work-card fade-up"
           style="transition-delay: 80ms"
         >
@@ -252,19 +222,20 @@
                   text-transform: uppercase;
                   color: var(--mid-gray);
                 "
-                >Cover image</span
               >
+                CalCal cover image
+              </span>
             </div>
           </div>
           <div class="work-card-body">
             <div class="work-card-tags">
-              <span class="card-tag">Interaction Design</span>
-              <span class="card-tag outline">Product</span>
+              <span class="card-tag">UX Research</span>
+              <span class="card-tag outline">Usability Testing</span>
             </div>
-            <div class="work-card-title">Third Case<br />Study Title</div>
+            <div class="work-card-title">CalCal<br />Calendar App</div>
             <p class="work-card-desc">
-              Brief framing sentence — what problem did this project solve and
-              for whom?
+              Calendar apps were built for one time zone. What happens when your
+              whole life crosses several?
             </p>
             <div class="work-card-footer">
               <span class="work-card-year">2024</span>
@@ -283,26 +254,80 @@
           </div>
         </a>
       </div>
-      <!--
-      OPTIONAL 4TH CARD NOTE: The original had a 4th card that spans
-      full width. Uncomment and populate this block if you have a 4th
-      project. Delete it if you only have 3.
 
-      <a href="case-study.html" class="work-card fade-up"
-         style="grid-column:1/-1;display:grid;grid-template-columns:1fr 2fr;transition-delay:120ms;">
-        ... card content ...
+      <!-- TESTIMONIAL SYSTEM — full-width fourth card -->
+      <!--
+        Spans full width. The 2-col layout (image left, content right)
+        gives it visual weight without elevating it above the featured card.
+ 
+        IMAGE: When ready, replace the inner div with:
+        <img src="images/testimonial-cover.jpg"
+             alt="Testimonial system — submission form and admin dashboard"
+             style="width:100%;height:100%;object-fit:cover;">
+      -->
+      <a
+        href="testimonial.html"
+        class="work-card fade-up"
+        style="
+          grid-column: 1/-1;
+          display: grid;
+          grid-template-columns: 1fr 2fr;
+          transition-delay: 120ms;
+        "
+      >
+        <div class="work-card-img" style="height: 100%; min-height: 220px">
+          <div class="work-card-img-inner">
+            <span
+              class="img-placeholder-text"
+              style="
+                opacity: 0.4;
+                font-size: 9px;
+                letter-spacing: 0.14em;
+                text-transform: uppercase;
+                color: var(--mid-gray);
+              "
+            >
+              Testimonial system cover image
+            </span>
+          </div>
+        </div>
+        <div class="work-card-body">
+          <div class="work-card-tags">
+            <span class="card-tag">Systems Design</span>
+            <span class="card-tag outline">Product Thinking</span>
+            <span class="card-tag outline">Self-Initiated</span>
+          </div>
+          <div class="work-card-title">
+            Designing the System Behind the Social Proof
+          </div>
+          <p class="work-card-desc">
+            The real problem wasn't missing content — it was a missing system. A
+            full moderated content pipeline designed from first principles:
+            submission form, admin dashboard, database schema, and API spec.
+            Concept to complete spec in seven days.
+          </p>
+          <div class="work-card-footer">
+            <span class="work-card-year">2026</span>
+            <svg
+              class="work-card-arrow"
+              width="18"
+              height="18"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              viewBox="0 0 24 24"
+            >
+              <path d="M7 17L17 7M17 7H7M17 7v10" />
+            </svg>
+          </div>
+        </div>
       </a>
-    --></section>
+    </section>
 
     <!-- ── ABOUT BLURB ── -->
     <section id="about-blurb" class="fade-up">
       <div class="about-blurb-left">
         <div class="about-blurb-eyebrow">About</div>
-        <!--
-        COPY NOTE: This headline echoes the About page H1.
-        It should feel like a warm invitation, not a job description.
-        The <em> wraps the italic word — keep it to one word.
-      -->
         <h2 class="about-blurb-h2">
           Designing systems<br />with <em>clarity</em><br />and care.
         </h2>
@@ -321,12 +346,6 @@
         </a>
       </div>
       <div class="about-blurb-right">
-        <!--
-        COPY NOTE: 2 short paragraphs. This is the homepage summary —
-        more concise than the About page intro.
-        Para 1: what you do and how you approach it.
-        Para 2: what makes your perspective different (your background).
-      -->
         <p class="about-blurb-p">
           I'm a UX designer and researcher focused on interaction systems and
           research-driven clarity. I'm drawn to complex human problems — where
@@ -338,11 +357,6 @@
           listen, and translate what people can't always articulate into systems
           that actually work for them.
         </p>
-        <!--
-        CAPABILITY GRID NOTE: 6 cells in a 2×3 grid.
-        These are your core skills/tools — short phrases only.
-        Green dot auto-added via CSS.
-      -->
         <div class="about-capabilities">
           <div class="capability-item">
             <div class="capability-dot"></div>
@@ -373,13 +387,6 @@
     </section>
 
     <!-- ── CONTACT ── -->
-    <!--
-    SECTION NOTE: This section sits on a dark graphite background.
-    Left col: your headline + direct links (email, LinkedIn, resume).
-    Right col: contact form.
-    The form works purely as HTML — JS later adds validation
-    and the success state. Without JS it submits normally.
-  -->
     <section id="contact" class="fade-up">
       <div class="contact-left">
         <div class="contact-top">
@@ -395,7 +402,6 @@
         <div class="contact-links">
           <div class="contact-links-label">Direct</div>
 
-          <!-- COPY NOTE: Replace with your professional email address -->
           <a href="mailto:jenlanders85@gmail.com" class="contact-link">
             <div class="contact-link-left">
               <span class="contact-link-label">Email</span>
@@ -414,7 +420,6 @@
             </svg>
           </a>
 
-          <!-- COPY NOTE: Replace with your real LinkedIn URL -->
           <a
             href="https://linkedin.com/in/jenniferlanders-uxdesign"
             class="contact-link"
@@ -440,7 +445,9 @@
             </svg>
           </a>
 
-          <!-- COPY NOTE: Update the href once your resume PDF is named and placed -->
+          <!--
+           add jennifer-landers-resume.pdf to files
+          -->
           <a
             href="jennifer-landers-resume.pdf"
             class="contact-link"
@@ -468,11 +475,6 @@
       <div class="contact-right">
         <div class="contact-form-label">Send a Message</div>
         <div class="contact-form-wrap">
-          <!--
-          FORM NOTE: action="" currently goes nowhere — the page just
-          reloads on submit. fixed later w js
-        
-        -->
           <form class="contact-form" id="contactForm" novalidate>
             <div class="form-row">
               <div class="form-field" id="field-name">
@@ -537,7 +539,6 @@
             </div>
           </form>
 
-          <!-- SUCCESS STATE: hidden by default, add w JS -->
           <div class="form-success" id="formSuccess">
             <div class="form-success-icon">
               <svg
@@ -562,7 +563,6 @@
     </section>
 
     <!-- ── FOOTER ── -->
-
     <footer>
       <a href="index.html" class="footer-monogram">JL</a>
       <span class="footer-copy"
@@ -571,9 +571,11 @@
     </footer>
 
     <!--
-    JS NOTE: Script tag is here but index.js is empty until later js add.
-    The page works completely without it.
-  -->
+      JS PATH NOTE:
+      Currently using javascript/index.js.
+      If index.js is in the root folder: src="index.js"
+      If it's in a /js subfolder: src="js/index.js"
+    -->
     <script src="javascript/index.js"></script>
   </body>
 </html>
