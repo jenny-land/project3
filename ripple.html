@@ -1,0 +1,633 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ripple — Jennifer Landers · UX Designer & Researcher</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="shared.css" />
+    <link rel="stylesheet" href="case-study.css" />
+  </head>
+  <body>
+    <div class="progress-bar" id="progressBar"></div>
+
+    <!-- ── NAV ── -->
+    <nav>
+      <a href="index.html" class="nav-monogram">JL</a>
+      <ul class="nav-links">
+        <li><a href="index.html#work">Work</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+      <a href="index.html#work" class="nav-back">
+        <svg
+          width="16"
+          height="16"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+          viewBox="0 0 24 24"
+        >
+          <path d="M19 12H5M12 19l-7-7 7-7" />
+        </svg>
+        All Work
+      </a>
+    </nav>
+
+    <!-- ══════════════════════════════════════════
+       COVER
+  ══════════════════════════════════════════ -->
+    <div class="cover">
+      <div class="cover-bg-number">01</div>
+
+      <div class="cover-tag">
+        <span class="tag">UX Research</span>
+        <span class="tag">Interaction Design</span>
+        <span class="tag">Accessibility</span>
+        <div class="divider-dot"></div>
+        <span class="year">2025</span>
+      </div>
+
+      <h1 class="cover-h1">Ripple</h1>
+
+      <p class="cover-hook">
+        How do you design a social tool for people whose energy — and
+        availability — changes moment to moment?
+      </p>
+
+      <div class="cover-meta">
+        <div class="cover-meta-item">
+          <div class="cover-meta-label">Role</div>
+          <div class="cover-meta-value">Lead UX Designer & Researcher</div>
+        </div>
+        <div class="cover-meta-item">
+          <div class="cover-meta-label">Timeline</div>
+          <div class="cover-meta-value">48-Hour Hackathon Sprint</div>
+        </div>
+        <div class="cover-meta-item">
+          <div class="cover-meta-label">Team</div>
+          <div class="cover-meta-value">Solo Design Lead</div>
+        </div>
+        <div class="cover-meta-item">
+          <div class="cover-meta-label">Tools</div>
+          <div class="cover-meta-value">Figma · FigJam · Canva</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════
+       PAGE CONTENT
+  ══════════════════════════════════════════ -->
+    <div class="page-content">
+      <!-- ── SECTION 01 · OVERVIEW ── -->
+      <section class="fade-up">
+        <div class="section-header">
+          <span class="section-number">01</span>
+          <span class="section-title">Overview</span>
+          <div class="section-rule"></div>
+        </div>
+
+        <div class="overview-grid">
+          <div class="overview-cell">
+            <div class="cover-meta-label">Context</div>
+            <div class="overview-text">
+              A 48-hour hackathon design sprint at Diablo Valley College. Ripple
+              is an iOS mobile app designed to help people with chronic illness,
+              disability, and fluctuating energy conditions navigate social
+              planning with honesty and ease — without requiring medical
+              explanation every time.
+            </div>
+          </div>
+          <div class="overview-cell">
+            <div class="cover-meta-label">My Role</div>
+            <div class="overview-text">
+              Led all research and synthesis, defined the core interaction model
+              and aura visualization concept, built the complete design system
+              ("Soft Morning"), designed multi-state UI across all screens, and
+              created the competition presentation deck.
+            </div>
+          </div>
+          <div class="overview-cell">
+            <div class="cover-meta-label">Methods</div>
+            <div class="overview-text">
+              Semi-structured interviews · Affinity mapping · Thematic analysis
+              · Competitive analysis · Heuristic evaluation · Literature review
+              (allostasis research) · Persona development · Accessibility audit
+            </div>
+          </div>
+          <div class="overview-cell">
+            <div class="cover-meta-label">Outcome</div>
+            <div class="overview-text">
+              Complete interactive Figma prototype with a full research
+              foundation, multi-state UI, and competition-ready presentation
+              deck — delivered within 48 hours. The aura system was cited by
+              judges as a novel approach to ambient social communication.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── SECTION 02 · THE PROBLEM ── -->
+      <section class="fade-up">
+        <div class="section-header">
+          <span class="section-number">02</span>
+          <span class="section-title">The Problem</span>
+          <div class="section-rule"></div>
+        </div>
+
+        <div class="two-col-text" style="margin-bottom: 48px">
+          <div class="prose">
+            <p>
+              Every major social coordination tool was built on a silent
+              assumption: that users have consistent, reliable energy. For the
+              estimated 1 in 5 people managing chronic conditions — POTS,
+              ME/CFS, fibromyalgia, ADHD — that assumption creates a painful
+              social dynamic that existing tools do nothing to address.
+            </p>
+            <p>
+              People with fluctuating energy face the same impossible choice in
+              every social interaction: overshare medical details to justify a
+              cancellation, mask their actual state to appear capable, or
+              quietly withdraw from social life altogether. None of these
+              options support authentic connection — and none of the tools on
+              the market were designed with this reality in mind.
+            </p>
+          </div>
+
+          <div class="stats-row" style="margin: 0">
+            <div class="stat-cell">
+              <div class="stat-number">1 in 5</div>
+              <div class="stat-label">
+                people manage chronic conditions that cause fluctuating energy
+              </div>
+            </div>
+            <div class="stat-cell">
+              <div class="stat-number">7</div>
+              <div class="stat-label">
+                research participants across 3 energy condition types
+              </div>
+            </div>
+            <div class="stat-cell">
+              <div class="stat-number">0</div>
+              <div class="stat-label">
+                existing apps designed specifically for fluctuating energy
+                communication
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="problem-statement">
+          <div class="problem-label">Core Problem Statement</div>
+          <p>
+            How might we help people with fluctuating energy communicate their
+            social availability authentically — without requiring them to
+            explain their condition every time?
+          </p>
+        </div>
+      </section>
+
+      <!-- ── SECTION 03 · RESEARCH & DISCOVERY ── -->
+      <section class="fade-up">
+        <div class="section-header">
+          <span class="section-number">03</span>
+          <span class="section-title">Research & Discovery</span>
+          <div class="section-rule"></div>
+        </div>
+
+        <div class="two-col-text" style="margin-bottom: 48px">
+          <div class="prose">
+            <p>
+              Given the 48-hour constraint, the research phase prioritized depth
+              over breadth. I conducted 7 semi-structured interviews with people
+              living with chronic illness, POTS, ME/CFS, or other
+              energy-variable conditions — recruited through a personal health
+              advocacy network I'm part of.
+            </p>
+            <p>
+              Findings were synthesized in a live FigJam affinity mapping
+              session, organized across four clusters: Energy Unpredictability,
+              Social Pressure, Communication Barriers, and Coping Strategies.
+              The research also drew on allostasis literature to build a
+              conceptual grounding for the aura metaphor — framing energy as
+              dynamic and contextual rather than a depleting battery.
+            </p>
+          </div>
+          <div class="prose">
+            <p>
+              The most revealing finding wasn't what people lacked — it was what
+              they had already built. Participants had invented sophisticated,
+              informal systems for communicating energy: color-coded emoji with
+              close friends, pre-negotiated check-in phrases, private shorthand.
+              Ripple's opportunity was to give those grassroots behaviors a
+              home.
+            </p>
+            <p>
+              I also conducted a competitive analysis of 5 existing apps —
+              social planning tools, health trackers, and accessibility-focused
+              products — and a heuristic evaluation of existing tools. None
+              addressed the core problem of ambient, low-effort energy
+              communication.
+            </p>
+          </div>
+        </div>
+
+        <div class="research-grid">
+          <div class="user-quote-card">
+            <div class="quote-label">Maya · Primary Persona · POTS</div>
+            <div class="quote-text">
+              "I either have to lie and say I'm fine, or overshare my entire
+              medical history just to cancel lunch."
+            </div>
+            <div class="quote-insight">
+              The binary choice between oversharing and masking reveals a
+              missing middle — a way to communicate truthfully without clinical
+              language or detailed justification.
+            </div>
+          </div>
+
+          <div class="user-quote-card">
+            <div class="quote-label">Jordan · Secondary Persona · ME/CFS</div>
+            <div class="quote-text">
+              "Every RSVP feels like a contract I might have to break, and I
+              hate myself when I do."
+            </div>
+            <div class="quote-insight">
+              The emotional weight of cancellation — guilt, shame, unreliability
+              — is a design problem. The right system reframes uncertainty as
+              honest communication, not failure.
+            </div>
+          </div>
+        </div>
+
+        <div class="insight-block">
+          <div class="insight-label">Key Research Finding</div>
+          <p>
+            Users weren't looking for a better calendar. They had already
+            invented the system they needed — in emoji, code words, and trusted
+            shorthand. Ripple's job was to formalize what already existed, not
+            design from scratch.
+          </p>
+        </div>
+      </section>
+
+      <!-- ── SECTION 04 · PROCESS ── -->
+      <section class="fade-up">
+        <div class="section-header">
+          <span class="section-number">04</span>
+          <span class="section-title">Process</span>
+          <div class="section-rule"></div>
+        </div>
+
+        <div class="process-steps">
+          <div class="process-step">
+            <div class="process-step-num">1</div>
+            <div class="process-step-title">Research Sprint</div>
+            <div class="process-step-desc">
+              7 interviews in 4 hours. Live affinity mapping to identify
+              behavioral clusters before any sketching. Literature review of
+              allostasis research ran in parallel to ground the energy metaphor
+              scientifically.
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="process-step-num">2</div>
+            <div class="process-step-title">Concept & Principles</div>
+            <div class="process-step-desc">
+              Established 4 design principles before wireframing: low cognitive
+              load, emotionally honest, dignified communication, inclusive by
+              default. Principles acted as decision filters throughout the
+              sprint — not decoration.
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="process-step-num">3</div>
+            <div class="process-step-title">Design System First</div>
+            <div class="process-step-desc">
+              Built the "Soft Morning" design system before individual screens —
+              palette, typography, spacing, motion, and illustration principles.
+              Visual language aligned with the emotional tone before a single
+              screen was designed.
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="process-step-num">4</div>
+            <div class="process-step-title">Prototype & Refine</div>
+            <div class="process-step-desc">
+              Built a multi-state Figma prototype covering 6 core screens in
+              full and low-energy variants. Reduced the energy scale from 5
+              states to 3 based on cognitive load feedback. Presentation deck
+              designed in the same system.
+            </div>
+          </div>
+        </div>
+
+        <!--
+        IMAGE GUIDANCE: Replace this mockup frame with a screenshot
+        of your Figma affinity map or the FigJam research board.
+        Recommended: export at 2x from Figma, JPG or WebP.
+        alt="Ripple affinity map organized across four behavioral clusters"
+      -->
+        <div class="mockup-frame">
+          <div class="mockup-placeholder">
+            <svg
+              width="32"
+              height="32"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1"
+              viewBox="0 0 24 24"
+              style="opacity: 0.3"
+            >
+              <rect x="3" y="3" width="18" height="18" rx="2" />
+              <path d="M3 9h18M9 21V9" />
+            </svg>
+            <span
+              >Affinity map — four behavioral clusters from research
+              synthesis</span
+            >
+          </div>
+        </div>
+        <p class="mockup-caption">
+          FigJam affinity map organized across Energy Unpredictability, Social
+          Pressure, Communication Barriers, and Coping Strategies.
+        </p>
+
+        <div class="decision-card">
+          <div class="decision-card-problem">
+            <div class="decision-card-label">The Challenge</div>
+            <div class="decision-card-text">
+              The aura visualization is visually expressive and emotionally
+              resonant — but an animated ambient glow is completely inaccessible
+              for screen reader users. Ripple's target population includes
+              people who rely on VoiceOver and other assistive technology at
+              low-energy moments, specifically when the app is most needed.
+            </div>
+          </div>
+          <div class="decision-card-solution">
+            <div class="decision-card-label">The Decision</div>
+            <div class="decision-card-text">
+              The aura was designed as a visual layer over a text-based energy
+              state system. The primary data is always text: "full energy,"
+              "taking it easy," "offline today." The aura is the enhancement —
+              not the source of truth. Screen readers read the text state. The
+              visual system earns its place on top of a working accessible
+              foundation.
+            </div>
+            <div class="decision-card-highlight">
+              Accessibility-first meant the visual system had to earn its place
+              on top of a working text foundation — not replace it.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── SECTION 05 · FINAL DESIGN ── -->
+      <section class="fade-up">
+        <div class="section-header">
+          <span class="section-number">05</span>
+          <span class="section-title">Final Design</span>
+          <div class="section-rule"></div>
+        </div>
+
+        <div class="prose" style="max-width: 640px; margin-bottom: 40px">
+          <p>
+            The final prototype centers on the home screen aura — a soft
+            animated glow that reflects the user's current energy state. The
+            aura isn't decorative; it's the primary communication surface. When
+            a user checks in, the aura shifts in intensity, color, and rhythm to
+            reflect their state across all their connections simultaneously,
+            with no message required.
+          </p>
+          <p>
+            One of the most intentional screens in the prototype is the
+            low-energy home state. When a user checks in at low capacity, the
+            interface softens: the aura dims, quick-action tiles reduce to a
+            single "Rest Mode" option, and notification badges disappear. The
+            screen communicates that rest is acceptable — no prompts to improve,
+            no red alerts, no productivity pressure.
+          </p>
+        </div>
+
+        <!--
+        IMAGE GUIDANCE: Replace with your primary Figma prototype screen.
+        Best choice: the home screen showing the full-energy aura state.
+        Dark background — export against the deep navy (#2D3A4A) from
+        your Soft Morning palette.
+        Recommended: 1400×900px, export at 2x.
+        alt="Ripple home screen showing full-energy aura state"
+      -->
+        <div
+          class="mockup-frame"
+          style="
+            background: var(--graphite);
+            min-height: 480px;
+            margin-bottom: 12px;
+          "
+        >
+          <div class="mockup-placeholder">
+            <svg
+              width="32"
+              height="32"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1"
+              viewBox="0 0 24 24"
+              style="opacity: 0.2; color: white"
+            >
+              <rect x="3" y="3" width="18" height="18" rx="2" />
+              <path d="M3 9h18M9 21V9" />
+            </svg>
+            <span style="color: rgba(255, 249, 232, 0.25)">
+              Home screen — full energy aura state
+            </span>
+          </div>
+        </div>
+        <p class="mockup-caption">
+          Ripple home screen — full energy state. The aura pulses in a steady,
+          confident rhythm. Quick actions in the lower third respect
+          single-handed reach zones.
+        </p>
+
+        <!--
+        IMAGE GUIDANCE: Replace with the low-energy home screen variant.
+        This is one of the most important screens to show — it demonstrates
+        that you designed for a first-class low state, not a degraded one.
+        Side-by-side comparison (full energy / low energy) would be ideal.
+        alt="Ripple home screen low-energy state — interface softens, aura dims"
+      -->
+        <div class="mockup-frame" style="min-height: 320px">
+          <div class="mockup-placeholder">
+            <svg
+              width="32"
+              height="32"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1"
+              viewBox="0 0 24 24"
+              style="opacity: 0.3"
+            >
+              <rect x="3" y="3" width="18" height="18" rx="2" />
+              <path d="M3 9h18M9 21V9" />
+            </svg>
+            <span>
+              Low-energy home state — interface softens, single action visible
+            </span>
+          </div>
+        </div>
+        <p class="mockup-caption">
+          Low-energy state — a first-class design decision, not a degraded
+          experience. The interface communicates that rest is acceptable.
+        </p>
+      </section>
+
+      <!-- ── SECTION 06 · OUTCOMES ── -->
+      <section class="fade-up">
+        <div class="section-header">
+          <span class="section-number">06</span>
+          <span class="section-title">Outcomes</span>
+          <div class="section-rule"></div>
+        </div>
+
+        <div class="outcomes-grid">
+          <div class="outcomes-list">
+            <div class="outcome-metric">
+              <div class="outcome-dot coral"></div>
+              <div class="outcome-text">
+                <strong>Judges cited the aura system</strong> as the most novel
+                interaction model in the hackathon — the only entry addressing
+                ambient social communication for people with fluctuating energy
+                conditions.
+              </div>
+            </div>
+
+            <div class="outcome-metric">
+              <div class="outcome-dot"></div>
+              <div class="outcome-text">
+                <strong>Complete prototype delivered in 48 hours</strong>
+                — full research foundation, multi-state UI, "Soft Morning"
+                design system, and competition-ready presentation deck.
+              </div>
+            </div>
+
+            <div class="outcome-metric">
+              <div class="outcome-dot"></div>
+              <div class="outcome-text">
+                <strong>Accessibility-first architecture validated</strong>
+                — text-based energy states confirmed functional with screen
+                reader before any visual aura layer was applied. WCAG 2.1 AA met
+                throughout; key elements reach AAA.
+              </div>
+            </div>
+
+            <div class="outcome-metric">
+              <div class="outcome-dot"></div>
+              <div class="outcome-text">
+                Ripple is continuing as a
+                <strong>Spring 2025 portfolio piece</strong> with extended
+                research, higher-fidelity prototyping, and a formal usability
+                testing phase currently in planning.
+              </div>
+            </div>
+          </div>
+
+          <div class="insight-block" style="align-self: start">
+            <div class="insight-label">What this taught me</div>
+            <p>
+              Designing for a community you're personally part of is both an
+              advantage and a risk. I had to work harder to separate my own
+              experience from what participants actually said — and that
+              discipline made the research more honest and the design more
+              grounded.
+            </p>
+          </div>
+        </div>
+
+        <div class="reflection-block">
+          <div class="reflection-item">
+            <div class="reflection-item-label">What Worked</div>
+            <div class="reflection-item-text">
+              Establishing design principles before wireframing. "Inclusive by
+              default" and "emotionally honest" prevented major rework — every
+              screen decision had a filter to run it through. The aura metaphor
+              also came directly from the research, not from aesthetics. That
+              grounding made it defensible.
+            </div>
+          </div>
+          <div class="reflection-item">
+            <div class="reflection-item-label">What I'd Change</div>
+            <div class="reflection-item-text">
+              With more time I'd test the energy scale more rigorously — 3
+              states vs. 5 vs. a continuous slider. The decision to use 3 was
+              informed by cognitive load feedback but not formally validated.
+              I'd also want to test the "soft commitment" language in the Plan
+              Together screen with users outside the chronic illness community.
+            </div>
+          </div>
+          <div class="reflection-item">
+            <div class="reflection-item-label">Next Steps</div>
+            <div class="reflection-item-text">
+              Extend research to 15+ participants. Prototype the notification
+              system — how does Ripple communicate a friend's energy change
+              without creating anxiety? Run a formal accessibility audit with
+              screen reader users. Build a high-fidelity version for the full
+              portfolio case study.
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- /page-content -->
+
+    <!-- ── CASE NAVIGATION ── -->
+    <!--
+    Ripple is project 01 — no Previous.
+    Next: Bondfire (bondfire.html)
+  -->
+    <div class="case-nav">
+      <div class="case-nav-item case-nav-empty"></div>
+      <a href="bondfire.html" class="case-nav-item case-nav-next">
+        <div class="case-nav-direction">Next Project</div>
+        <div class="case-nav-title">Bondfire</div>
+        <div class="case-nav-tags">
+          <span class="case-nav-tag">UX Research</span>
+          <span class="case-nav-tag">B2B SaaS</span>
+          <span class="case-nav-tag">Systems Design</span>
+        </div>
+      </a>
+    </div>
+
+    <!-- ── FOOTER ── -->
+    <footer>
+      <a href="index.html" class="footer-monogram">JL</a>
+      <span class="footer-copy"
+        >© 2025 Jennifer Landers · Designed & built with intention</span
+      >
+    </footer>
+
+    <script src="case-study.js"></script>
+  </body>
+</html>
+
+<!-- Notes: Ai used to update case study template to Ripple project
+
+Case nav: no Previous, Next → Bondfire
+Mockup frames stay as placeholders with specific image guidance per frame
+Created a file, read a fileCreated a file, read a file
+Every copy decision explained:
+Cover hook — kept exactly as agreed. Simple design question, invites the reader in.
+Stats — 1 in 5 replaces the original 7 as the lead stat because it contextualizes the scale of the problem before the reader sees your research number. 7 interviews and 0 existing apps follow. These three together tell a story: big problem, real research, gap in the market.
+Research section — the grassroots workaround finding is framed carefully. "Ripple's opportunity was to give those grassroots behaviors a home" — not "this is how all chronically ill people communicate." The framing honors individual variation while still making the design insight clear.
+Personas — used your real persona names (Maya, Jordan) with their real conditions and quotes from the document. These are more specific and more credible than generic placeholders.
+Low-energy state — given its own paragraph in Section 05 because it's genuinely the most sophisticated design decision in the project. The line "a first-class state, not a degraded experience" is worth calling out in an interview.
+Accessibility — woven throughout rather than treated as a separate checklist. It appears in the decision card, in the overview, and in outcomes. That's how it should read — not as an add-on but as a constraint that shaped every decision.
+Image guidance — every mockup frame has a specific comment telling you exactly which Figma screen to export, at what size, with what alt text. The side-by-side suggestion for full/low energy states is worth doing — that comparison is the clearest single visual argument for why Ripple is thoughtful.
+ 
+
+---change next link if not to bondfire.
+
+-->
