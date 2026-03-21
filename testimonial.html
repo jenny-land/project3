@@ -1,0 +1,690 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Testimonial System — Jennifer Landers · UX Designer & Researcher
+    </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="shared.css" />
+    <link rel="stylesheet" href="case-study.css" />
+  </head>
+  <body>
+    <div class="progress-bar" id="progressBar"></div>
+
+    <!-- ── NAV ── -->
+    <nav>
+      <a href="index.html" class="nav-monogram">JL</a>
+      <ul class="nav-links">
+        <li><a href="index.html#work">Work</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+      <a href="index.html#work" class="nav-back">
+        <svg
+          width="16"
+          height="16"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+          viewBox="0 0 24 24"
+        >
+          <path d="M19 12H5M12 19l-7-7 7-7" />
+        </svg>
+        All Work
+      </a>
+    </nav>
+
+    <!-- ══════════════════════════════════════════
+       COVER
+  ══════════════════════════════════════════ -->
+    <div class="cover">
+      <div class="cover-bg-number">04</div>
+
+      <div class="cover-tag">
+        <span class="tag">Systems Design</span>
+        <span class="tag">Product Thinking</span>
+        <span class="tag">Self-Initiated</span>
+        <div class="divider-dot"></div>
+        <span class="year">2026</span>
+      </div>
+
+      <!--
+      TITLE NOTE: Keeping this descriptive rather than a product name —
+      this is a system, not a branded app. The subtitle does the work.
+    -->
+      <h1 class="cover-h1">
+        Designing the<br />System Behind<br />the Social Proof
+      </h1>
+
+      <p class="cover-hook">
+        My portfolio had an empty space where trust should live. The real
+        problem wasn't missing content — it was a missing system.
+      </p>
+
+      <div class="cover-meta">
+        <div class="cover-meta-item">
+          <div class="cover-meta-label">Role</div>
+          <div class="cover-meta-value">UX Designer · Product Designer</div>
+        </div>
+        <div class="cover-meta-item">
+          <div class="cover-meta-label">Timeline</div>
+          <div class="cover-meta-value">
+            Concept to spec: 7 days · March 2026
+          </div>
+        </div>
+        <div class="cover-meta-item">
+          <div class="cover-meta-label">Status</div>
+          <div class="cover-meta-value">
+            Design complete · Implementation pending
+          </div>
+        </div>
+        <div class="cover-meta-item">
+          <div class="cover-meta-label">Deliverables</div>
+          <div class="cover-meta-value">
+            Spec · Prototype · Schema · API · Admin dashboard
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════
+       PAGE CONTENT
+  ══════════════════════════════════════════ -->
+    <div class="page-content">
+      <!-- ── SECTION 01 · OVERVIEW ── -->
+      <section class="fade-up">
+        <div class="section-header">
+          <span class="section-number">01</span>
+          <span class="section-title">Overview</span>
+          <div class="section-rule"></div>
+        </div>
+
+        <div class="overview-grid">
+          <div class="overview-cell">
+            <div class="cover-meta-label">Context</div>
+            <div class="overview-text">
+              A self-initiated product design project. Instead of adding static
+              testimonial quotes to my portfolio, I designed the full system
+              required to collect, moderate, and display them — submission form,
+              admin dashboard, display component, database schema, and API spec.
+              Concept to complete spec in 7 days.
+            </div>
+          </div>
+          <div class="overview-cell">
+            <div class="cover-meta-label">What I Designed</div>
+            <div class="overview-text">
+              End-to-end content pipeline across 6 stages and 2 actor types.
+              Submission form with prompt chips, privacy controls, and consent.
+              Admin dashboard with review, edit, approve, feature, and reject
+              flows. Display carousel with accessibility-first markup. Full
+              handoff spec.
+            </div>
+          </div>
+          <div class="overview-cell">
+            <div class="cover-meta-label">Approach</div>
+            <div class="overview-text">
+              System design before UI design. Mapped the content pipeline first,
+              defined the data model, then designed the interfaces that each
+              stage required. Every field in the form traces back to a specific
+              database column. Every admin action maps to a defined status
+              transition.
+            </div>
+          </div>
+          <div class="overview-cell">
+            <div class="cover-meta-label">Status</div>
+            <div class="overview-text">
+              Design and specification are complete. Implementation and live
+              user testing are the next phase. This case study documents the
+              design thinking and system logic — not a shipped product, but a
+              fully specced one ready for an engineering handoff.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── SECTION 02 · THE PROBLEM ── -->
+      <section class="fade-up">
+        <div class="section-header">
+          <span class="section-number">02</span>
+          <span class="section-title">The Problem</span>
+          <div class="section-rule"></div>
+        </div>
+
+        <div class="two-col-text" style="margin-bottom: 48px">
+          <div class="prose">
+            <p>
+              Portfolios live or die on trust. Hiring managers want to know what
+              it's actually like to work with you — not just what you made.
+              Testimonials are one of the most direct answers, and mine were
+              absent.
+            </p>
+            <p>
+              I could have typed two quotes into static HTML and called it done.
+              But that immediately raised questions I couldn't ignore: How do
+              new testimonials get added? How do I maintain quality without
+              losing the submitter's original voice? What does the page look
+              like before I have any? How do I protect people who want to stay
+              anonymous?
+            </p>
+            <p>
+              Those questions aren't content questions. They're product
+              questions — about a content lifecycle, multiple actors, and real
+              edge cases. Solving the empty space properly meant designing the
+              system before touching the UI.
+            </p>
+          </div>
+          <div class="prose">
+            <p>
+              The pipeline has six stages: Collect → Validate → Store → Review →
+              Approve → Display. Each stage has its own interface requirements,
+              its own actor (submitter or admin), and its own edge cases.
+              Designing for the empty state — before any testimonials exist — is
+              where most portfolio implementations quietly fail.
+            </p>
+            <p>
+              The decision to build a system rather than add static content also
+              reflected something broader: strong system thinking paired with
+              modern tooling is a force multiplier. AI was used to accelerate
+              execution — scaffolding the spec, stress-testing the data model,
+              building the prototype. Every design decision and tradeoff was
+              defined first. Direction came before delegation.
+            </p>
+          </div>
+        </div>
+
+        <div class="stats-row" style="margin: 0 0 48px">
+          <div class="stat-cell">
+            <div class="stat-number">6</div>
+            <div class="stat-label">
+              pipeline stages from submission to display
+            </div>
+          </div>
+          <div class="stat-cell">
+            <div class="stat-number">2</div>
+            <div class="stat-label">
+              actor types — submitter and admin — each with distinct flows
+            </div>
+          </div>
+          <div class="stat-cell">
+            <div class="stat-number">7</div>
+            <div class="stat-label">
+              design decisions documented with explicit rationale in the written
+              spec
+            </div>
+          </div>
+        </div>
+
+        <div class="problem-statement">
+          <div class="problem-label">The Design Reframe</div>
+          <p>
+            The empty space on my portfolio wasn't a design problem. It was a
+            product problem — a missing content lifecycle with no system to
+            sustain it. Solving it properly meant thinking through the full
+            pipeline before writing a single line of UI code.
+          </p>
+        </div>
+      </section>
+
+      <!-- ── SECTION 03 · SYSTEM THINKING ── -->
+      <section class="fade-up">
+        <div class="section-header">
+          <span class="section-number">03</span>
+          <span class="section-title">System Thinking</span>
+          <div class="section-rule"></div>
+        </div>
+
+        <div class="two-col-text" style="margin-bottom: 48px">
+          <div class="prose">
+            <p>
+              Before designing any interface, I mapped the end-to-end pipeline.
+              A testimonial system is a lightweight CMS — it has content states,
+              multiple actors, status transitions, and edge cases that don't
+              show up until you look for them.
+            </p>
+            <p>
+              Defining the pipeline first meant every downstream decision had
+              clear constraints. Form fields map directly to database columns.
+              Admin actions map to status transitions. The empty state is a
+              designed state, not an oversight. The data model was designed
+              alongside the UI, not after it — which is why an engineer could
+              pick up the spec and build directly from it.
+            </p>
+          </div>
+          <div class="prose">
+            <p>
+              Two fields in the database schema capture the core ethical tension
+              of the project: <code>content_raw</code> stores the original
+              submission, untouched. <code>content_edited</code> stores the
+              polished version for display. Keeping both means editorial control
+              without data loss — the submitter's original voice is always
+              preserved, even when the displayed version is refined.
+            </p>
+            <p>
+              The <code>is_featured</code> boolean and
+              <code>display_name</code> field trace back directly to UX
+              decisions: featured testimonials get elevated placement, and
+              submitters choose their own display name — full name, first name
+              only, or anonymous. Each field earns its place by mapping to a
+              specific user need or admin action.
+            </p>
+          </div>
+        </div>
+
+        <div class="research-grid">
+          <div class="user-quote-card">
+            <div class="quote-label">Design Tension · Trust vs. Friction</div>
+            <div class="quote-text">
+              "Email verification increases legitimacy — but breaks momentum at
+              exactly the wrong moment, after emotional intent is established
+              but before the task is complete."
+            </div>
+            <div class="quote-insight">
+              V1 decision: honeypot field + manual moderation instead of email
+              verification. The admin review layer is the real safety net.
+              Invisible protection, zero UX cost to the submitter. V2 can add
+              verification once real spam justifies the friction.
+            </div>
+          </div>
+
+          <div class="user-quote-card">
+            <div class="quote-label">Design Principle · Display Component</div>
+            <div class="quote-text">
+              "A card signals: this is a widget, apart from the page. For
+              testimonials that's exactly wrong. Typography and whitespace
+              should carry the design."
+            </div>
+            <div class="quote-insight">
+              The display component has no card container — intentionally.
+              Editorial integration over component isolation. The words carry
+              the weight. This decision was made before a single line of display
+              CSS was written.
+            </div>
+          </div>
+        </div>
+
+        <div class="insight-block">
+          <div class="insight-label">Key Design Insight</div>
+          <p>
+            When a designer hands over a clear data model alongside wireframes,
+            the engineering conversation changes entirely. Designing the system
+            before the screens meant the spec was complete — not just the
+            visuals.
+          </p>
+        </div>
+      </section>
+
+      <!-- ── SECTION 04 · PROCESS ── -->
+      <section class="fade-up">
+        <div class="section-header">
+          <span class="section-number">04</span>
+          <span class="section-title">Process</span>
+          <div class="section-rule"></div>
+        </div>
+
+        <div class="process-steps">
+          <div class="process-step">
+            <div class="process-step-num">1</div>
+            <div class="process-step-title">Map the Pipeline</div>
+            <div class="process-step-desc">
+              Defined all 6 stages before opening Figma. Identified both actor
+              types and their distinct needs. Mapped status transitions
+              (submitted → in_review → approved). Designed for the empty state
+              before any content existed.
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="process-step-num">2</div>
+            <div class="process-step-title">Design the Data Model</div>
+            <div class="process-step-desc">
+              Built the 18-field database schema with UX rationale per column.
+              Every field traces to a specific design decision. Two content
+              fields preserve editorial control without data loss. Status enum
+              defines the admin workflow.
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="process-step-num">3</div>
+            <div class="process-step-title">Design the Interfaces</div>
+            <div class="process-step-desc">
+              Submission form with prompt chips, privacy controls, name
+              preference, relationship multi-select, and consent checkbox. Admin
+              dashboard with filter, review, edit, approve, feature, and reject.
+              Display carousel with accessibility-first markup and
+              auto-rotation.
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="process-step-num">4</div>
+            <div class="process-step-title">Write the Spec</div>
+            <div class="process-step-desc">
+              Complete written spec — field requirements, validation rules,
+              admin workflow, display logic, 7-decision design rationale log,
+              component token set, and 4 API endpoints with full request and
+              response bodies. Handoff-ready without a single follow-up
+              question.
+            </div>
+          </div>
+        </div>
+
+        <!--
+        IMAGE GUIDANCE: Replace with a screenshot of your interactive
+        spec HTML — the pipeline diagram view or the admin dashboard
+        view works best here as a process artifact.
+        The spec HTML file itself is a deliverable worth showing.
+        alt="Testimonial system pipeline — six stages from submission to display"
+      -->
+        <div class="mockup-frame">
+          <div class="mockup-placeholder">
+            <svg
+              width="32"
+              height="32"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1"
+              viewBox="0 0 24 24"
+              style="opacity: 0.3"
+            >
+              <rect x="3" y="3" width="18" height="18" rx="2" />
+              <path d="M3 9h18M9 21V9" />
+            </svg>
+            <span
+              >Content pipeline — Collect → Validate → Store → Review → Approve
+              → Display</span
+            >
+          </div>
+        </div>
+        <p class="mockup-caption">
+          The full content pipeline mapped before any UI work began. Six stages,
+          two actors, one system.
+        </p>
+
+        <div class="decision-card">
+          <div class="decision-card-problem">
+            <div class="decision-card-label">The Challenge</div>
+            <div class="decision-card-text">
+              Prompt chips — small clickable phrases that append starter text to
+              the testimonial field — help submitters past blank-page anxiety.
+              But placeholder text in the textarea disappears the moment someone
+              starts typing, removing the scaffold at exactly the moment it's
+              needed. How do you guide without prescribing?
+            </div>
+          </div>
+          <div class="decision-card-solution">
+            <div class="decision-card-label">The Decision</div>
+            <div class="decision-card-text">
+              Chips stay visible after interaction — they're not placeholder
+              text, they're an active writing tool embedded in the form.
+              Clicking a chip appends a starter phrase to whatever the submitter
+              has already written. The chip toggles active/inactive so the
+              submitter can see what they've used. The textarea remains fully
+              editable — chips prompt without prescribing.
+            </div>
+            <div class="decision-card-highlight">
+              The distinction between a scaffold and a constraint is whether the
+              user retains their own voice. Chips scaffold. They don't
+              constrain.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── SECTION 05 · FINAL DESIGN ── -->
+      <section class="fade-up">
+        <div class="section-header">
+          <span class="section-number">05</span>
+          <span class="section-title">Final Design</span>
+          <div class="section-rule"></div>
+        </div>
+
+        <div class="prose" style="max-width: 640px; margin-bottom: 40px">
+          <p>
+            The submission form is designed to reduce hesitation and increase
+            quality simultaneously. Every field was chosen deliberately — to
+            lower the barrier to starting, protect submitters who want privacy,
+            and give the admin enough context to make good moderation decisions.
+            The form ends with a "Cheers!" success state — champagne glasses, a
+            warm thank-you, and clear expectations about next steps. Submission
+            should feel like a moment worth marking.
+          </p>
+          <p>
+            The admin dashboard gives me filter, select, edit, approve, feature,
+            and reject controls in one interface. Raw and edited content are
+            shown side by side — editorial control without losing the original
+            voice. The display component on the portfolio itself has no card
+            border by design: testimonials are integrated into the page
+            typographically, not isolated as a widget.
+          </p>
+        </div>
+
+        <!--
+        IMAGE GUIDANCE: Replace with a screenshot of your submission
+        form prototype — specifically the state showing the prompt
+        chips and the testimonial textarea together. This is the
+        most distinctive UI decision in the project.
+        alt="Testimonial submission form with prompt chips and privacy controls"
+      -->
+        <div
+          class="mockup-frame"
+          style="
+            background: var(--graphite);
+            min-height: 480px;
+            margin-bottom: 12px;
+          "
+        >
+          <div class="mockup-placeholder">
+            <svg
+              width="32"
+              height="32"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1"
+              viewBox="0 0 24 24"
+              style="opacity: 0.2; color: white"
+            >
+              <rect x="3" y="3" width="18" height="18" rx="2" />
+              <path d="M3 9h18M9 21V9" />
+            </svg>
+            <span style="color: rgba(255, 249, 232, 0.25)">
+              Submission form — prompt chips, privacy controls, consent
+            </span>
+          </div>
+        </div>
+        <p class="mockup-caption">
+          Submission form — prompt chips reduce blank-page anxiety without
+          removing the submitter's voice. Name preference and relationship
+          fields give submitters real control over how they appear.
+        </p>
+
+        <!--
+        IMAGE GUIDANCE: Replace with the admin dashboard screenshot
+        from your spec HTML. The review panel showing raw vs. edited
+        content side by side is the strongest screen to show here —
+        it demonstrates the ethical design thinking clearly.
+        alt="Admin dashboard — review panel with raw and edited content side by side"
+      -->
+        <div class="mockup-frame" style="min-height: 320px">
+          <div class="mockup-placeholder">
+            <svg
+              width="32"
+              height="32"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1"
+              viewBox="0 0 24 24"
+              style="opacity: 0.3"
+            >
+              <rect x="3" y="3" width="18" height="18" rx="2" />
+              <path d="M3 9h18M9 21V9" />
+            </svg>
+            <span
+              >Admin dashboard — filter, review, edit, approve, feature,
+              reject</span
+            >
+          </div>
+        </div>
+        <p class="mockup-caption">
+          Admin review panel — raw submission and edited version shown side by
+          side. Editorial control without data loss. Original voice always
+          preserved.
+        </p>
+      </section>
+
+      <!-- ── SECTION 06 · OUTCOMES ── -->
+      <section class="fade-up">
+        <div class="section-header">
+          <span class="section-number">06</span>
+          <span class="section-title">Outcomes</span>
+          <div class="section-rule"></div>
+        </div>
+
+        <div class="outcomes-grid">
+          <div class="outcomes-list">
+            <div class="outcome-metric">
+              <div class="outcome-dot coral"></div>
+              <div class="outcome-text">
+                <strong>Concept to complete spec in 7 days</strong>
+                — fully interactive prototype, 18-field database schema with UX
+                rationale per column, 4 API endpoints with complete request and
+                response bodies, written spec with 7-decision design rationale
+                log, and full component token set. Handoff-ready.
+              </div>
+            </div>
+
+            <div class="outcome-metric">
+              <div class="outcome-dot coral"></div>
+              <div class="outcome-text">
+                <strong>Demonstrates PM-adjacent product thinking</strong>
+                — not a UI exercise but a system design: content lifecycle,
+                multiple actor roles, status transitions, V1/V2 scope boundary,
+                and engineering handoff artifacts produced alongside the design
+                work.
+              </div>
+            </div>
+
+            <div class="outcome-metric">
+              <div class="outcome-dot"></div>
+              <div class="outcome-text">
+                <strong
+                  >AI used transparently as a production accelerator</strong
+                >
+                — scaffolding the spec, stress-testing the data model, building
+                the prototype. Every system decision, UX tradeoff, and design
+                rationale defined first. Direction came before delegation.
+              </div>
+            </div>
+
+            <div class="outcome-metric">
+              <div class="outcome-dot"></div>
+              <div class="outcome-text">
+                Three distinct deliverable types produced in parallel:
+                <strong>UX artifacts</strong> (prototype, flows),
+                <strong>engineering artifacts</strong> (schema, API spec), and
+                <strong>product artifacts</strong> (written spec, decision log).
+                Cross-functional thinking by design.
+              </div>
+            </div>
+
+            <div class="outcome-metric">
+              <div class="outcome-dot"></div>
+              <div class="outcome-text">
+                V1 scope boundary defined deliberately — email verification,
+                invisible CAPTCHA, and LinkedIn auth are
+                <strong>deferred, not omitted.</strong>
+                Each is documented with the condition that would trigger its
+                addition. Scope decisions made with explicit rationale, not by
+                accident.
+              </div>
+            </div>
+          </div>
+
+          <div class="insight-block" style="align-self: start">
+            <div class="insight-label">What this taught me</div>
+            <p>
+              The most important design work often happens before the UI exists
+              — in the questions you ask, the constraints you name, the
+              tradeoffs you make explicit before a single pixel is placed. This
+              project was a deliberate practice of that principle.
+            </p>
+          </div>
+        </div>
+
+        <div class="reflection-block">
+          <div class="reflection-item">
+            <div class="reflection-item-label">What Worked</div>
+            <div class="reflection-item-text">
+              Designing the data model before the UI forced every interface
+              decision to be grounded. When I asked "what fields does the form
+              need?" the answer came from the schema, not from intuition. The
+              form and the database ended up in complete alignment — which is
+              rarer than it should be.
+            </div>
+          </div>
+          <div class="reflection-item">
+            <div class="reflection-item-label">What I'd Change</div>
+            <div class="reflection-item-text">
+              The one gap in the current spec is a notification strategy — how
+              does the admin know when a new submission arrives? A lightweight
+              email alert would close the loop without adding system complexity.
+              That's V1.1, and it should have been in V1. I'll add it before
+              implementation begins.
+            </div>
+          </div>
+          <div class="reflection-item">
+            <div class="reflection-item-label">Next Steps</div>
+            <div class="reflection-item-text">
+              Implement the system — starting with the submission form and admin
+              dashboard using the existing spec. Run a moderated usability test
+              on the submission form with 5 potential submitters before going
+              live. Add the admin notification layer. Then: collect real
+              testimonials and let the system prove itself.
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- /page-content -->
+
+    <!-- ── CASE NAVIGATION ── -->
+    <!--
+    Testimonial System is project 04 — last in the sequence at launch.
+    Previous: CalCal (calcal.html)
+    No Next at launch — remove or update when Ctrl Z is added.
+  -->
+    <div class="case-nav">
+      <a href="calcal.html" class="case-nav-item">
+        <div class="case-nav-direction">Previous Project</div>
+        <div class="case-nav-title">CalCal Calendar App</div>
+        <div class="case-nav-tags">
+          <span class="case-nav-tag">UX Research</span>
+          <span class="case-nav-tag">Usability Testing</span>
+        </div>
+      </a>
+      <!--
+      NO NEXT at launch — Ctrl Z and Act for Community come later.
+      When Ctrl Z is ready, replace this empty div with:
+      <a href="ctrlz.html" class="case-nav-item case-nav-next">
+        <div class="case-nav-direction">Next Project</div>
+        <div class="case-nav-title">Ctrl Z</div>
+        ...
+      </a>
+    -->
+      <div class="case-nav-item case-nav-empty"></div>
+    </div>
+
+    <!-- ── FOOTER ── -->
+    <footer>
+      <a href="index.html" class="footer-monogram">JL</a>
+      <span class="footer-copy"
+        >© 2025 Jennifer Landers · Designed & built with intention</span
+      >
+    </footer>
+
+    <script src="case-study.js"></script>
+  </body>
+</html>
