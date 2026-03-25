@@ -1,0 +1,705 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Testimonial System — Jennifer Landers · UX Designer & Researcher
+    </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/shared.css" />
+    <link rel="stylesheet" href="css/case-study.css" />
+  </head>
+  <body>
+    <div class="progress-bar" id="progressBar"></div>
+
+    <!-- ── NAV ── -->
+    <nav>
+      <a href="index.html" class="nav-monogram">JL</a>
+      <ul class="nav-links">
+        <li><a href="index.html#work">Work</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+      <a href="index.html#work" class="nav-back">
+        <svg
+          width="16"
+          height="16"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+          viewBox="0 0 24 24"
+        >
+          <path d="M19 12H5M12 19l-7-7 7-7" />
+        </svg>
+        All Work
+      </a>
+    </nav>
+
+    <!-- ══════════════════════════════════════════
+       COVER
+  ══════════════════════════════════════════ -->
+    <div class="cover">
+      <div class="cover-bg-number">04</div>
+
+      <div class="cover-tag">
+        <span class="tag">Systems Design</span>
+        <span class="tag">Product Thinking</span>
+        <span class="tag">Self-Initiated</span>
+        <div class="divider-dot"></div>
+        <span class="year">2025</span>
+      </div>
+
+      <h1 class="cover-h1">
+        Testimonial System<br />— Trust &amp; Feedback<br />Infrastructure
+      </h1>
+
+      <p class="cover-hook">
+        My portfolio had no structured, trustworthy way to collect and present
+        feedback. What started as a personal gap quickly revealed a broader
+        product problem.
+      </p>
+
+      <div class="cover-meta">
+        <div class="cover-meta-item">
+          <div class="cover-meta-label">Role</div>
+          <div class="cover-meta-value">
+            Product Designer · End-to-End System Design
+          </div>
+        </div>
+        <div class="cover-meta-item">
+          <div class="cover-meta-label">Timeline</div>
+          <div class="cover-meta-value">2025</div>
+        </div>
+        <div class="cover-meta-item">
+          <div class="cover-meta-label">Type</div>
+          <div class="cover-meta-value">Self-initiated product system</div>
+        </div>
+        <div class="cover-meta-item">
+          <div class="cover-meta-label">Deliverables</div>
+          <div class="cover-meta-value">
+            Data model · API structure · Moderation workflow · Design tokens ·
+            UI components
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════
+       PAGE CONTENT
+  ══════════════════════════════════════════ -->
+    <div class="page-content">
+      <!-- ── SECTION 01 · OVERVIEW ── -->
+      <section class="fade-up">
+        <div class="section-header">
+          <span class="section-number">01</span>
+          <span class="section-title">Overview</span>
+          <div class="section-rule"></div>
+        </div>
+
+        <div class="overview-grid">
+          <div class="overview-cell">
+            <div class="cover-meta-label">Context</div>
+            <div class="overview-text">
+              A self-initiated product design project. I designed a testimonial
+              system to solve a gap in my own portfolio — there was no
+              structured, trustworthy way to collect and present feedback. What
+              began as a personal need quickly revealed a broader problem most
+              platforms quietly ignore.
+            </div>
+          </div>
+          <div class="overview-cell">
+            <div class="cover-meta-label">The Reframe</div>
+            <div class="overview-text">
+              Most testimonial features are treated as static content — manually
+              added, lightly curated, hard to maintain. This project reframes
+              testimonials as a system, not a section: a structured, scalable
+              way to collect, moderate, and present feedback while balancing
+              trust, usability, and flexibility.
+            </div>
+          </div>
+          <div class="overview-cell">
+            <div class="cover-meta-label">Approach</div>
+            <div class="overview-text">
+              Rather than designing a single interface, I approached this as a
+              full system design problem. I mapped the complete lifecycle of a
+              testimonial — submission, validation, storage, moderation, display
+              — ensuring that each part worked together rather than solving only
+              the visible front-end layer.
+            </div>
+          </div>
+          <div class="overview-cell">
+            <div class="cover-meta-label">Outcome</div>
+            <div class="overview-text">
+              A complete, end-to-end testimonial system design. Full
+              specification including data model, API structure, moderation
+              workflow, design tokens, and UI components. A system that can be
+              used within my portfolio and adapted for other designers, teams,
+              or products.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── SECTION 02 · THE PROBLEM ── -->
+      <section class="fade-up">
+        <div class="section-header">
+          <span class="section-number">02</span>
+          <span class="section-title">The Problem</span>
+          <div class="section-rule"></div>
+        </div>
+
+        <div class="two-col-text" style="margin-bottom: 48px">
+          <div class="prose">
+            <p>
+              Most platforms treat testimonials as an afterthought. There's no
+              consistent way to collect them, formatting and publishing are
+              manual, validation and spam protection are minimal or absent,
+              there's no moderation workflow, and there's no transparency
+              between edited and original content.
+            </p>
+            <p>
+              The result is a system that is difficult to scale, hard to trust,
+              and inconsistent for both users and administrators. Something that
+              should build credibility ends up undermining it through its own
+              structural gaps.
+            </p>
+          </div>
+          <div class="prose">
+            <p>
+              The core question this project set out to answer: how might we
+              design a system that makes testimonials easy to collect,
+              trustworthy to display, and sustainable to manage over time?
+            </p>
+            <p>
+              Solving that properly meant thinking beyond the UI layer — into
+              content lifecycle, multiple actor types, status transitions, and
+              the edge cases that don't show up until you look for them.
+            </p>
+          </div>
+        </div>
+
+        <div class="stats-row" style="margin: 0 0 48px">
+          <div class="stat-cell">
+            <div class="stat-number">5</div>
+            <div class="stat-label">
+              lifecycle stages mapped before opening a design tool
+            </div>
+          </div>
+          <div class="stat-cell">
+            <div class="stat-number">2</div>
+            <div class="stat-label">
+              distinct user types — contributor and admin — each with their own
+              flows
+            </div>
+          </div>
+          <div class="stat-cell">
+            <div class="stat-number">0</div>
+            <div class="stat-label">
+              good solutions found when treating testimonials as static content
+            </div>
+          </div>
+        </div>
+
+        <div class="problem-statement">
+          <div class="problem-label">Core Problem Statement</div>
+          <p>
+            How might we design a system that makes testimonials easy to
+            collect, trustworthy to display, and sustainable to manage over
+            time?
+          </p>
+        </div>
+      </section>
+
+      <!-- ── SECTION 03 · APPROACH ── -->
+      <section class="fade-up">
+        <div class="section-header">
+          <span class="section-number">03</span>
+          <span class="section-title">Approach</span>
+          <div class="section-rule"></div>
+        </div>
+
+        <div class="two-col-text" style="margin-bottom: 48px">
+          <div class="prose">
+            <p>
+              Rather than designing a single interface, I approached this as a
+              full system design problem. That meant resisting the pull toward
+              the visible layer — the form, the card, the carousel — until the
+              underlying system logic was solid.
+            </p>
+            <p>
+              I mapped the complete lifecycle of a testimonial: submission,
+              validation, storage, moderation, and display. Each stage has its
+              own interface requirements, its own actor, and its own failure
+              modes. Designing for the empty state — before any testimonials
+              exist — is where most portfolio implementations quietly fail.
+            </p>
+          </div>
+          <div class="prose">
+            <p>
+              This ensured that each part of the experience worked together,
+              rather than solving only the visible front-end layer. Form fields
+              trace to database columns. Admin actions map to status
+              transitions. Every decision connects back to the system, not just
+              the screen.
+            </p>
+            <p>
+              The decision to build a system rather than add static content also
+              reflected something broader: strong system thinking paired with
+              modern tooling is a force multiplier. AI was used to accelerate
+              execution — scaffolding the spec, stress-testing the data model.
+              Every design decision and tradeoff was defined first. Direction
+              came before delegation.
+            </p>
+          </div>
+        </div>
+
+        <div class="research-grid">
+          <div class="user-quote-card">
+            <div class="quote-label">Design Tension · Trust vs. Friction</div>
+            <div class="quote-text">
+              "Adding strict validation could improve trust — but at the cost of
+              completion rates. The question is where the real safety net
+              lives."
+            </div>
+            <div class="quote-insight">
+              I chose lower-friction validation methods with lightweight
+              anti-spam protections. The admin review layer is the actual safety
+              net — invisible protection at zero UX cost to the submitter.
+            </div>
+          </div>
+
+          <div class="user-quote-card">
+            <div class="quote-label">Design Principle · Dual Users</div>
+            <div class="quote-text">
+              "The system supports two completely different people doing
+              completely different things — and both experiences need to be
+              right."
+            </div>
+            <div class="quote-insight">
+              Designing for both the contributor and the admin shaped the form
+              structure, the moderation tools, and the display rules. Neither
+              user's experience was treated as secondary.
+            </div>
+          </div>
+        </div>
+
+        <div class="insight-block">
+          <div class="insight-label">The Approach That Mattered</div>
+          <p>
+            Treating content as a system rather than manually managing it means
+            repeatable workflows, structured storage, and scalable logic — a
+            system that grows without increasing maintenance complexity.
+          </p>
+        </div>
+      </section>
+
+      <!-- ── SECTION 04 · SYSTEM DESIGN ── -->
+      <section class="fade-up">
+        <div class="section-header">
+          <span class="section-number">04</span>
+          <span class="section-title">System Design</span>
+          <div class="section-rule"></div>
+        </div>
+
+        <div class="process-steps">
+          <div class="process-step">
+            <div class="process-step-num">1</div>
+            <div class="process-step-title">Submission Layer</div>
+            <div class="process-step-desc">
+              Structured testimonial form with optional identity fields (name,
+              role, organization), privacy controls (display name vs. full
+              name), and clear consent and expectation setting. Designed to
+              reduce friction while maintaining credibility.
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="process-step-num">2</div>
+            <div class="process-step-title">Validation &amp; Trust</div>
+            <div class="process-step-desc">
+              Required fields for meaningful input. Optional credibility
+              indicators. Anti-spam strategy using a low-friction approach. The
+              key decision: balancing ease of submission with trustworthiness of
+              content.
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="process-step-num">3</div>
+            <div class="process-step-title">Data Structure</div>
+            <div class="process-step-desc">
+              Defined schema supporting flexible testimonial types. Strict
+              separation between raw submission data and edited display content
+              — allowing refinement without losing the original voice.
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="process-step-num">4</div>
+            <div class="process-step-title">Moderation Workflow</div>
+            <div class="process-step-desc">
+              Admin dashboard for review and approval. Ability to approve, edit,
+              reject, and feature testimonials. This transforms testimonials
+              from static content into a fully manageable system.
+            </div>
+          </div>
+        </div>
+
+        <!--
+          IMAGE GUIDANCE: Replace with a screenshot of your interactive
+          spec HTML — the pipeline diagram view or the admin dashboard
+          view works best here as a process artifact.
+          alt="Testimonial system lifecycle — five stages from submission to display"
+        -->
+        <div class="mockup-frame">
+          <div class="mockup-placeholder">
+            <svg
+              width="32"
+              height="32"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1"
+              viewBox="0 0 24 24"
+              style="opacity: 0.3"
+            >
+              <rect x="3" y="3" width="18" height="18" rx="2" />
+              <path d="M3 9h18M9 21V9" />
+            </svg>
+            <span>
+              Content lifecycle — Submission → Validation → Storage → Moderation
+              → Display
+            </span>
+          </div>
+        </div>
+        <p class="mockup-caption">
+          The full content lifecycle mapped before any UI work began. Five
+          stages, two actors, one system.
+        </p>
+
+        <div class="decision-card">
+          <div class="decision-card-problem">
+            <div class="decision-card-label">The Challenge</div>
+            <div class="decision-card-text">
+              Dynamic rendering based on testimonial status — approved vs.
+              featured — requires clear hierarchy and consistent formatting. How
+              do you give the admin meaningful editorial control without
+              building a CMS from scratch?
+            </div>
+          </div>
+          <div class="decision-card-solution">
+            <div class="decision-card-label">The Decision</div>
+            <div class="decision-card-text">
+              Display logic is driven entirely by the data model. An
+              <code>is_featured</code> boolean controls elevated placement. A
+              <code>status</code> enum governs visibility. The admin doesn't
+              need to touch layout — they approve, feature, or reject, and the
+              system handles presentation.
+            </div>
+            <div class="decision-card-highlight">
+              When the data model is right, the display layer almost designs
+              itself. Structure is the design.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── SECTION 05 · KEY DESIGN DECISIONS ── -->
+      <section class="fade-up">
+        <div class="section-header">
+          <span class="section-number">05</span>
+          <span class="section-title">Key Design Decisions</span>
+          <div class="section-rule"></div>
+        </div>
+
+        <div class="prose" style="max-width: 640px; margin-bottom: 40px">
+          <p>
+            The most consequential decisions in this project weren't about
+            visual design — they were about trust architecture, data integrity,
+            and the ethics of editing someone else's words. Each decision below
+            was made deliberately, with explicit rationale.
+          </p>
+        </div>
+
+        <div class="research-grid" style="margin-bottom: 40px">
+          <div class="user-quote-card">
+            <div class="quote-label">
+              Designing for Trust, Not Just Collection
+            </div>
+            <div class="quote-text">
+              "Many systems prioritize collecting testimonials quickly. I
+              focused on ensuring they would feel credible and intentional when
+              displayed."
+            </div>
+            <div class="quote-insight">
+              This included separating raw vs. edited content, allowing optional
+              identity verification signals, and maintaining transparency in how
+              testimonials are presented. Trust is not a visual layer — it's
+              built through structure and process.
+            </div>
+          </div>
+
+          <div class="user-quote-card">
+            <div class="quote-label">
+              Reducing Friction Without Losing Quality
+            </div>
+            <div class="quote-text">
+              "Email verification could improve trust, but breaks momentum after
+              emotional intent is established — at exactly the wrong moment."
+            </div>
+            <div class="quote-insight">
+              I chose lower-friction validation with lightweight anti-spam
+              protections. This keeps the system usable while still maintaining
+              reasonable trust signals. The admin review layer is the real
+              safety net.
+            </div>
+          </div>
+        </div>
+
+        <div class="decision-card">
+          <div class="decision-card-problem">
+            <div class="decision-card-label">The Challenge</div>
+            <div class="decision-card-text">
+              Editorial control is necessary — but editing someone else's words
+              raises an ethical question. How do you refine a testimonial for
+              display without erasing the person's original voice? And how do
+              you make that distinction visible and auditable?
+            </div>
+          </div>
+          <div class="decision-card-solution">
+            <div class="decision-card-label">The Decision</div>
+            <div class="decision-card-text">
+              Two content fields in the database schema:
+              <code>content_raw</code> stores the original submission,
+              untouched. <code>content_edited</code>
+              stores the polished version for display. Keeping both means
+              editorial control without data loss — the submitter's original
+              voice is always preserved, even when the displayed version is
+              refined.
+            </div>
+            <div class="decision-card-highlight">
+              Transparency in how testimonials are handled is itself a trust
+              signal. The system should be auditable by design.
+            </div>
+          </div>
+        </div>
+
+        <!--
+          IMAGE GUIDANCE: Replace with the admin dashboard screenshot
+          from your spec HTML. The review panel showing raw vs. edited
+          content side by side is the strongest screen to show here —
+          it demonstrates the ethical design thinking clearly.
+          alt="Admin dashboard — review panel with raw and edited content side by side"
+        -->
+        <div class="mockup-frame" style="min-height: 320px">
+          <div class="mockup-placeholder">
+            <svg
+              width="32"
+              height="32"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1"
+              viewBox="0 0 24 24"
+              style="opacity: 0.3"
+            >
+              <rect x="3" y="3" width="18" height="18" rx="2" />
+              <path d="M3 9h18M9 21V9" />
+            </svg>
+            <span>
+              Admin dashboard — filter, review, edit, approve, feature, reject
+            </span>
+          </div>
+        </div>
+        <p class="mockup-caption">
+          Admin review panel — raw submission and edited version shown side by
+          side. Editorial control without data loss. Original voice always
+          preserved.
+        </p>
+      </section>
+
+      <!-- ── SECTION 06 · AI-ASSISTED WORKFLOW ── -->
+      <section class="fade-up">
+        <div class="section-header">
+          <span class="section-number">06</span>
+          <span class="section-title">AI-Assisted Workflow</span>
+          <div class="section-rule"></div>
+        </div>
+
+        <div class="two-col-text" style="margin-bottom: 48px">
+          <div class="prose">
+            <p>
+              AI was used as a productivity and structuring tool — not a
+              decision-maker. I used it to help structure database schema and
+              system logic, generate and refine API endpoint patterns, and
+              validate the completeness of flows and edge cases.
+            </p>
+          </div>
+          <div class="prose">
+            <p>
+              All outputs were reviewed, adjusted, and aligned with the intended
+              user experience and system behavior. This allowed me to move more
+              efficiently through technical structuring while maintaining full
+              control over design decisions. Direction came before delegation.
+            </p>
+          </div>
+        </div>
+
+        <div class="insight-block">
+          <div class="insight-label">On AI and Design Authorship</div>
+          <p>
+            The value of AI in this workflow was in acceleration, not
+            authorship. Every system decision, UX tradeoff, and design rationale
+            was defined first — then AI was used to execute against that
+            foundation more efficiently. The thinking was always mine.
+          </p>
+        </div>
+      </section>
+
+      <!-- ── SECTION 07 · OUTCOMES ── -->
+      <section class="fade-up">
+        <div class="section-header">
+          <span class="section-number">07</span>
+          <span class="section-title">Outcomes</span>
+          <div class="section-rule"></div>
+        </div>
+
+        <div class="outcomes-grid">
+          <div class="outcomes-list">
+            <div class="outcome-metric">
+              <div class="outcome-dot coral"></div>
+              <div class="outcome-text">
+                <strong
+                  >A complete, end-to-end testimonial system design</strong
+                >
+                — full specification including data model, API structure,
+                moderation workflow, design tokens, and UI components. A system
+                that can be used within my portfolio or adapted for other
+                designers, teams, or products.
+              </div>
+            </div>
+
+            <div class="outcome-metric">
+              <div class="outcome-dot coral"></div>
+              <div class="outcome-text">
+                <strong
+                  >Systems thinking across the full product lifecycle</strong
+                >
+                — not a UI exercise but a full system design: content lifecycle,
+                multiple actor roles, status transitions, and engineering
+                handoff artifacts produced alongside the design work.
+              </div>
+            </div>
+
+            <div class="outcome-metric">
+              <div class="outcome-dot"></div>
+              <div class="outcome-text">
+                <strong>Product thinking beyond surface-level features</strong>
+                — UX depth in form design, trust architecture, and user
+                behavior. Ability to structure technical systems as a designer
+                and communicate them clearly across disciplines.
+              </div>
+            </div>
+
+            <div class="outcome-metric">
+              <div class="outcome-dot"></div>
+              <div class="outcome-text">
+                <strong
+                  >Effective use of AI to support complex workflows</strong
+                >
+                — scaffolding the spec, stress-testing the data model, building
+                the prototype. Every system decision and UX tradeoff defined
+                first. Direction came before delegation.
+              </div>
+            </div>
+          </div>
+
+          <div class="insight-block" style="align-self: start">
+            <div class="insight-label">What This Taught Me</div>
+            <p>
+              Designing this system reinforced that trust is not a visual layer
+              — it's built through structure and process. Small content features
+              often require deeper system thinking. And designing for multiple
+              user roles changes how systems need to function.
+            </p>
+            <p style="margin-top: 16px">
+              It also pushed me to think beyond individual screens and toward
+              reusable product patterns — a way of working I'll carry into every
+              project.
+            </p>
+          </div>
+        </div>
+
+        <div class="reflection-block">
+          <div class="reflection-item">
+            <div class="reflection-item-label">What I Demonstrated</div>
+            <div class="reflection-item-text">
+              Systems thinking across the full product lifecycle. Product
+              thinking beyond surface-level features. UX depth in form design,
+              trust, and user behavior. Ability to structure technical systems
+              as a designer. Effective use of AI to support complex workflows.
+            </div>
+          </div>
+          <div class="reflection-item">
+            <div class="reflection-item-label">What I Learned</div>
+            <div class="reflection-item-text">
+              Trust is not a visual layer — it's built through structure and
+              process. Small content features often require deeper system
+              thinking. Designing for multiple user roles changes how systems
+              need to function. Thinking beyond individual screens toward
+              reusable product patterns is a muscle worth developing.
+            </div>
+          </div>
+          <div class="reflection-item">
+            <div class="reflection-item-label">Next Steps</div>
+            <div class="reflection-item-text">
+              Test submission flow with real users. Refine validation strategies
+              based on observed behavior. Explore integrations with CMS
+              platforms. Expand the system for broader use cases beyond
+              portfolios — other designers, teams, and products could benefit
+              from the same infrastructure.
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- /page-content -->
+
+    <!-- ── CASE NAVIGATION ── -->
+    <!--
+      Testimonial System is project 04 — last in the sequence at launch.
+      Previous: CalCal (calcal.html)
+      No Next at launch — remove or update when Ctrl Z is added.
+    -->
+    <div class="case-nav">
+      <a href="calcal.html" class="case-nav-item">
+        <div class="case-nav-direction">Previous Project</div>
+        <div class="case-nav-title">CalCal Calendar App</div>
+        <div class="case-nav-tags">
+          <span class="case-nav-tag">UX Research</span>
+          <span class="case-nav-tag">Usability Testing</span>
+        </div>
+      </a>
+      <!--
+        NO NEXT at launch — Ctrl Z and Act for Community come later.
+        When Ctrl Z is ready, replace this empty div with:
+        <a href="ctrlz.html" class="case-nav-item case-nav-next">
+          <div class="case-nav-direction">Next Project</div>
+          <div class="case-nav-title">Ctrl Z</div>
+          ...
+        </a>
+      -->
+      <div class="case-nav-item case-nav-empty"></div>
+    </div>
+
+    <!-- ── FOOTER ── -->
+    <footer>
+      <a href="index.html" class="footer-monogram">JL</a>
+      <span class="footer-copy"
+        >© 2025 Jennifer Landers · Designed &amp; built with intention</span
+      >
+    </footer>
+
+    <script src="javascript/case-study.js"></script>
+  </body>
+</html>
