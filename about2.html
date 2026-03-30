@@ -1,0 +1,456 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About — Jennifer Landers · UX Designer & Researcher</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/shared.css" />
+    <link rel="stylesheet" href="css/about.css" />
+  </head>
+  <body>
+    <!-- ── NAV ── -->
+    <!--
+    STRUCTURE NOTE: About link has class="active" here.
+  -->
+    <nav>
+      <a href="index.html" class="nav-monogram">JL</a>
+      <ul class="nav-links">
+        <li><a href="index.html#work">Work</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+      <a href="index.html#contact" class="nav-cta">Say Hello</a>
+    </nav>
+
+    <div class="page">
+      <!-- ══════════════════════════════════════════
+         HERO
+         2-col on desktop: headline + tags left,
+         portrait frame right.
+         Mobile: stacked, portrait below headline.
+    ══════════════════════════════════════════ -->
+      <div class="hero fade-up">
+        <div class="hero-left">
+          <div class="hero-label">About</div>
+
+          <!--
+          COPY NOTE: This H1 Update if you find a line that feels more you.
+        -->
+          <h1 class="hero-h1">
+            Designing systems<br />with <em>clarity</em><br />and care.
+          </h1>
+
+          <!--
+          TAG NOTE: Mix of filled and outline tags.
+          Keep to 4 tags max
+        -->
+          <div class="hero-tags">
+            <span class="tag">UX Research</span>
+            <span class="tag">Interaction Design</span>
+            <span class="tag outline">Bay Area</span>
+            <span class="tag outline">Open to Opportunities</span>
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <!--
+          PORTRAIT NOTE: This is a placeholder box.
+          When you have your photo:
+          1. Remove the <div class="portrait-frame"></div>
+          2. Replace with:
+             <img src="images/jennifer-landers.jpg"
+                  alt="Jennifer Landers"
+                  class="portrait-frame"
+                  width="360" height="450">
+          Recommended: 720×900px, JPG or WebP.
+        -->
+          <div class="portrait-frame"></div>
+
+          <p class="portrait-note">
+            A clean, editorial portrait on a neutral background works best here.
+          </p>
+        </div>
+      </div>
+      <!-- /hero -->
+
+      <!-- ══════════════════════════════════════════
+         SECTION 01 · INTRODUCTION
+         2-col on desktop: prose left, pull quote right.
+         Mobile: stacked.
+    ══════════════════════════════════════════ -->
+      <section class="fade-up">
+        <div class="section-header">
+          <span class="section-number">01</span>
+          <span class="section-title">Introduction</span>
+          <div class="section-rule"></div>
+        </div>
+
+        <div class="intro-grid">
+          <div class="intro-prose">
+            <!--
+            COPY NOTE: 2–3 paragraphs. This is your longer intro —
+            more personal than the homepage blurb.
+            Para 1: who you are and what you care about.
+            Para 2: how you approach the work.
+            Para 3 (optional): what you're looking for right now.
+
+            Update these with your final personal summary
+            from your master career document.
+          -->
+            <p>
+              I'm a UX designer and researcher focused on building interaction
+              systems that feel clear, human, and grounded in how people
+              actually behave — not how we assume they do.
+            </p>
+            <p>
+              My approach starts with observation. Before I sketch a single
+              screen, I want to understand what users are really trying to
+              accomplish, where they stall, and what they're not saying out
+              loud. That attentiveness — to behavior, to language, to the gap
+              between what people say and what they do — is something I
+              developed long before I knew what UX was.
+            </p>
+            <p>
+              From there, I focus on creating clarity — helping teams move from
+              unclear problems to structured, usable solutions.
+            </p>
+            <p>
+              I'm currently based in the Bay Area, completing my Interaction
+              Design certificate at Diablo Valley College, and actively seeking
+              full-time UX researcher and product designer roles at
+              product-focused teams.
+            </p>
+          </div>
+
+          <div class="intro-aside">
+            <!--
+            PULL QUOTE NOTE: One sentence that captures your design POV.
+            This should sound like something you'd actually say —
+            not a generic design platitude.
+
+            Update this with a line from your own voice.
+          -->
+            <div class="aside-pull">
+              "Clarity isn't just a design outcome — it's something you have to
+              actively create."
+            </div>
+
+            <!--
+            ASIDE DETAIL NOTE: Supporting context under the pull quote.
+            Keep this brief — 2–3 lines max.
+            Currently: location + availability + openness to internships.
+          -->
+            <div class="aside-detail">
+              Currently based in the Bay Area. Open to full-time roles,
+              internships, and contract work in UX research and product design —
+              especially at teams building accessible, thoughtful digital
+              products.
+            </div>
+          </div>
+        </div>
+        <!-- /intro-grid -->
+      </section>
+
+      <!-- ══════════════════════════════════════════
+         SECTION 02 · HOW I THINK
+         Full-width intro sentence, then 4-lens bordered grid,
+         then a closing statement.
+    ══════════════════════════════════════════ -->
+      <section class="fade-up">
+        <div class="section-header">
+          <span class="section-number">02</span>
+          <span class="section-title">How I Think</span>
+          <div class="section-rule"></div>
+        </div>
+
+        <!--
+        COPY NOTE: This sentence frames the 4 lenses below.
+        It should set up the grid — explain your design philosophy
+        in one punchy line.
+      -->
+        <p class="lens-intro">
+          I approach every project by asking four questions before I open Figma.
+        </p>
+
+        <!--
+        LENS GRID NOTE: 4 bordered cells, each with a ghost number,
+        a title in small caps, and a 1–2 sentence description.
+        These are your design thinking lenses
+
+        Keep each description to 1–2 sentences. Too long and
+        the grid loses its visual rhythm.
+      -->
+        <div class="lens-grid">
+          <div class="lens-item">
+            <div class="lens-item-number">01</div>
+            <div class="lens-item-title">Who can't use this?</div>
+            <div class="lens-item-desc">
+              Accessibility isn't a checklist — it's the first constraint.
+              Designing for the edges makes the whole system better.
+            </div>
+          </div>
+
+          <div class="lens-item">
+            <div class="lens-item-number">02</div>
+            <div class="lens-item-title">What are people not saying?</div>
+            <div class="lens-item-desc">
+              Users describe symptoms, not causes. My job is to hear the
+              frustration underneath the feature request.
+            </div>
+          </div>
+
+          <div class="lens-item">
+            <div class="lens-item-number">03</div>
+            <div class="lens-item-title">Where does trust break down?</div>
+            <div class="lens-item-desc">
+              Unclear feedback, unpredictable states, and missing context erode
+              confidence. I look for where a system stops communicating.
+            </div>
+          </div>
+
+          <div class="lens-item">
+            <div class="lens-item-number">04</div>
+            <div class="lens-item-title">What happens at the edges?</div>
+            <div class="lens-item-desc">
+              Empty states, errors, and transitions are where experience is
+              shaped — or lost. I design for the full range, not just the happy
+              path.
+            </div>
+          </div>
+        </div>
+        <!-- /lens-grid -->
+
+        <!--
+        CLOSING NOTE: A single sentence that ties the 4 lenses together.
+        The <strong> wraps the most important phrase.
+      -->
+        <p class="lens-closing">
+          Good design isn't just visual —
+          <strong
+            >it's the result of asking the right questions early and turning
+            those answers into clear, usable systems.</strong
+          >
+        </p>
+      </section>
+
+      <!-- ══════════════════════════════════════════
+         SECTION 03 · BACKGROUND
+         Green block, 2-col inside.
+         Left: prose about ECE → UX.
+         Right: pull quote + skill transfer list.
+
+         FRAMING NOTE: This section does NOT say "career change"
+
+         The skills built observing children who couldn't
+         articulate their needs ARE UX skills.
+    ══════════════════════════════════════════ -->
+      <section class="fade-up">
+        <div class="section-header">
+          <span class="section-number">03</span>
+          <span class="section-title">Background</span>
+          <div class="section-rule"></div>
+        </div>
+
+        <div class="background-block">
+          <div class="background-block-left">
+            <!--
+            COPY NOTE: This is where your ECE background lives.
+            Frame it as: "this experience gave me X, which I now
+            apply as Y in UX." Never apologetic, never a pivot story.
+            Update with specifics from your master career document —
+            what age groups, what types of environments, what you observed.
+          -->
+            <p>
+              For nine years I worked in early childhood education — an
+              environment that demands extraordinary attentiveness. Children
+              can't always tell you what they need. They show you through
+              behavior, frustration, and the moments they disengage.
+            </p>
+            <p>
+              That experience built my core UX muscle: the ability to observe
+              without judgment, to separate what someone says from what they
+              mean, and to design for people who cannot fully articulate their
+              own needs. It's the same skill set, applied to a different canvas
+              — now applied to digital products where clarity, trust, and
+              usability directly impact outcomes.
+            </p>
+          </div>
+
+          <div class="background-block-right">
+            <!--
+            CALLOUT NOTE: A memorable line from your background story.
+            Should feel like something you'd say in an interview.
+            Serif italic — keep it to 2–3 lines max.
+          -->
+            <div class="background-callout">
+              "Watching someone understand something for the first time never
+              gets old — whether that's a four-year-old or a first-time user."
+            </div>
+
+            <!--
+            SKILL TRANSFER LIST NOTE: These are the transferable skills
+            from ECE → UX. Each gets a small dot (defined in about.css
+            via ::before). Keep each line to 3–5 words.
+            These should mirror language from your resume.
+          -->
+            <div class="background-tags">
+              <div class="background-tag-row">
+                Behavioral observation & synthesis
+              </div>
+              <div class="background-tag-row">
+                Designing for users who can't self-report
+              </div>
+              <div class="background-tag-row">
+                Communication clarity under constraint
+              </div>
+              <div class="background-tag-row">
+                Building trust through consistency
+              </div>
+              <div class="background-tag-row">
+                Emotional intelligence in complex systems
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /background-block -->
+      </section>
+
+      <!-- ══════════════════════════════════════════
+         SECTION 04 · WHAT I'M LOOKING FOR
+         2fr/1fr grid on desktop.
+         Left: prose about the kinds of teams/work want.
+         Right: a short interest list with green dots.
+    ══════════════════════════════════════════ -->
+      <section class="fade-up">
+        <div class="section-header">
+          <span class="section-number">04</span>
+          <span class="section-title">What I'm Looking For</span>
+          <div class="section-rule"></div>
+        </div>
+
+        <div class="looking-grid">
+          <div class="looking-prose">
+            <!--
+            COPY NOTE: Be specific here — not "I'm looking for a role
+            where I can grow." Name the actual environments, problems,
+            and team types that excite you.
+            Update with specifics from your master career document
+            about your target roles and company types.
+          -->
+            <p>
+              I'm drawn to product teams working on problems that directly
+              affect how people navigate their daily lives — especially in
+              healthcare, accessibility-focused products, civic tech, and
+              collaborative platforms where clear design genuinely changes
+              outcomes.
+            </p>
+            <p>
+              I thrive in environments that treat research and design as
+              essential to decision-making — where teams are open to stepping
+              back, re-evaluating problems, and improving how things work. I do
+              my best work in collaborative settings where I can help bring
+              structure to unclear problems, align teams, and move ideas forward
+              into usable solutions.
+            </p>
+          </div>
+
+          <div class="looking-aside">
+            <!--
+            ASIDE LIST NOTE: Short, specific environments where you do
+            your best work. Each gets a green dot (defined in about.css).
+            These should feel honest — not aspirational boilerplate.
+          -->
+            <div class="looking-aside-label">Environments where I thrive</div>
+
+            <div class="interest-item">
+              <div class="interest-dot"></div>
+              Research-integrated design processes
+            </div>
+            <div class="interest-item">
+              <div class="interest-dot"></div>
+              Accessibility-first product teams
+            </div>
+            <div class="interest-item">
+              <div class="interest-dot"></div>
+              Cross-functional collaboration with developers
+            </div>
+            <div class="interest-item">
+              <div class="interest-dot"></div>
+              Products that serve underrepresented users
+            </div>
+            <div class="interest-item">
+              <div class="interest-dot"></div>
+              Teams that value craft and rigor equally
+            </div>
+          </div>
+        </div>
+        <!-- /looking-grid -->
+      </section>
+
+      <!-- ══════════════════════════════════════════
+         CTA BLOCK
+         Not wrapped in <section> — it's a closing block.
+         2-col on desktop: serif H2 left, copy + buttons right.
+         Leads to the contact section on index.html.
+    ══════════════════════════════════════════ -->
+      <div class="cta-block fade-up">
+        <div>
+          <!--
+          COPY NOTE: This headline mirrors the one on the homepage.
+          The <em> word should be the emotional hook.
+          "thoughtful" works — update if you find something
+          that feels more authentically you.
+        -->
+          <h2 class="cta-h2">
+            Let's build<br />something <em>thoughtful</em><br />together.
+          </h2>
+        </div>
+
+        <div class="cta-right">
+          <p>
+            If you're building something that needs a designer who listens,
+            brings clarity, and helps move ideas forward — I'd love to hear
+            about it.
+          </p>
+          <div class="cta-buttons">
+            <!--
+            BUTTON NOTE: Primary CTA goes to contact section on homepage.
+            Secondary CTA links to your resume PDF.
+            Update the resume href when you finalize the filename.
+          -->
+            <a href="index.html#contact" class="btn-primary">Say Hello</a>
+            <a
+              href="jennifer-landers-resume.pdf"
+              class="btn-secondary"
+              target="_blank"
+              >View Resume</a
+            >
+          </div>
+        </div>
+      </div>
+      <!-- /cta-block -->
+    </div>
+    <!-- /page -->
+
+    <!-- ── FOOTER ── -->
+    <!-- Same footer as index.html — JL monogram, your name in copy -->
+    <footer>
+      <a href="index.html" class="footer-monogram">JL</a>
+      <span class="footer-copy"
+        >© 2025 Jennifer Landers · Designed & built with intention</span
+      >
+    </footer>
+
+    <!--
+    JS NOTE: about.js is empty until  created
+    The page works completely without it — all content visible,
+    no scroll reveals yet.
+  -->
+    <script src="javascript/about.js"></script>
+  </body>
+</html>
