@@ -1,0 +1,644 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CalCal — Jennifer Landers · UX Designer & Researcher</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/shared.css" />
+    <link rel="stylesheet" href="css/case-study.css" />
+  </head>
+  <body>
+    <div class="progress-bar" id="progressBar"></div>
+
+    <!-- ── NAV ── -->
+    <nav>
+      <a href="index.html" class="nav-monogram">JL</a>
+      <ul class="nav-links">
+        <li><a href="index.html#work">Work</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+      <a href="index.html#work" class="nav-back">
+        <svg
+          width="16"
+          height="16"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+          viewBox="0 0 24 24"
+        >
+          <path d="M19 12H5M12 19l-7-7 7-7" />
+        </svg>
+        All Work
+      </a>
+    </nav>
+
+    <!-- ══════════════════════════════════════════
+       COVER
+    ══════════════════════════════════════════ -->
+    <div class="cover">
+      <div class="cover-bg-number">03</div>
+
+      <div class="cover-tag">
+        <span class="tag">UX Research</span>
+        <span class="tag">Interaction Design</span>
+        <span class="tag">Team Project</span>
+        <div class="divider-dot"></div>
+        <span class="year">2024</span>
+      </div>
+
+      <h1 class="cover-h1">CalCal<br />Calendar App</h1>
+
+      <p class="cover-hook">
+        Most calendar tools are built around one assumption: you exist in a
+        single time zone. What happens when your relationships, your work, and
+        your life don't?
+      </p>
+
+      <div class="cover-meta">
+        <div class="cover-meta-item">
+          <div class="cover-meta-label">Role</div>
+          <div class="cover-meta-value">
+            Team Lead · UX Researcher · Interaction Designer
+          </div>
+        </div>
+        <div class="cover-meta-item">
+          <div class="cover-meta-label">Context</div>
+          <div class="cover-meta-value">Course Project · DVC</div>
+        </div>
+        <div class="cover-meta-item">
+          <div class="cover-meta-label">Team</div>
+          <div class="cover-meta-value">Group of 4</div>
+        </div>
+        <div class="cover-meta-item">
+          <div class="cover-meta-label">Tools</div>
+          <div class="cover-meta-value">
+            Figma · Maze · FigJam · Google Forms
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════
+       PAGE CONTENT
+    ══════════════════════════════════════════ -->
+    <div class="page-content">
+      <!-- ── SECTION 01 · OVERVIEW ── -->
+      <section class="fade-up">
+        <div class="section-header">
+          <span class="section-number">01</span>
+          <span class="section-title">Overview</span>
+          <div class="section-rule"></div>
+        </div>
+
+        <div class="overview-grid">
+          <div class="overview-cell">
+            <div class="cover-meta-label">Context</div>
+            <div class="overview-text">
+              A full end-to-end UX project completed in Interaction Design for
+              Web and Mobile Platforms at Diablo Valley College. CalCal is a
+              calendar app concept designed for people managing relationships
+              and responsibilities across multiple time zones — with a focus on
+              smarter reminders, conflict detection, and calendar syncing.
+            </div>
+          </div>
+          <div class="overview-cell">
+            <div class="cover-meta-label">My Contributions</div>
+            <div class="overview-text">
+              POV statements · Primary HMW (adopted by team) · Task flows · User
+              flow design · Participant recruiting · Moderated usability session
+              facilitation · Testing environment rebuild · Team leadership and
+              project coordination
+            </div>
+          </div>
+          <div class="overview-cell">
+            <div class="cover-meta-label">Methods</div>
+            <div class="overview-text">
+              Semi-structured interviews · Survey research · Affinity mapping ·
+              Competitive analysis · Persona development · Task flow & user flow
+              design · Figma prototyping · Maze unmoderated testing · Moderated
+              in-person usability sessions
+            </div>
+          </div>
+          <div class="overview-cell">
+            <div class="cover-meta-label">Outcome</div>
+            <div class="overview-text">
+              Interactive Figma prototype across 3 core task flows, tested with
+              9 participants via Maze and moderated sessions. Usability data
+              surfaced exactly where the design succeeded, where it created
+              friction, and where the most valuable feature was completely
+              invisible to users.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── SECTION 02 · THE PROBLEM ── -->
+      <section class="fade-up">
+        <div class="section-header">
+          <span class="section-number">02</span>
+          <span class="section-title">The Problem</span>
+          <div class="section-rule"></div>
+        </div>
+
+        <div class="two-col-text" style="margin-bottom: 48px">
+          <div class="prose">
+            <p>
+              Most calendar apps are designed around a simple assumption: the
+              user exists in one time zone. That assumption breaks quickly in
+              real life — the moment your team, your family, or your social life
+              crosses a border, users are left manually calculating time
+              differences, relying on external tools, and still making errors.
+            </p>
+            <p>
+              Three core problems emerged from research: time zone confusion
+              (users calculating differences themselves), misaligned reminders
+              (notifications tied to the user's time, not the event's context),
+              and fragmented workflows (multiple tools increasing cognitive
+              load). But the deeper issue wasn't just logistical.
+            </p>
+            <p>
+              Missing a meeting is inconvenient. Missing a moment with someone
+              you care about because the app didn't account for the difference —
+              that's a human problem. That distinction shaped every decision we
+              made.
+            </p>
+          </div>
+
+          <div class="stats-row" style="margin: 0">
+            <div class="stat-cell">
+              <div class="stat-number">9</div>
+              <div class="stat-label">
+                research participants — students and working professionals
+              </div>
+            </div>
+            <div class="stat-cell">
+              <div class="stat-number">88.9%</div>
+              <div class="stat-label">
+                had friends or family outside their time zone
+              </div>
+            </div>
+            <div class="stat-cell">
+              <div class="stat-number">55.6%</div>
+              <div class="stat-label">
+                regularly communicated with people outside the US
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="problem-statement">
+          <div class="problem-label">
+            Primary HMW — Authored by Jennifer, Adopted by Team
+          </div>
+          <p>
+            How might we create a calendar app that seamlessly adapts to
+            multiple time zones and integrates with existing tools — helping
+            busy professionals and students manage international schedules
+            without manual calculations, workflow interruptions, or
+            miscommunication?
+          </p>
+        </div>
+      </section>
+
+      <!-- ── SECTION 03 · RESEARCH & DISCOVERY ── -->
+      <section class="fade-up">
+        <div class="section-header">
+          <span class="section-number">03</span>
+          <span class="section-title">Research & Discovery</span>
+          <div class="section-rule"></div>
+        </div>
+
+        <div class="two-col-text" style="margin-bottom: 48px">
+          <div class="prose">
+            <p>
+              The team conducted surveys and semi-structured interviews with 9
+              participants — a mix of college students and working professionals
+              between ages 18 and 54. Research targeted people managing
+              international relationships or schedules alongside students
+              balancing unpredictable, multi-context commitments.
+            </p>
+            <p>
+              I led participant recruiting and facilitated moderated in-person
+              sessions alongside Maze's unmoderated remote testing. The
+              combination gave us both the depth of observed behavior and the
+              breadth of quantitative task metrics — neither alone would have
+              been enough.
+            </p>
+          </div>
+          <div class="prose">
+            <p>
+              Findings were synthesized through affinity mapping into four
+              themes: Reminder Preferences, Timezone Management, Integration
+              Needs, and Complex Schedules. A competitive analysis covering
+              Google Calendar (55.6% of participants' primary tool), Apple
+              Calendar, Re:Catch, and Momentum confirmed the gap: none offered
+              native timezone conflict detection. Users were solving the problem
+              themselves — with workarounds.
+            </p>
+            <p>
+              Secondary research validated our findings. A published case study
+              on Google Calendar's timezone handling documented nearly identical
+              friction points — confirming we weren't designing for edge cases.
+            </p>
+          </div>
+        </div>
+
+        <div class="research-grid">
+          <div class="user-quote-card">
+            <div class="quote-label">Participant Feedback · Usability Test</div>
+            <div class="quote-text">
+              "Overall layout is confusing. What does this app solve? Why is it
+              better than a regular calendar app?"
+            </div>
+            <div class="quote-insight">
+              Multiple participants couldn't articulate CalCal's value
+              proposition — revealing a gap between the features we designed and
+              how we surfaced their purpose. The app needed onboarding before
+              the home screen.
+            </div>
+          </div>
+
+          <div class="user-quote-card">
+            <div class="quote-label">
+              Participant Feedback · Create Event Flow
+            </div>
+            <div class="quote-text">
+              "Too many questions to create an event. Looked cluttered and
+              boring — it just felt like work."
+            </div>
+            <div class="quote-insight">
+              Task completion rates don't capture experience quality. Users
+              completed the Create Event flow at 71.4% — but described it as
+              frustrating. That gap between completion and satisfaction is where
+              retention is lost.
+            </div>
+          </div>
+        </div>
+
+        <div class="insight-block">
+          <div class="insight-label">Key Research Finding</div>
+          <p>
+            Task success rates are an incomplete quality signal. CalCal's
+            participants completed flows at acceptable rates while
+            simultaneously describing the experience as cluttered and
+            frustrating — a retention risk the numbers alone would never have
+            revealed. This is what mixed-methods testing makes visible.
+          </p>
+        </div>
+      </section>
+
+      <!-- ── SECTION 04 · PROCESS ── -->
+      <section class="fade-up">
+        <div class="section-header">
+          <span class="section-number">04</span>
+          <span class="section-title">Process</span>
+          <div class="section-rule"></div>
+        </div>
+
+        <div class="process-steps">
+          <div class="process-step">
+            <div class="process-step-num">1</div>
+            <div class="process-step-title">Discovery & Framing</div>
+            <div class="process-step-desc">
+              Interviews, surveys, competitive analysis, and secondary research.
+              Team members developed independent POV statements before
+              converging — my HMW formulation was adopted verbatim as the team's
+              primary framing, and became the compass for every design decision
+              that followed.
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="process-step-num">2</div>
+            <div class="process-step-title">Flows & Architecture</div>
+            <div class="process-step-desc">
+              I designed all three task flows and user flows: Create Event (with
+              timezone conflict detection branch), Sync Calendar, and Set Time
+              Zone. These flows shaped the prototype structure and became the
+              direct basis for all three Maze usability test tasks.
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="process-step-num">3</div>
+            <div class="process-step-title">Prototype & Leadership</div>
+            <div class="process-step-desc">
+              The team built wireframes across all core screens into an
+              interactive Figma prototype. This project required significant
+              hands-on leadership — I coordinated weekly sessions, organized
+              additional working time to meet deadlines, and adapted how I
+              communicated to support different team needs.
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="process-step-num">4</div>
+            <div class="process-step-title">Test & Synthesize</div>
+            <div class="process-step-desc">
+              Unmoderated Maze testing plus moderated local sessions. I led
+              recruiting and facilitated in-person sessions. When the test
+              environment was compromised mid-test, I rebuilt the prototype and
+              recreated the test in a controlled environment — ensuring we were
+              working from clean, reliable data.
+            </div>
+          </div>
+        </div>
+
+        <!--
+          IMAGE GUIDANCE: Replace with your task flow or user flow
+          diagram from Figma. The Create Event flow with the timezone
+          conflict branch is the most interesting one to show —
+          it demonstrates the decision thinking, not just the screens.
+          alt="CalCal task flows — Create Event, Sync Calendar, Set Time Zone"
+        -->
+        <div class="mockup-frame">
+          <div class="mockup-placeholder">
+            <svg
+              width="32"
+              height="32"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1"
+              viewBox="0 0 24 24"
+              style="opacity: 0.3"
+            >
+              <rect x="3" y="3" width="18" height="18" rx="2" />
+              <path d="M3 9h18M9 21V9" />
+            </svg>
+            <span>Task flows — Create Event, Sync Calendar, Set Time Zone</span>
+          </div>
+        </div>
+        <p class="mockup-caption">
+          Three task flows mapped in Figma. The Create Event flow includes a
+          timezone conflict detection branch — the most complex path and the
+          hardest usability test task.
+        </p>
+
+        <div class="decision-card">
+          <div class="decision-card-problem">
+            <div class="decision-card-label">The Problem</div>
+            <div class="decision-card-text">
+              The Create Event form tried to do everything on one screen: event
+              name, all-day toggle, start and end times with timezone display,
+              recurrence, attendees, reminders, and conflict warnings. Usability
+              testing showed the highest friction of any flow — 71.4% success,
+              71.1% misclick rate, and feedback describing it as "cluttered" and
+              "just work."
+            </div>
+          </div>
+          <div class="decision-card-solution">
+            <div class="decision-card-label">The Recommendation</div>
+            <div class="decision-card-text">
+              Split the form into progressive steps: Basic Info → Reminders →
+              Attendees → Confirm. This pattern reduces cognitive load and
+              creates natural checkpoints — giving the conflict detection
+              warning room to live without overwhelming the primary task.
+            </div>
+            <div class="decision-card-highlight">
+              The most valuable feature — timezone conflict detection — was also
+              the hardest to find. Good research reveals not just what's broken,
+              but what's buried.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── SECTION 05 · FINAL DESIGN ── -->
+      <section class="fade-up">
+        <div class="section-header">
+          <span class="section-number">05</span>
+          <span class="section-title">Final Design</span>
+          <div class="section-rule"></div>
+        </div>
+
+        <div class="prose" style="max-width: 640px; margin-bottom: 40px">
+          <p>
+            The prototype addressed all three research-validated problem areas:
+            a timezone settings flow that lets users toggle between device
+            timezone and a searchable manual zone, a reminders overlay with
+            stacked notifications and a persistent reminder option, and a
+            calendar sync screen supporting OAuth connection to external
+            services.
+          </p>
+          <p>
+            The highest-performing screen in usability testing was the reminders
+            overlay — 92.9% task success, intuitive enough that participants
+            rarely misclicked. The lowest was the Find Better Time feature — 0
+            direct successes, entirely reliant on indirect paths. The gap
+            between those two numbers is itself a finding: discoverability is a
+            design problem, not a user problem.
+          </p>
+        </div>
+
+        <!--
+          IMAGE GUIDANCE: Replace with your Figma prototype screens.
+          Best choice: the agenda/home view or a before/after showing the
+          cluttered original Create Event vs a proposed stepped version.
+          alt="CalCal prototype — agenda view and event creation"
+        -->
+        <div
+          class="mockup-frame"
+          style="
+            background: var(--graphite);
+            min-height: 480px;
+            margin-bottom: 12px;
+          "
+        >
+          <div class="mockup-placeholder">
+            <svg
+              width="32"
+              height="32"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1"
+              viewBox="0 0 24 24"
+              style="opacity: 0.2; color: white"
+            >
+              <rect x="3" y="3" width="18" height="18" rx="2" />
+              <path d="M3 9h18M9 21V9" />
+            </svg>
+            <span style="color: rgba(255, 249, 232, 0.25)">
+              Primary prototype screens — agenda view and event creation
+            </span>
+          </div>
+        </div>
+        <p class="mockup-caption">
+          CalCal home and agenda view — time-blocked events with local and
+          secondary timezone labels for international events.
+        </p>
+
+        <!--
+          IMAGE GUIDANCE: The reminders overlay or timezone conflict warning
+          are the two most distinctive features — worth showing separately.
+          alt="CalCal reminders overlay — stacked reminders with persistent option"
+        -->
+        <div class="mockup-frame" style="min-height: 320px">
+          <div class="mockup-placeholder">
+            <svg
+              width="32"
+              height="32"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1"
+              viewBox="0 0 24 24"
+              style="opacity: 0.3"
+            >
+              <rect x="3" y="3" width="18" height="18" rx="2" />
+              <path d="M3 9h18M9 21V9" />
+            </svg>
+            <span>
+              Reminders overlay — stacked notifications and persistent reminder
+              toggle
+            </span>
+          </div>
+        </div>
+        <p class="mockup-caption">
+          Reminders overlay — the highest-performing feature in usability
+          testing. 92.9% success rate, intuitive flow, low misclick.
+        </p>
+      </section>
+
+      <!-- ── SECTION 06 · OUTCOMES ── -->
+      <section class="fade-up">
+        <div class="section-header">
+          <span class="section-number">06</span>
+          <span class="section-title">Outcomes & Next Steps</span>
+          <div class="section-rule"></div>
+        </div>
+
+        <div class="outcomes-grid">
+          <div class="outcomes-list">
+            <div class="outcome-metric">
+              <div class="outcome-dot coral"></div>
+              <div class="outcome-text">
+                <strong>Reminders overlay: 92.9% task success</strong>
+                — the best-performing flow in the prototype. Low drop-off, low
+                misclick rate. Participants described it as intuitive and
+                well-designed without prompting.
+              </div>
+            </div>
+
+            <div class="outcome-metric">
+              <div class="outcome-dot coral"></div>
+              <div class="outcome-text">
+                <strong>HMW question adopted verbatim by the team</strong>
+                — written during the diverge-then-converge POV session, it
+                survived peer review unchanged and became the compass for every
+                design decision that followed.
+              </div>
+            </div>
+
+            <div class="outcome-metric">
+              <div class="outcome-dot"></div>
+              <div class="outcome-text">
+                Settings-based flows (Set Time Zone, Sync Calendar) both
+                achieved <strong>86.7% task success</strong> — above target.
+                Learnable paths with acceptable misclick rates, confirming the
+                settings architecture was sound even if the entry points weren't
+                always obvious.
+              </div>
+            </div>
+
+            <div class="outcome-metric">
+              <div class="outcome-dot"></div>
+              <div class="outcome-text">
+                Find Better Time: <strong>0 direct successes</strong> across all
+                test participants. All completions were indirect — a critical
+                insight. The app's most distinctive feature was entirely
+                undiscoverable, and would have shipped invisible without this
+                data.
+              </div>
+            </div>
+
+            <div class="outcome-metric">
+              <div class="outcome-dot"></div>
+              <div class="outcome-text">
+                <strong>Led recruiting and rebuilt the test environment</strong>
+                mid-study after the prototype was modified post-launch.
+                Confirmed with the instructor and continued forward with clean,
+                reliable data. Now lock all prototypes before launching live
+                tests.
+              </div>
+            </div>
+          </div>
+
+          <div class="insight-block" style="align-self: start">
+            <div class="insight-label">Looking back</div>
+            <p>
+              CalCal was my first full UX project — and a turning point. It's
+              where I started to understand that good design doesn't just
+              organize time. It supports how people show up in their lives. The
+              final product isn't the version I would design today, but the
+              thinking behind it still holds.
+            </p>
+          </div>
+        </div>
+
+        <div class="reflection-block">
+          <div class="reflection-item">
+            <div class="reflection-item-label">Redesign Event Creation</div>
+            <div class="reflection-item-text">
+              Split the Create Event form into a stepped flow — Basic Info,
+              Reminders, Attendees, Confirm. The single-screen approach created
+              unnecessary cognitive load and buried the conflict detection
+              feature that made CalCal worth using.
+            </div>
+          </div>
+          <div class="reflection-item">
+            <div class="reflection-item-label">Surface the Core Feature</div>
+            <div class="reflection-item-text">
+              Find Better Time had 0 direct successes — not because it wasn't
+              useful, but because no one could find it. Move it earlier in the
+              event creation flow, where the context makes its purpose
+              immediately clear.
+            </div>
+          </div>
+          <div class="reflection-item">
+            <div class="reflection-item-label">Add Onboarding First</div>
+            <div class="reflection-item-text">
+              Multiple participants asked "why is this better than Google
+              Calendar?" — which means the value proposition wasn't landing
+              before they started using it. An onboarding moment that
+              establishes the international-first premise needs to come before
+              the home screen.
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- /page-content -->
+
+    <!-- ── CASE NAVIGATION ── -->
+    <div class="case-nav">
+      <a href="bondfire.html" class="case-nav-item">
+        <div class="case-nav-direction">Previous Project</div>
+        <div class="case-nav-title">Bondfire</div>
+        <div class="case-nav-tags">
+          <span class="case-nav-tag">UX Research</span>
+          <span class="case-nav-tag">B2B SaaS</span>
+        </div>
+      </a>
+      <a href="testimonial.html" class="case-nav-item case-nav-next">
+        <div class="case-nav-direction">Next Project</div>
+        <div class="case-nav-title">Testimonial System</div>
+        <div class="case-nav-tags">
+          <span class="case-nav-tag">Systems Design</span>
+          <span class="case-nav-tag">Product Thinking</span>
+        </div>
+      </a>
+    </div>
+
+    <!-- ── FOOTER ── -->
+    <footer>
+      <a href="index.html" class="footer-monogram">JL</a>
+      <span class="footer-copy"
+        >© 2025 Jennifer Landers · Designed & built with intention</span
+      >
+    </footer>
+
+    <script src="javascript/case-study.js"></script>
+  </body>
+</html>

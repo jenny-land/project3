@@ -1,0 +1,771 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ripple — Jennifer Landers · UX Designer & Researcher</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/shared.css" />
+    <link rel="stylesheet" href="css/case-study.css" />
+  </head>
+  <body>
+    <div class="progress-bar" id="progressBar"></div>
+
+    <!-- ── NAV ── -->
+    <nav>
+      <a href="index.html" class="nav-monogram">JL</a>
+      <ul class="nav-links">
+        <li><a href="index.html#work">Work</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+      <a href="index.html#work" class="nav-back">
+        <svg
+          width="16"
+          height="16"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+          viewBox="0 0 24 24"
+        >
+          <path d="M19 12H5M12 19l-7-7 7-7" />
+        </svg>
+        All Work
+      </a>
+    </nav>
+
+    <!-- ══════════════════════════════════════════
+       COVER
+  ══════════════════════════════════════════ -->
+    <div class="cover">
+      <div class="cover-bg-number">01</div>
+
+      <div class="cover-tag">
+        <span class="tag">UX Research</span>
+        <span class="tag">Interaction Design</span>
+        <span class="tag">Accessibility</span>
+        <div class="divider-dot"></div>
+        <span class="year">2025</span>
+      </div>
+
+      <h1 class="cover-h1">Ripple</h1>
+
+      <p class="cover-hook">
+        How do you design a social tool for people whose energy — and
+        availability — changes moment to moment?
+      </p>
+
+      <div class="cover-meta">
+        <div class="cover-meta-item">
+          <div class="cover-meta-label">Role</div>
+          <div class="cover-meta-value">Lead UX Designer & Researcher</div>
+        </div>
+        <div class="cover-meta-item">
+          <div class="cover-meta-label">Timeline</div>
+          <div class="cover-meta-value">4-Day Hackathon Sprint (~48 hrs)</div>
+        </div>
+        <div class="cover-meta-item">
+          <div class="cover-meta-label">Team</div>
+          <div class="cover-meta-value">3-Person Multidisciplinary Team</div>
+        </div>
+        <div class="cover-meta-item">
+          <div class="cover-meta-label">Tools</div>
+          <div class="cover-meta-value">Figma · FigJam · Canva</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════
+       PAGE CONTENT
+  ══════════════════════════════════════════ -->
+    <div class="page-content">
+      <!-- ── SECTION 01 · OVERVIEW ── -->
+      <section class="fade-up">
+        <div class="section-header">
+          <span class="section-number">01</span>
+          <span class="section-title">Overview</span>
+          <div class="section-rule"></div>
+        </div>
+
+        <div class="overview-grid">
+          <div class="overview-cell">
+            <div class="cover-meta-label">Context</div>
+            <div class="overview-text">
+              Fig Build 2026- A 4-day remote hackathon sprint (~48 working
+              hours). Ripple is an iOS mobile app designed to help people with
+              chronic illness, disability, and fluctuating energy conditions
+              navigate social planning with honesty and ease — without requiring
+              medical explanation every time. The app uses a combination of
+              text-based states and a visually expressive aura to communicate
+              availability as an <em>ambient</em>, low-effort signal.
+            </div>
+          </div>
+          <div class="overview-cell">
+            <div class="cover-meta-label">My Role</div>
+            <div class="overview-text">
+              Led UX research, synthesis, and overall product direction.
+              Responsible for translating early ideas into a cohesive
+              interaction model and final prototype. Defined the core concept
+              (aura-based energy system), established design principles,
+              designed the full multi-state UI and "Soft Morning" design system,
+              built the Figma prototype, and shaped and delivered the final
+              presentation. Teammates contributed to early ideation, select
+              research interviews, and feedback during wireframing.
+            </div>
+          </div>
+          <div class="overview-cell">
+            <div class="cover-meta-label">Methods</div>
+            <div class="overview-text">
+              Semi-structured interviews · Affinity mapping · Thematic analysis
+              · Competitive analysis · Heuristic evaluation · Literature review
+              (allostasis research) · Persona development · Accessibility audit
+            </div>
+          </div>
+          <div class="overview-cell">
+            <div class="cover-meta-label">Outcome</div>
+            <div class="overview-text">
+              Complete interactive Figma prototype with a full research
+              foundation, multi-state UI, and competition-ready presentation
+              deck — delivered within the hackathon timeframe. Competing against
+              650+ submissions from teams of 2–4, including professionals and
+              graduate students. The ambient aura system demonstrated a clear
+              gap in existing social tools and established a strong foundation
+              for future iteration.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── SECTION 02 · THE PROBLEM ── -->
+      <section class="fade-up">
+        <div class="section-header">
+          <span class="section-number">02</span>
+          <span class="section-title">The Problem</span>
+          <div class="section-rule"></div>
+        </div>
+
+        <div class="two-col-text" style="margin-bottom: 48px">
+          <div class="prose">
+            <p>
+              Most social and planning tools are built on a quiet assumption:
+              that users have consistent, reliable energy. For people managing
+              chronic illness, neurodivergence, or fluctuating conditions —
+              POTS, ME/CFS, fibromyalgia, ADHD — that assumption breaks down,
+              and the tools do nothing to address what comes next.
+            </p>
+            <p>
+              The result is a recurring, exhausting dilemma. Explaining capacity
+              requires emotional labor and vulnerability. Masking energy leads
+              to burnout. Cancelling plans carries guilt. Withdrawing quietly
+              reduces social connection over time. Every interaction forces the
+              same impossible choice between oversharing, masking, or
+              disconnecting — none of which support authentic, sustainable
+              relationships.
+            </p>
+          </div>
+
+          <div class="stats-row" style="margin: 0">
+            <div class="stat-cell">
+              <div class="stat-number">1 in 5</div>
+              <div class="stat-label">
+                people manage chronic conditions that cause fluctuating energy
+              </div>
+            </div>
+            <div class="stat-cell">
+              <div class="stat-number">7</div>
+              <div class="stat-label">
+                research participants across chronic illness and energy-variable
+                conditions
+              </div>
+            </div>
+            <div class="stat-cell">
+              <div class="stat-number">0</div>
+              <div class="stat-label">
+                existing useful apps designed for ambient, low-effort energy
+                communication
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="problem-statement">
+          <div class="problem-label">Core Problem Statement</div>
+          <p>
+            How might we help people communicate social availability honestly
+            and non-judgmentally — without requiring them to explain their
+            condition every time?
+          </p>
+        </div>
+      </section>
+
+      <!-- ── SECTION 03 · RESEARCH & DISCOVERY ── -->
+      <section class="fade-up">
+        <div class="section-header">
+          <span class="section-number">03</span>
+          <span class="section-title">Research & Discovery</span>
+          <div class="section-rule"></div>
+        </div>
+
+        <div class="two-col-text" style="margin-bottom: 48px">
+          <div class="prose">
+            <p>
+              Given the compressed timeline, research prioritized depth over
+              breadth. I conducted 4 interviews personally; 3 additional
+              interviews were supported by teammates — 7 total, with
+              participants recruited through my personal network of people
+              living with energy- or activity-limiting conditions.
+            </p>
+            <p>
+              Findings were synthesized in a live FigJam affinity mapping
+              session, organized around four clusters: Energy Unpredictability,
+              Social Pressure, Communication Barriers, and Emotional Impact
+              (guilt, obligation, withdrawal). A lightweight literature review
+              on allostasis ran in parallel, grounding the concept of energy as
+              dynamic rather than a fixed, depleting resource.
+            </p>
+          </div>
+          <div class="prose">
+            <p>
+              Across interviews, participants consistently reported difficulty
+              communicating availability even with close friends and partners —
+              not just acquaintances. Guilt and fear of disappointing others
+              were nearly universal. What participants needed wasn't a smarter
+              scheduling tool — it was a way to signal capacity honestly,
+              without over-explaining or masking their condition entirely.
+            </p>
+            <p>
+              A competitive analysis of existing apps — social planning tools,
+              health trackers, accessibility-focused products — confirmed the
+              gap. None addressed ambient, low-effort communication of energy
+              state. Insights immediately informed design principles and the
+              interaction model before any screens were drawn.
+            </p>
+          </div>
+        </div>
+
+        <div class="research-grid">
+          <div class="user-quote-card">
+            <div class="quote-label">Maya · Primary Persona · POTS</div>
+            <div class="quote-text">
+              "I either have to lie and say I'm fine, or overshare my entire
+              medical history just to cancel lunch."
+            </div>
+            <div class="quote-insight">
+              The binary choice between oversharing and masking reveals a
+              missing middle — a way to communicate truthfully without clinical
+              language or detailed justification.
+            </div>
+          </div>
+
+          <div class="user-quote-card">
+            <div class="quote-label">Jordan · Secondary Persona · ME/CFS</div>
+            <div class="quote-text">
+              "Every RSVP feels like a contract I might have to break, and I
+              hate myself when I do."
+            </div>
+            <div class="quote-insight">
+              The emotional weight of cancellation — guilt, shame, unreliability
+              — is a design problem. The right system reframes uncertainty as
+              honest communication, not failure.
+            </div>
+          </div>
+        </div>
+
+        <div class="insight-block">
+          <div class="insight-label">Key Research Finding</div>
+          <p>
+            Difficulty communicating availability wasn't limited to casual
+            relationships — it showed up even with close friends and partners.
+            Guilt and fear of disappointment were the emotional undercurrent in
+            nearly every interview. The design opportunity wasn't a new feature
+            — it was a new framework: one that makes honest communication the
+            path of least resistance.
+          </p>
+        </div>
+      </section>
+
+      <!-- ── SECTION 04 · PROCESS ── -->
+      <section class="fade-up">
+        <div class="section-header">
+          <span class="section-number">04</span>
+          <span class="section-title">Process</span>
+          <div class="section-rule"></div>
+        </div>
+
+        <div class="process-steps">
+          <div class="process-step">
+            <div class="process-step-num">1</div>
+            <div class="process-step-title">Research Sprint</div>
+            <div class="process-step-desc">
+              7 interviews synthesized in a live affinity mapping session.
+              Organized around four behavioral clusters before any sketching.
+              Literature review of allostasis research ran in parallel to ground
+              the energy metaphor scientifically. Insights immediately informed
+              design principles and interaction model.
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="process-step-num">2</div>
+            <div class="process-step-title">Principles Before Screens</div>
+            <div class="process-step-desc">
+              Established 4 design principles before wireframing: low cognitive
+              load, emotionally honest communication, dignity over productivity,
+              inclusive by default. Principles acted as decision filters
+              throughout the sprint — preventing rework and keeping every design
+              decision grounded.
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="process-step-num">3</div>
+            <div class="process-step-title">Design System First</div>
+            <div class="process-step-desc">
+              Built the "Soft Morning" design system — palette, typography,
+              spacing, motion, and illustration principles — before individual
+              screens. Visual language aligned with the emotional tone of the
+              product before a single UI screen was designed, ensuring
+              consistency and enabling rapid prototyping without losing intent.
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="process-step-num">4</div>
+            <div class="process-step-title">
+              Hi-Fi First + AI-Assisted Prototyping
+            </div>
+            <div class="process-step-desc">
+              Designed high-fidelity wireframes before prototyping, then used
+              Figma Make (AI prototyping tool) to translate them into an
+              interactive prototype — defining the design system in prompts,
+              building screens sequentially, correcting misalignments at each
+              step, and adding animations last. 4–5 participants then explored
+              the prototype in a lightweight usability testing session,
+              informing minor refinements.
+            </div>
+          </div>
+        </div>
+
+        <!--
+        IMAGE GUIDANCE: Replace this mockup frame with a screenshot
+        of your Figma affinity map or the FigJam research board.
+        Recommended: export at 2x from Figma, JPG or WebP.
+        alt="Ripple affinity map organized across four behavioral clusters"
+      -->
+        <div class="mockup-frame">
+          <div class="mockup-placeholder">
+            <svg
+              width="32"
+              height="32"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1"
+              viewBox="0 0 24 24"
+              style="opacity: 0.3"
+            >
+              <rect x="3" y="3" width="18" height="18" rx="2" />
+              <path d="M3 9h18M9 21V9" />
+            </svg>
+            <span
+              >Affinity map — four behavioral clusters from research
+              synthesis</span
+            >
+          </div>
+        </div>
+        <p class="mockup-caption">
+          FigJam affinity map organized across Energy Unpredictability, Social
+          Pressure, Communication Barriers, and Emotional Impact (guilt,
+          obligation, withdrawal).
+        </p>
+
+        <div class="decision-card">
+          <div class="decision-card-problem">
+            <div class="decision-card-label">The Challenge</div>
+            <div class="decision-card-text">
+              The aura visualization is visually expressive and emotionally
+              resonant — but an animated ambient glow is completely inaccessible
+              for screen reader users. Ripple's target population includes
+              people who rely on VoiceOver and other assistive technology at
+              low-energy moments, specifically when the app is most needed.
+            </div>
+          </div>
+          <div class="decision-card-solution">
+            <div class="decision-card-label">The Decision</div>
+            <div class="decision-card-text">
+              The aura was designed as a visual layer over a text-based energy
+              state system. The primary data is always text: "full energy,"
+              "taking it easy," "offline today." The aura enhances the
+              experience — it doesn't carry it. Screen readers read the text
+              state. The visual system earns its place on top of a working
+              accessible foundation.
+            </div>
+            <div class="decision-card-highlight">
+              Accessibility-first meant the visual system had to earn its place
+              on top of a working text foundation — not replace it.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── SECTION 05 · KEY DESIGN DECISIONS ── -->
+      <section class="fade-up">
+        <div class="section-header">
+          <span class="section-number">05</span>
+          <span class="section-title">Key Design Decisions</span>
+          <div class="section-rule"></div>
+        </div>
+
+        <div class="process-steps">
+          <div class="process-step">
+            <div class="process-step-num">1</div>
+            <div class="process-step-title">
+              Designing for Fluctuating Energy
+            </div>
+            <div class="process-step-desc">
+              Energy is expressed as a flexible, shared ambient signal rather
+              than a binary availability toggle. This supports honest
+              communication without overcommitment — the goal is coordination
+              around emotional safety, not productivity.
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="process-step-num">2</div>
+            <div class="process-step-title">Energy Scale Tradeoff</div>
+            <div class="process-step-desc">
+              Explored numeric (1–5) vs. simplified (high/medium/low) models.
+              Decision deferred to future testing. Numeric is precise but
+              potentially judgment-heavy; simplified is intuitive but less
+              granular. Both approaches have merit depending on user context and
+              condition type.
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="process-step-num">3</div>
+            <div class="process-step-title">Accessibility First</div>
+            <div class="process-step-desc">
+              The aura is a visual layer; text-based energy states are the
+              source of truth. No reliance on animation or color alone. The
+              visual system enhances the experience — it doesn't carry it. This
+              ensures clarity, screen reader compatibility, and usability in
+              low-energy moments when assistive technology is most needed.
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="process-step-num">4</div>
+            <div class="process-step-title">
+              Low-Energy as a First-Class Experience
+            </div>
+            <div class="process-step-desc">
+              Instead of treating low energy as a degraded state, I designed it
+              intentionally: simplified interface, reduced actions, visual
+              softening, notifications removed. The goal is not to encourage
+              action — but to remove pressure. The screen communicates that rest
+              is acceptable.
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="process-step-num">5</div>
+            <div class="process-step-title">Reducing Emotional Friction</div>
+            <div class="process-step-desc">
+              Soft, non-committal language throughout the interface reduces
+              guilt and social pressure. The design supports self-care and
+              preserves dignity in social interaction — coordination is framed
+              around emotional safety, not obligation.
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="process-step-num">6</div>
+            <div class="process-step-title">
+              Future Wearable Insights (Exploratory)
+            </div>
+            <div class="process-step-desc">
+              Potential integration with wearable sensors — muscle tension,
+              breathing, sweat — to track energy passively and reduce check-in
+              friction further. Out of scope for the hackathon, but this informs
+              Ripple's long-term vision and extends the ambient communication
+              model.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── SECTION 06 · FINAL DESIGN ── -->
+      <section class="fade-up">
+        <div class="section-header">
+          <span class="section-number">06</span>
+          <span class="section-title">Final Design</span>
+          <div class="section-rule"></div>
+        </div>
+
+        <div class="prose" style="max-width: 640px; margin-bottom: 40px">
+          <p>
+            The final prototype centers on the home screen aura — a soft
+            animated glow that reflects the user's current energy state. The
+            aura isn't decorative; it's the primary communication surface. When
+            a user checks in, the aura shifts in intensity, color, and rhythm to
+            reflect their state across all their connections simultaneously,
+            with no message required.
+          </p>
+          <p>
+            One of the most intentional screens in the prototype is the
+            low-energy home state. When a user checks in at low capacity, the
+            interface softens: the aura dims, quick-action tiles reduce to a
+            single "Rest Mode" option, and notification badges disappear. The
+            screen communicates that rest is acceptable — no prompts to improve,
+            no red alerts, no productivity pressure. This is a first-class
+            design decision, not a degraded fallback.
+          </p>
+        </div>
+
+        <!--
+        IMAGE GUIDANCE: Replace with your primary Figma prototype screen.
+        Best choice: the home screen showing the full-energy aura state.
+        Dark background — export against the deep navy (#2D3A4A) from
+        your Soft Morning palette.
+        Recommended: 1400×900px, export at 2x.
+        alt="Ripple home screen showing full-energy aura state"
+      -->
+        <div
+          class="mockup-frame"
+          style="
+            background: var(--graphite);
+            min-height: 480px;
+            margin-bottom: 12px;
+          "
+        >
+          <div class="mockup-placeholder">
+            <svg
+              width="32"
+              height="32"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1"
+              viewBox="0 0 24 24"
+              style="opacity: 0.2; color: white"
+            >
+              <rect x="3" y="3" width="18" height="18" rx="2" />
+              <path d="M3 9h18M9 21V9" />
+            </svg>
+            <span style="color: rgba(255, 249, 232, 0.25)">
+              Home screen — full energy aura state
+            </span>
+          </div>
+        </div>
+        <p class="mockup-caption">
+          Ripple home screen — full energy state. The aura pulses in a steady,
+          confident rhythm. Quick actions in the lower third respect
+          single-handed reach zones.
+        </p>
+
+        <!--
+        IMAGE GUIDANCE: Replace with the low-energy home screen variant.
+        This is one of the most important screens to show — it demonstrates
+        that you designed for a first-class low state, not a degraded one.
+        Side-by-side comparison (full energy / low energy) would be ideal.
+        alt="Ripple home screen low-energy state — interface softens, aura dims"
+      -->
+        <div class="mockup-frame" style="min-height: 320px">
+          <div class="mockup-placeholder">
+            <svg
+              width="32"
+              height="32"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1"
+              viewBox="0 0 24 24"
+              style="opacity: 0.3"
+            >
+              <rect x="3" y="3" width="18" height="18" rx="2" />
+              <path d="M3 9h18M9 21V9" />
+            </svg>
+            <span>
+              Low-energy home state — interface softens, single action visible
+            </span>
+          </div>
+        </div>
+        <p class="mockup-caption">
+          Low-energy state — a first-class design decision, not a degraded
+          experience. The interface communicates that rest is acceptable.
+        </p>
+      </section>
+
+      <!-- ── SECTION 07 · OUTCOMES ── -->
+      <section class="fade-up">
+        <div class="section-header">
+          <span class="section-number">07</span>
+          <span class="section-title">Outcomes</span>
+          <div class="section-rule"></div>
+        </div>
+
+        <div class="outcomes-grid">
+          <div class="outcomes-list">
+            <div class="outcome-metric">
+              <div class="outcome-dot coral"></div>
+              <div class="outcome-text">
+                <strong>Fully interactive prototype delivered</strong> within
+                the hackathon timeframe — complete research foundation,
+                multi-state UI, "Soft Morning" design system, and
+                competition-ready presentation deck, all under significant time
+                and resource constraints.
+              </div>
+            </div>
+
+            <div class="outcome-metric">
+              <div class="outcome-dot"></div>
+              <div class="outcome-text">
+                <strong>Demonstrated a clear market gap</strong> — competitive
+                analysis of 5+ existing tools confirmed no existing app
+                addressed ambient, low-effort energy communication for this
+                population.
+              </div>
+            </div>
+
+            <div class="outcome-metric">
+              <div class="outcome-dot"></div>
+              <div class="outcome-text">
+                <strong>Accessibility-first architecture</strong> — text-based
+                energy states confirmed functional with screen reader before any
+                visual aura layer was applied. WCAG 2.1 AA met throughout; key
+                elements reach AAA.
+              </div>
+            </div>
+
+            <div class="outcome-metric">
+              <div class="outcome-dot"></div>
+              <div class="outcome-text">
+                Submitted in a hackathon with <strong>650+ entries</strong> from
+                teams of 2–4, including professionals and graduate students.
+                Ripple is continuing as a Spring 2026 portfolio piece with
+                extended research and a formal usability testing phase in
+                planning.
+              </div>
+            </div>
+          </div>
+
+          <div class="insight-block" style="align-self: start">
+            <div class="insight-label">What this taught me</div>
+            <p>
+              Designing for a community you're personally part of is both an
+              advantage and a risk. Being personally connected to the problem
+              required discipline to separate my own assumptions from what
+              participants actually said — and that discipline made the research
+              more honest and the design more grounded.
+            </p>
+          </div>
+        </div>
+
+        <div class="reflection-block">
+          <div class="reflection-item">
+            <div class="reflection-item-label">What Worked</div>
+            <div class="reflection-item-text">
+              Establishing principles before wireframing prevented rework and
+              kept every design decision grounded. "Inclusive by default" and
+              "emotionally honest" acted as reliable filters throughout the
+              sprint. The aura metaphor came directly from research, not from
+              aesthetics — that grounding made it defensible. High-fidelity
+              wireframes combined with AI-assisted prototyping enabled efficient
+              iteration under time constraints.
+            </div>
+          </div>
+          <div class="reflection-item">
+            <div class="reflection-item-label">What I'd Change</div>
+            <div class="reflection-item-text">
+              With more time I'd test the energy scale more rigorously — 3
+              states vs. 5 vs. a continuous slider. The decision to simplify was
+              informed by cognitive load feedback but not formally validated.
+              I'd also want to test the soft, non-committal language in the Plan
+              Together screen with users outside the chronic illness community
+              to understand how the framing lands.
+            </div>
+          </div>
+          <div class="reflection-item">
+            <div class="reflection-item-label">Next Steps</div>
+            <div class="reflection-item-text">
+              Test numeric vs. simplified energy representation models. Expand
+              research to 15+ participants with broader condition
+              representation. Explore the notification system — how does Ripple
+              communicate a friend's energy change without creating anxiety?
+              Conduct formal accessibility testing with screen reader users.
+              Investigate wearable integration for passive energy tracking.
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- /page-content -->
+
+    <!-- ── CASE NAVIGATION ── -->
+    <!--
+    Ripple is project 01 — no Previous.
+    Next: Bondfire (bondfire.html) — update if needed.
+  -->
+    <div class="case-nav">
+      <div class="case-nav-item case-nav-empty"></div>
+      <a href="bondfire.html" class="case-nav-item case-nav-next">
+        <div class="case-nav-direction">Next Project</div>
+        <div class="case-nav-title">Bondfire</div>
+        <div class="case-nav-tags">
+          <span class="case-nav-tag">UX Research</span>
+          <span class="case-nav-tag">B2B SaaS</span>
+          <span class="case-nav-tag">Systems Design</span>
+        </div>
+      </a>
+    </div>
+
+    <!-- ── FOOTER ── -->
+    <footer>
+      <a href="index.html" class="footer-monogram">JL</a>
+      <span class="footer-copy"
+        >© 2025 Jennifer Landers · Designed & built with intention</span
+      >
+    </footer>
+
+    <script src="javascript/case-study.js"></script>
+  </body>
+</html>
+
+<!--
+CHANGELOG — what changed from previous version:
+
+COVER:
+- Timeline updated from "48-Hour Hackathon Sprint" to "4-Day Hackathon Sprint (~48 hrs)"
+- Team updated from "Solo Design Lead" to "3-Person Multidisciplinary Team" (accurate to case study)
+
+SECTION 01 · OVERVIEW:
+- Context: Added "ambient" (italicized) to describe the energy communication model; added 4-day / ~48 hrs framing
+- My Role: Expanded to reflect the full scope and clarify teammate contributions
+- Outcome: Removed the judge citation (not confirmed); added 650+ submissions context; referenced ambient aura concept and future iteration
+
+SECTION 02 · THE PROBLEM:
+- Updated opening paragraph to include the "quiet assumption" framing from the revised case study
+- Added specific conditions (POTS, ME/CFS, fibromyalgia, ADHD) for concreteness
+- Updated stat label to "ambient, low-effort energy communication" (more precise)
+- Problem statement updated to match revised wording: "honestly and non-judgmentally"
+
+SECTION 03 · RESEARCH & DISCOVERY:
+- Clarified interview breakdown: 4 personal + 3 teammate-supported = 7 total
+- Updated affinity cluster label: "Emotional Impact (guilt, obligation, withdrawal)" replaces "Coping Strategies"
+- Added note that insights immediately informed design principles
+
+SECTION 04 · PROCESS:
+- Step 1: Removed exact "4 hours" timing; clarified allostasis review ran in parallel
+- Step 2: Renamed from "Concept & Principles" to "Principles Before Screens"
+- Step 4: Renamed to "Hi-Fi First + AI-Assisted Prototyping"; added Figma Make detail; added usability testing note (4–5 participants)
+
+NEW SECTION 05 · KEY DESIGN DECISIONS:
+- Added as a full section with 6 design decisions from the revised case study
+- Covers: ambient energy signal, energy scale tradeoff, accessibility first, low-energy first-class state, emotional friction, wearable integration (exploratory)
+
+SECTION 06 · FINAL DESIGN (was 05):
+- Second prose paragraph updated to emphasize "first-class design decision, not a degraded fallback"
+
+SECTION 07 · OUTCOMES (was 06):
+- Removed unconfirmed judge citation as first bullet
+- First bullet reframed around delivery and constraints
+- Added "650+ submissions" stat inline
+- Reflection / What Worked: Integrated AI prototyping tool mention
+- Next Steps updated to match revised case study list
+
+SECTION NUMBERS: Renumbered throughout (Final Design = 06, Outcomes = 07) to account for new Key Design Decisions section.
+-->
